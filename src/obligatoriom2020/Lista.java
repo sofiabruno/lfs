@@ -1,4 +1,4 @@
-package obligatoriom2020;
+ package obligatoriom2020;
 
 
 public class Lista implements ILista {

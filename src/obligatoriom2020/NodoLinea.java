@@ -5,9 +5,9 @@ public class NodoLinea extends Nodo {
     ListaPalabra listaPalabras;
 
     public NodoLinea(Object dato) {
+        super(dato);
         this.listaPalabras = new ListaPalabra();
-        this.dato = dato;
-        this.siguiente = null;
+        
     }
 
     public ListaPalabra getListaPalabras() {

@@ -13,9 +13,9 @@ public class NodoUnidad extends Nodo{
     }
     
     public NodoUnidad(Object dato) {
+        super(dato);
         this.listaCarpeta = new ListaCarpeta();
-        this.dato = dato;
-        this.siguiente = null;
+    
     }
     
 }

@@ -5,8 +5,7 @@ public class NodoCarpeta extends Nodo{
         ListaMensaje listamensaje;
 
       public NodoCarpeta(Object dato) {
-        this.dato = dato;
-        this.siguiente = null;
+        super(dato);
         this.listamensaje = new ListaMensaje();
     }
 
