@@ -53,6 +53,7 @@ public class Lista implements ILista {
 
     //PRE: 
     //POS: Agrega un nuevo Nodo al principio de la lista
+    @Override
     public void agregarInicio(Object dato){
         Nodo nuevo= new Nodo(dato);
         nuevo.setSiguiente(inicio);
@@ -65,6 +66,7 @@ public class Lista implements ILista {
     
      //PRE:
     //POS: Borra el primer nodo
+    @Override
      public void borrarInicio(){
         if (!this.esVacia()){
             this.inicio=this.inicio.getSiguiente();
@@ -73,6 +75,7 @@ public class Lista implements ILista {
     }
  //PRE:
     //POS: elimina todos los nodos de una lista dada
+    @Override
      public void vaciar(){
              this.inicio=null;
              this.fin=null;
@@ -81,14 +84,15 @@ public class Lista implements ILista {
    
          //PRE:
     //POS: Recorre y muestra los datos de lista
+    @Override
    public void mostrar(){
         if (this.esVacia())
             System.out.println("Lista es vacía");
         else  {
-            NodoLista aux=this.inicio;
+            Nodo aux=this.inicio;
             while (aux!=null)  {
                 System.out.println(aux.getDato());
-                aux=aux.getSig();
+                aux=aux.getSiguiente();
             }
         }
     }
@@ -98,6 +102,7 @@ public class Lista implements ILista {
    
     //PRE:
     //POS: Agrega un nuevo Nodo al final de la lista
+    @Override
  public void agregarFinal(Object dato){
         //NodoLista nuevo= new NodoLista(n);
         if (this.esVacia())
@@ -105,8 +110,8 @@ public class Lista implements ILista {
         
         else
         {
-           NodoLista nuevo= new NodoLista(dato); 
-           fin.setSig(nuevo);
+           Nodo nuevo= new Nodo(dato); 
+           fin.setSiguiente(nuevo);
            fin =nuevo;
            this.cantelementos=this.cantelementos+1;  
         }
@@ -115,16 +120,17 @@ public class Lista implements ILista {
 
       //PRE:
     //POS: Borra el último nodo
+    @Override
     public void borrarFin(){
         if (!this.esVacia()){
             if (this.inicio==this.fin)
                 this.borrarInicio();  // actualiza canelementos
             else{
-                NodoLista aux = this.inicio;
-                while (aux.getSig().getSig() != null)
-                    aux=aux.getSig();
+                Nodo aux = this.inicio;
+                while (aux.getSiguiente().getSiguiente() != null)
+                    aux=aux.getSiguiente();
                 this.fin=aux;
-                this.fin.setSig(null);
+                this.fin.setSiguiente(null);
                 this.cantelementos=this.cantelementos-1;
             }
         }
@@ -133,22 +139,23 @@ public class Lista implements ILista {
 
     //PRE: lista ordenada => mantiena orden
     //POS: inserta nuevo elemento en orden ascendente
+    @Override
     public void agregarOrd(Object dato){
         //lista vacìa o primer elemento es mayor o igual => agrego al ppio
         Object datonodo = this.inicio.getDato();
-        if (this.esVacia() || (this.inicio.getDato() > dato ){
-            this.agregarInicio(n);
+        if (this.esVacia() || (this.inicio.getDato() > dato )){
+            this.agregarInicio(dato);
             return;
         }
         if (this.fin.getDato()<=n){   //ùltimo elemento es menor o igual => agrego al final
             this.agregarFinal(n);
             return;
         }
-        NodoLista aux=this.inicio;
-        while (aux.getSig()!=null && aux.getSig().getDato() < n)
+        Nodoaux=this.inicio;
+        while (aux.getSiguinete()!=null && aux.getSiguiente().getDato() < n)
            ;
-        NodoLista nuevo=new NodoLista(n);
-        nuevo.setSig(aux.getSig());
+        Nodonuevo=new Nodo(n);
+        nuevo.setSiguiente(aux.getSig());
         aux.setSig(nuevo);
     }
 
@@ -167,24 +174,26 @@ public class Lista implements ILista {
 
     //PRE: //POS:
    //PRE: //POS:
-    public NodoLista obtenerElemento(Object dato){
-        NodoLista aux=this.inicio;
+    @Override
+    public Nodo obtenerElemento(Object dato){
+        Nodo aux=this.inicio;
         while (aux!=null && aux.getDato()!=dato)
-            aux=aux.getSig();
+            aux=aux.getSiguiente();
         //encontrÃ© dato o lleguÃ© al final
         return aux;
     }
 
 
     
-    /*****  para resolver en forma recursiva Métodos RECURSIVOS  *****/
+    /*****  para resolver en forma recursiva Métodos RECURSIVOS
+     * @param l *****/
 
  //PRE:
     //POS: muestra los datos de la lista en orden de enlace
-    public void mostrarREC(NodoLista l){
+    public void mostrarREC(Nodo l){
         if(l!=null){
             System.out.println(l.getDato());
-            mostrarREC(l.getSig());
+            mostrarREC(l.getSiguiente());
             
             
         }
