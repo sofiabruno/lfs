@@ -1,9 +1,6 @@
 package obligatoriom2020;
 
-public class NodoMensaje {
-
-    Object dato; //nombre del archivo es el dato  
-    NodoMensaje siguiente;
+public class NodoMensaje extends Nodo{
     ListaLinea listaLineas;
 
     public NodoMensaje(Object dato) {
@@ -18,22 +15,6 @@ public class NodoMensaje {
 
     public void setLd(ListaLinea listaLineas) {
         this.listaLineas = listaLineas;
-    }
-
-    public Object getDato() {
-        return dato;
-    }
-
-    public void setDato(int dato) {
-        this.dato = dato;
-    }
-
-    public NodoMensaje getSiguiente() {
-        return siguiente;
-    }
-
-    public void setSiguiente(NodoMensaje siguiente) {
-        this.siguiente = siguiente;
     }
 
 }
