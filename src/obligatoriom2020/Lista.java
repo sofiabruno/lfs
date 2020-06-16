@@ -42,9 +42,11 @@ public class Lista implements ILista {
     
 
  /**************Métodos Básicos*******************/
-/***********************************************/
+
     //PRE:
     //POS: Retorna true si la lista no tiene nodos
+    
+    @Override
     public boolean esVacia(){
         return (this.inicio==null);       
       }
@@ -52,8 +54,8 @@ public class Lista implements ILista {
     //PRE: 
     //POS: Agrega un nuevo Nodo al principio de la lista
     public void agregarInicio(Object dato){
-        NodoLista nuevo= new NodoLista(dato);
-        nuevo.setSig(inicio);
+        Nodo nuevo= new Nodo(dato);
+        nuevo.setSiguiente(inicio);
         this.inicio=nuevo;
         if(this.fin==null)//estoy insertando el primer nodo
             this.fin=nuevo;
@@ -65,7 +67,7 @@ public class Lista implements ILista {
     //POS: Borra el primer nodo
      public void borrarInicio(){
         if (!this.esVacia()){
-            this.inicio=this.inicio.getSig();
+            this.inicio=this.inicio.getSiguiente();
             this.cantelementos=this.cantelementos-1;
         }
     }
