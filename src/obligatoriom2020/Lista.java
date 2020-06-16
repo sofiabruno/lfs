@@ -142,21 +142,21 @@ public class Lista implements ILista {
     @Override
     public void agregarOrd(Object dato){
         //lista vacìa o primer elemento es mayor o igual => agrego al ppio
-        Object datonodo = this.inicio.getDato();
-        if (this.esVacia() || (this.inicio.getDato() > dato )){
+//        Object datonodo = this.inicio.getDato(); esto no se cuando se usa
+        if (this.esVacia() || this.inicio.getDato() >= dato ){
             this.agregarInicio(dato);
             return;
         }
-        if (this.fin.getDato()<=n){   //ùltimo elemento es menor o igual => agrego al final
-            this.agregarFinal(n);
+        if (this.fin.getDato()<=dato){   //ùltimo elemento es menor o igual => agrego al final
+            this.agregarFinal(dato);
             return;
         }
-        Nodoaux=this.inicio;
-        while (aux.getSiguinete()!=null && aux.getSiguiente().getDato() < n)
+        Nodo aux=this.inicio;
+        while (aux.getSiguiente()!=null && aux.getSiguiente().getDato() < dato)
            ;
-        Nodonuevo=new Nodo(n);
-        nuevo.setSiguiente(aux.getSig());
-        aux.setSig(nuevo);
+        Nodo nuevo=new Nodo(dato);
+        nuevo.setSiguiente(aux.getSiguiente());
+        aux.setSiguiente(nuevo);
     }
 
 
