@@ -33,8 +33,8 @@ public class ListaCarpeta implements IListaCarpeta {
     }
 
     @Override
-    public void agregarInicio(int n) {
-        NodoCarpeta nuevo= new NodoCarpeta(dato,Nombre);
+    public void agregarInicio(Object dato) {
+        NodoCarpeta nuevo= new NodoCarpeta(dato);
            if (this.esVacia()){
                this.Primero=nuevo;
                this.Ultimo=nuevo;
@@ -43,11 +43,6 @@ public class ListaCarpeta implements IListaCarpeta {
                nuevo.siguiente=this.Primero;
                this.Primero=nuevo;                      
            }
-    }
-
-    @Override
-    public void agregarFinal(int n) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -70,13 +65,9 @@ public class ListaCarpeta implements IListaCarpeta {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public void agregarInicio(int n, String nombre) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     @Override
-    public void agregarFinal(int n, String Nombre) {
+    public void agregarFinal(Object dato) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
