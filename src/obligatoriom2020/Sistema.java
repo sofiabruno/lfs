@@ -4,13 +4,16 @@ public class Sistema implements ISistema {
     
     int Ciudades [][] = new int[6][6];
     NodoUnidad unidad = new NodoUnidad("C");
-    
+    ListaCarpeta listacarpeta;  
+    ListaMensaje listamensaje;
     
     @Override
     public Retorno crearSistemaMensajes() {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
         
         CargarDistancias(Ciudades);
+        listacarpeta = new ListaCarpeta();
+        listamensaje = new ListaMensaje();
         
         return ret;
 
@@ -19,6 +22,10 @@ public class Sistema implements ISistema {
     @Override
     public Retorno destruirSistemaMensajes() {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+        
+        listacarpeta = null;
+        listamensaje = null;
+        
         return ret;
 
     }

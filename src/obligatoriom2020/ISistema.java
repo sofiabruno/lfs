@@ -2,6 +2,8 @@
 package obligatoriom2020;
 
 public interface ISistema {
+    
+ // Funcionalidades referentes a carpeta, mensaje
  Retorno crearSistemaMensajes();
  Retorno destruirSistemaMensajes();
  Retorno AgregarCarpeta(String unidad, String carpeta);
@@ -10,6 +12,7 @@ public interface ISistema {
  Retorno EliminarMensaje(String unidad,String carpeta, String mensaje);
  Retorno ListarEstructura(String unidad, String carpeta);
  
+ // Funcionalidades referentes a lineas, palabras, diccionario
  Retorno InsertarLinea(); 
  Retorno InsertarLineaEnPosicion(int posicionLinea); 
  Retorno BorrarLinea(int posicionLinea);
@@ -25,6 +28,8 @@ public interface ISistema {
  Retorno BorrarPalabraDiccionario(String palabraABorrar);
  Retorno ImprimirDiccionario();
  Retorno ImprimirTextoIncorrecto();
+ 
+ // Funcionalidades referentes a ejercicio complementario
  Retorno CargarDistancias(int[][] Ciudades);
  Retorno BuscarCamino ( int [][] M, String origen, String destino);
  
