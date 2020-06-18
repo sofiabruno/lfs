@@ -41,6 +41,12 @@ public class ObligatorioM2020 {
         // listamos la carpeta nuevamente para ver si estan los archivos correctos.
         p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los documentos de la carpeta Archivos");
 
+        
+        
+        
+        
+        
+        
         // casos de error
         // carpeta
         p.ver(s.AgregarCarpeta("C", "Archivos").resultado, Retorno.Resultado.ERROR, "Error Se intento crear la carpeta Archivos en unidad C que ya existe");
@@ -55,6 +61,13 @@ public class ObligatorioM2020 {
         p.ver(s.EliminarMensaje("X", "Archivos", "mensaje1").resultado, Retorno.Resultado.ERROR, "Se intenta eliminar mensaje 1 en carpeta Archivos y en unidad X que no existe");
         p.ver(s.EliminarMensaje("C", "Archivos", "mensaje4").resultado, Retorno.Resultado.ERROR, "Se intenta eliminar mensaje 4 en carpeta Archivos que no existe");
       
+        
+        
+        
+        
+        
+        
+        p.ver(s.BuscarCamino(s.Ciudades, "Montevideo", "NewYork").resultado, Retorno.Resultado.OK, s.BuscarCamino(s.Ciudades, "Montevideo", "NewYork").valorString);
         
         p.ver(s.destruirSistemaMensajes().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Se destruye sistma");
 

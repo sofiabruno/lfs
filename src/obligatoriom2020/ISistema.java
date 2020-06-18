@@ -9,6 +9,7 @@ public interface ISistema {
  Retorno AgregarMensaje(String unidad, String carpeta, String mensaje);
  Retorno EliminarMensaje(String unidad,String carpeta, String mensaje);
  Retorno ListarEstructura(String unidad, String carpeta);
+ 
  Retorno InsertarLinea(); 
  Retorno InsertarLineaEnPosicion(int posicionLinea); 
  Retorno BorrarLinea(int posicionLinea);
