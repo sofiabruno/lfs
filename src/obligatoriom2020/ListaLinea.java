@@ -1,6 +1,6 @@
 
 package obligatoriom2020;
 
-public class ListaLinea {
+public class ListaLinea extends Lista {
     
 }

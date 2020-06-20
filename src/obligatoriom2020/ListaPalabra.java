@@ -2,6 +2,6 @@
 package obligatoriom2020;
 
 
-public class ListaPalabra {
+public class ListaPalabra extends Lista {
     
 }

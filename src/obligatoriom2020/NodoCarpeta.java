@@ -9,11 +9,11 @@ public class NodoCarpeta extends Nodo{
         this.listamensaje = new ListaMensaje();
     }
 
-     public ListaMensaje getLd() {
+    public ListaMensaje getListamensaje() {
         return listamensaje;
     }
 
-    public void setLd(ListaMensaje ld) {
-        this.listamensaje = ld;
+    public void setListamensaje(ListaMensaje listamensaje) {
+        this.listamensaje = listamensaje;
     }
 }

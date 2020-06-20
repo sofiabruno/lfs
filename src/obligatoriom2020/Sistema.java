@@ -33,6 +33,12 @@ public class Sistema implements ISistema {
     @Override
     public Retorno AgregarCarpeta(String unidad, String carpeta) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+        ret.valorString = "No se pudo agregar la carpeta" + carpeta +"porque ya exuste";
+        if (!this.unidad.getListaCarpeta().buscarelemento(carpeta)) {
+            this.unidad.getListaCarpeta().agregarOrd(carpeta);
+        }
+        ret.valorString = "se agregó la carpeta" + carpeta;
+    
         return ret;
 
     }
@@ -294,4 +300,9 @@ public class Sistema implements ISistema {
 
         return "";
     }
+    
+    
+    
+    
+    
 }
