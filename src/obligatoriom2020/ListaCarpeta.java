@@ -1,6 +1,6 @@
 package obligatoriom2020;
 
-public class ListaCarpeta implements IListaCarpeta {
+public class ListaCarpeta extends Lista {
 
     NodoCarpeta Primero;
     NodoCarpeta Ultimo;

@@ -60,187 +60,187 @@ public class ObligatorioM2020 {
         // *******************************************************************************************************************************************
         // ********* Aca iria la linea de codigo para indicar en que unidad, carpeta y documento(mensaje) ingresariamos las lineas, palabras *********
         // *******************************************************************************************************************************************     
-        
+        //NodoCarpeta mensaje = s.unidad.getListaCarpeta().obtenerElemento("Archivos").get
         
         
         
 //        // OPERACIONES RELATIVAS A LAS LINEAS ----------------------------------------------------------------------------------------------------------------
 //        //      INSERTA UNA NUEVA LINEA VACIA AL FINAL DEL TEXTO
 //        //      Insertamos dos linea vacia
-//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarLinea().valorString);
-//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarLinea().valorString);
-//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.ImprimirTexto().valorString);
+//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");
+//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente";
+//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Texto impreso correctamente");
 //        
 //        //      INSERTA UNA NUEVA LINEA VACIA EN LA POSICION INDICADA
 //        //      Insertamos una nueva linea vacia en posicion 1 y la linea que contiene "Palabra 1" se mueve a la posicion 2
-//        p.ver(s.InsertarLineaEnPosicion(1).resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarLineaEnPosicion(1).valorString);
-//        p.ver(s.InsertarPalabraEnLinea(1, 1, "Palabra1").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarPalabraEnLinea(1, 1, "Palabra1").valorString);
-//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.ImprimirTexto().valorString);
-//        p.ver(s.InsertarLineaEnPosicion(1).resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarLineaEnPosicion(1).valorString);
-//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.ImprimirTexto().valorString);
+//        p.ver(s.InsertarLineaEnPosicion(1).resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Línea insertada en la posición indicada");
+//        p.ver(s.InsertarPalabraEnLinea(1, 1, "Palabra1").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Texto impreso correctamente");
+//        p.ver(s.InsertarLineaEnPosicion(1).resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Línea insertada en la posición indicada");
+//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Texto impreso correctamente");
 //        
 //        //      BORRA LA LINEA EN LA POSICION INDICADA
 //        //      Borramos la linea de la posicion 1 y la linea de la posicion 2 se mueve a la posicion 1
-//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarLinea().valorString);
-//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarLinea().valorString);
-//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra1").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarPalabraEnLinea(2, 1, "Palabra1").valorString);
-//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.ImprimirTexto().valorString);
-//        p.ver(s.BorrarLinea(1).resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.BorrarLinea(1).valorString);
-//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.ImprimirTexto().valorString);
+//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");
+//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");
+//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra1").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Texto impreso correctamente");
+//        p.ver(s.BorrarLinea(1).resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea borrada correctamente");
+//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Texto impreso correctamente");
 //        
 //        //      BORRA TODAS LAS LINEAS DEL TEXTO
 //        //      Borramos todas las lineas del texto
-//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarLinea().valorString);
-//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarLinea().valorString);
-//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra1").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarPalabraEnLinea(2, 1, "Palabra1").valorString);
-//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.ImprimirTexto().valorString);
+//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");
+//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");
+//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra1").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Texto impreso correctamente";
 //        //      Hasta aca se plantea un texto para luegar borrarlo
-//        p.ver(s.BorrarTodo().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.BorrarTodo().valorString);
-//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.ImprimirTexto().valorString);
+//        p.ver(s.BorrarTodo().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Todas las líneas del texto han sido borradas");
+//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Texto impreso correctamente");
 //        
 //        //      BORRA TODAS LAS OCURRENCIAS DE UNA PALABRA EN EL TEXTO
 //        //      Borramos todas las palabras "Palabra2" y correr las palabras en la linea 
-//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarLinea().valorString);
-//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarLinea().valorString);
-//        p.ver(s.InsertarPalabraEnLinea(1, 1, "Palabra1").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarPalabraEnLinea(1, 1, "Palabra1").valorString);
-//        p.ver(s.InsertarPalabraEnLinea(1, 2, "Palabra2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarPalabraEnLinea(1, 2, "Palabra2").valorString);
-//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra1").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarPalabraEnLinea(2, 1, "Palabra1").valorString);
-//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarPalabraEnLinea(2, 1, "Palabra2").valorString);
-//        p.ver(s.InsertarLineaEnPosicion(2).resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarLineaEnPosicion(2).valorString);
-//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarPalabraEnLinea(2, 1, "Palabra2").valorString);
-//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.ImprimirTexto().valorString);
+//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");
+//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");
+//        p.ver(s.InsertarPalabraEnLinea(1, 1, "Palabra1").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.InsertarPalabraEnLinea(1, 2, "Palabra2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra1").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.InsertarLineaEnPosicion(2).resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Línea insertada en la posición indicada");
+//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Texto impreso correctamente");
 //        //      Hasta aca se plantea un texto para luego borrar y ver como se perjudico el mismo
-//        p.ver(s.BorrarOcurrenciasPalabraEnTexto("Palabra2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.BorrarOcurrenciasPalabraEnTexto("Palabra2").valorString);
-//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.ImprimirTexto().valorString);
+//        p.ver(s.BorrarOcurrenciasPalabraEnTexto("Palabra2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra borrada correctamente");
+//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Texto impreso correctamente");
 //        
 //        //      IMPRIME EL TEXTO POR PANTALLA
 //        //      Mostrar texto en pantalla y "Texto vacio" cuando no contiene lineas el mensaje
-//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarLinea().valorString);
-//        p.ver(s.InsertarPalabraEnLinea(1, 1, "Palabra1").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarPalabraEnLinea(1, 1, "Palabra1").valorString);
-//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarLinea().valorString);
-//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarPalabraEnLinea(2, 1, "Palabra2").valorString);
-//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarLinea().valorString);
-//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.ImprimirTexto().valorString);
+//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");
+//        p.ver(s.InsertarPalabraEnLinea(1, 1, "Palabra1").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");
+//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");
+//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Texto impreso correctamente");
 //        //      Hasta aca se plantea un texto para poder verlo por pantalla, posteriormente se borra en su totalidad parar mostrar que esta vacio
-//        p.ver(s.BorrarTodo().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.BorrarTodo().valorString);
-//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.ImprimirTexto().valorString);
+//        p.ver(s.BorrarTodo().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Todas las líneas del texto han sido borradas");
+//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Texto impreso correctamente");
 //        
 //            
 //        // OPERACIONES RELATIVAS A LAS PALABRAS --------------------------------------------------------------------------------------------------------------
 //        //      INSERTA UNA PALABRA EN UNA LINEA SOLO SI LA LINEA NO ESTA LLENA
 //        //      Insertamos dos lineas y dos palabras en la linea 2
-//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarLinea().valorString);
-//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarLinea().valorString);
-//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra1").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarPalabraEnLinea(2, 1, "Palabra1").valorString);
-//        p.ver(s.InsertarPalabraEnLinea(2, 2, "Palabra2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarPalabraEnLinea(2, 2, "Palabra2").valorString);
-//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.ImprimirTexto().valorString);
+//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");
+//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");
+//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra1").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.InsertarPalabraEnLinea(2, 2, "Palabra2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Texto impreso correctamente");
 //        //      Insertamos "Palabra3" en la linea 2 posicion 1, llegando a su maximo por linea(3 palabras)
-//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra3").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarPalabraEnLinea(2, 1, "Palabra3").valorString);
-//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.ImprimirTexto().valorString);
+//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra3").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Texto impreso correctamente");
 //        //      Luego intentamos agregar una cuarta palabra en la linea 2, la cual no la dejara ingresar ya que la misma tiene 3 palabras ya
-//        p.ver(s.InsertarPalabraEnLinea(2, 2, "Palabra4").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarPalabraEnLinea(2, 2, "Palabra4").valorString);
-//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.ImprimirTexto().valorString);
+//        p.ver(s.InsertarPalabraEnLinea(2, 2, "Palabra4").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Texto impreso correctamente");
 //        
 //        //      INSERTAR UNA PALABRA A UNA LINEA Y DESPLAZA A LA SIGUIENTE SI ES NECESARIO
 //        //      Insertamos dos lineas y dos palabras en la linea 2
-//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarLinea().valorString);
-//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarLinea().valorString);
-//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra1").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarPalabraEnLinea(2, 1, "Palabra1").valorString);
-//        p.ver(s.InsertarPalabraEnLinea(2, 2, "Palabra2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarPalabraEnLinea(2, 2, "Palabra2").valorString);
-//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.ImprimirTexto().valorString);
+//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");
+//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");
+//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra1").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.InsertarPalabraEnLinea(2, 2, "Palabra2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Texto impreso correctamente");
 //        //      Insertamos "Palabra3" en la linea 2 posicion 1, llegando a su maximo por linea(3 palabras)
-//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra3").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarPalabraEnLinea(2, 1, "Palabra3").valorString);
-//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.ImprimirTexto().valorString);
+//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra3").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Texto impreso correctamente");
 //        //      Insertamos "Palabra4" en linea 2 posicion 2, al tener el maximo de palabras, "Palabra2" se desplaza a la linea 3 posicion 1
-//        p.ver(s.InsertarPalabraYDesplazar(2, 2, "Palabra4").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarPalabraYDesplazar(2, 2, "Palabra4").valorString);
-//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.ImprimirTexto().valorString);
+//        p.ver(s.InsertarPalabraYDesplazar(2, 2, "Palabra4").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Texto impreso correctamente");
 //        //      Insertamos "Palabra5" en linea 2 posicion 3, al tener el maximo de palabras, "Palabra1" se desplaza a la linea 3 posicion 1
-//        p.ver(s.InsertarPalabraYDesplazar(2, 3, "Palabra5").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarPalabraYDesplazar(2, 3, "Palabra5").valorString);
-//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.ImprimirTexto().valorString);
+//        p.ver(s.InsertarPalabraYDesplazar(2, 3, "Palabra5").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Texto impreso correctamente");
 //        
 //        //      BORRA LA PALABRA EN LA POSICION INDICADA
 //        //      Insertamos dos lineas y tres palabras en la linea 2
-//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarLinea().valorString);
-//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarLinea().valorString);
-//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra1").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarPalabraEnLinea(2, 1, "Palabra1").valorString);
-//        p.ver(s.InsertarPalabraEnLinea(2, 2, "Palabra2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarPalabraEnLinea(2, 2, "Palabra2").valorString);
-//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra3").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarPalabraEnLinea(2, 1, "Palabra3").valorString);
-//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.ImprimirTexto().valorString);      
+//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente";
+//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente";
+//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra1").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente";
+//        p.ver(s.InsertarPalabraEnLinea(2, 2, "Palabra2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente";
+//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra3").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente";
+//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Texto impreso correctamente";      
 //        //      Borramos "Palabra3", ubicada en linea 2 posicion 1
 //        p.ver(s.BorrarPalabra(2, 1).resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.BorrarPalabra(2, 1).valorString); 
-//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.ImprimirTexto().valorString); 
+//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Texto impreso correctamente"; 
 //        //      Insertamos una tercer linea e ingresamos "Palabra3" en la misma, luego borramos "Palabra1" y "Palabra2"
-//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarLinea().valorString);
-//        p.ver(s.InsertarPalabraEnLinea(3, 1, "Palabra3").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarPalabraEnLinea(3, 1, "Palabra3").valorString);
+//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente";
+//        p.ver(s.InsertarPalabraEnLinea(3, 1, "Palabra3").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente";
 //        p.ver(s.BorrarPalabra(2, 1).resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.BorrarPalabra(2, 1).valorString);
 //        p.ver(s.BorrarPalabra(2, 1).resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.BorrarPalabra(2, 1).valorString); 
-//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.ImprimirTexto().valorString); 
+//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Texto impreso correctamente"; 
 //        
 //        //      BORRA TODAS LAS OCURRENCIAS DE UNA PALABRA EN LA LINEA INDICADA
 //        //      Insertamos dos lineas y tres palabras en la linea 2
-//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarLinea().valorString);
-//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarLinea().valorString);
-//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra1").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarPalabraEnLinea(2, 1, "Palabra1").valorString);
-//        p.ver(s.InsertarPalabraEnLinea(2, 2, "Palabra2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarPalabraEnLinea(2, 2, "Palabra2").valorString);
-//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarPalabraEnLinea(2, 1, "Palabra2").valorString);
-//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.ImprimirTexto().valorString);  
+//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");
+//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");
+//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra1").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.InsertarPalabraEnLinea(2, 2, "Palabra2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Texto impreso correctamente");  
 //        //      Borramos todas las "Palabra2" que existan en la linea 2
-//        p.ver(s.BorrarOcurrenciasPalabraEnLinea(2, "Palabra2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.BorrarOcurrenciasPalabraEnLinea(2, "Palabra2").valorString);
-//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.ImprimirTexto().valorString);
+//        p.ver(s.BorrarOcurrenciasPalabraEnLinea(2, "Palabra2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra borrada correctamente");
+//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Texto impreso correctamente");
 //        
 //        //      IMPRIME LA LINEA POR PANTALLA
 //        //      Insertamos dos lineas e imprimimos en pantalla solo la linea 2
-//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarLinea().valorString);
-//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarLinea().valorString);
+//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente";
+//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente";
 //        p.ver(s.ImprimirLinea(2).resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.ImprimirLinea(2).valorString);
 //        //      Insertamos dos palabras en la linea 2 y luego imprimimos en pantalla solo la linea 2
-//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra1").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarPalabraEnLinea(2, 1, "Palabra1").valorString);
-//        p.ver(s.InsertarPalabraEnLinea(2, 2, "Palabra2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarPalabraEnLinea(2, 2, "Palabra2").valorString);
+//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra1").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente";
+//        p.ver(s.InsertarPalabraEnLinea(2, 2, "Palabra2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente";
 //        p.ver(s.ImprimirLinea(2).resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.ImprimirLinea(2).valorString);
 //           
 //        
 //        // OPERACIONES RELATIVAS AL DICCIONARIO --------------------------------------------------------------------------------------------------------------
 //        //      AGREGA UNA PALABRA AL DICCIONARIO
 //        //      Ingresamos tres palabras al diccionario y luego imprimimos en pantalla las palabras que tiene el diccionario
-//        p.ver(s.IngresarPalabraDiccionario("Hoja").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.IngresarPalabraDiccionario("Hoja").valorString);
-//        p.ver(s.IngresarPalabraDiccionario("Hojalata").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.IngresarPalabraDiccionario("Hojalata").valorString);
-//        p.ver(s.IngresarPalabraDiccionario("Bosque").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.IngresarPalabraDiccionario("Bosque").valorString);
-//        p.ver(s.ImprimirDiccionario().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.ImprimirDiccionario().valorString);
+//        p.ver(s.IngresarPalabraDiccionario("Hoja").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.IngresarPalabraDiccionario("Hojalata").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.IngresarPalabraDiccionario("Bosque").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.ImprimirDiccionario().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Diccionario impreso correctamente");
 //        
 //        //      BORRA UNA PALABRA DEL DICCIONARIO
 //        //      Ingresamos tres palabras al diccionario y luego borramos una palabra
-//        p.ver(s.IngresarPalabraDiccionario("Hoja").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.IngresarPalabraDiccionario("Hoja").valorString);
-//        p.ver(s.IngresarPalabraDiccionario("Hojalata").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.IngresarPalabraDiccionario("Hojalata").valorString);
-//        p.ver(s.IngresarPalabraDiccionario("Bosque").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.IngresarPalabraDiccionario("Bosque").valorString);
-//        p.ver(s.BorrarPalabraDiccionario("Hoja").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.BorrarPalabraDiccionario("Hoja").valorString);
-//        p.ver(s.ImprimirDiccionario().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.ImprimirDiccionario().valorString);
+//        p.ver(s.IngresarPalabraDiccionario("Hoja").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.IngresarPalabraDiccionario("Hojalata").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.IngresarPalabraDiccionario("Bosque").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.BorrarPalabraDiccionario("Hoja").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra borrada correctamente");
+//        p.ver(s.ImprimirDiccionario().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Diccionario impreso correctamente");
 //        
 //        //      MUESTRA LAS PALABRAS DEL DICCIONARIO ALFABETICAMENTE
 //        //      Imprimimos en pantalla el diccionario vacio
-//        p.ver(s.ImprimirDiccionario().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.ImprimirDiccionario().valorString);
+//        p.ver(s.ImprimirDiccionario().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Diccionario impreso correctamente");
 //        //      Ingresamos tres palabras al diccionario y luego imprimimos en pantalla las palabras que tiene el diccionario ordenadas alfabeticamente
-//        p.ver(s.IngresarPalabraDiccionario("Hoja").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.IngresarPalabraDiccionario("Hoja").valorString);
-//        p.ver(s.IngresarPalabraDiccionario("Hojalata").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.IngresarPalabraDiccionario("Hojalata").valorString);
-//        p.ver(s.IngresarPalabraDiccionario("Bosque").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.IngresarPalabraDiccionario("Bosque").valorString);
-//        p.ver(s.ImprimirDiccionario().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.ImprimirDiccionario().valorString);
+//        p.ver(s.IngresarPalabraDiccionario("Hoja").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.IngresarPalabraDiccionario("Hojalata").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.IngresarPalabraDiccionario("Bosque").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.ImprimirDiccionario().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Diccionario impreso correctamente");
 //        
 //        //      MUESTRA LAS PALABRAS DEL TEXTO QUE NO SE ENCUENTRAN EN EL DICCIONARIO
 //        //      Insertamos tres lineas y seis palabras 
-//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarLinea().valorString);
-//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarLinea().valorString);
-//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarLinea().valorString);
-//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra21").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarPalabraEnLinea(2, 1, "Palabra21").valorString);
-//        p.ver(s.InsertarPalabraEnLinea(2, 2, "Palabra22").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarPalabraEnLinea(2, 2, "Palabra22").valorString);
-//        p.ver(s.InsertarPalabraEnLinea(1, 1, "Palabra11").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarPalabraEnLinea(1, 1, "Palabra11").valorString);
-//        p.ver(s.InsertarPalabraEnLinea(1, 2, "Palabra12").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarPalabraEnLinea(1, 2, "Palabra12").valorString);
-//        p.ver(s.InsertarPalabraEnLinea(1, 3, "Palabra13").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarPalabraEnLinea(1, 3, "Palabra13").valorString);
-//        p.ver(s.InsertarPalabraEnLinea(3, 1, "Palabra31").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.InsertarPalabraEnLinea(3, 1, "Palabra31").valorString);
-//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.ImprimirTexto().valorString); 
+//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");
+//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");
+//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");
+//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra21").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.InsertarPalabraEnLinea(2, 2, "Palabra22").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.InsertarPalabraEnLinea(1, 1, "Palabra11").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.InsertarPalabraEnLinea(1, 2, "Palabra12").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.InsertarPalabraEnLinea(1, 3, "Palabra13").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.InsertarPalabraEnLinea(3, 1, "Palabra31").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Texto impreso correctamente"); 
 //        //      Ingresamos tres palabras al diccionario y luego imprimimos en pantalla las palabras que no pertenecen al diccionario
-//        p.ver(s.IngresarPalabraDiccionario("Palabra12").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.IngresarPalabraDiccionario("Palabra12").valorString);
-//        p.ver(s.IngresarPalabraDiccionario("Palabra21").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.IngresarPalabraDiccionario("Palabra21").valorString);
-//        p.ver(s.IngresarPalabraDiccionario("Palabra22").resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.IngresarPalabraDiccionario("Palabra22").valorString);
-//        p.ver(s.ImprimirTextoIncorrecto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.ImprimirTextoIncorrecto().valorString);
+//        p.ver(s.IngresarPalabraDiccionario("Palabra12").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.IngresarPalabraDiccionario("Palabra21").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.IngresarPalabraDiccionario("Palabra22").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+//        p.ver(s.ImprimirTextoIncorrecto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Diccionario impreso correctamente");
 //        
 //      
         // EJERCICIO COMPLEMENTARIO --------------------------------------------------------------------------------------------------------------------------
