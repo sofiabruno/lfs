@@ -60,7 +60,7 @@ public class ObligatorioM2020 {
         // *******************************************************************************************************************************************
         // ********* Aca iria la linea de codigo para indicar en que unidad, carpeta y documento(mensaje) ingresariamos las lineas, palabras *********
         // *******************************************************************************************************************************************     
-        //NodoCarpeta mensaje = s.unidad.getListaCarpeta().obtenerElemento("Archivos").getListaMensaje().obtenerElemento("mensaje1");
+        NodoCarpeta mensaje = (NodoCarpeta) s.unidad.getListaCarpeta().obtenerElemento("Archivos").getListamensaje().obtenerElemento("mensaje1");
         
         
         
