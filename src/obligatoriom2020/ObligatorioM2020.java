@@ -19,49 +19,52 @@ public class ObligatorioM2020 {
         // OPERACIONES RELATIVAS A LA ESTRUCTURA -------------------------------------------------------------------------------------------------------------
         //      AGREGAR CARPETA A LA ESTRUCTURA DE CARPETAS     
         //      Agregar carpetas 
-        p.ver(s.AgregarCarpeta("C", "Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Archivos en unidad C");
-        p.ver(s.AgregarCarpeta("C", "Documentos").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Se creo la carpeta documentos en unidad C");
-        p.ver(s.AgregarCarpeta("C", "Mensajes").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Se creo la carpeta mensajes en unidad C");
-        p.ver(s.AgregarCarpeta("C", "Otros Archivos").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Se creo la carpeta otros Archivos en unidad C");
+        p.ver(s.AgregarCarpeta("C", "Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Archivos en unidad C: " + s.AgregarCarpeta("C", "Archivos").valorString);
+        p.ver(s.AgregarCarpeta("C", "Documentos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Documentos en unidad C: " + s.AgregarCarpeta("C", "Documentos").valorString);
+        p.ver(s.AgregarCarpeta("C", "Mensajes").resultado, Retorno.Resultado.OK, "Se creo la carpeta Mensajes en unidad C: " + s.AgregarCarpeta("C", "Mensajes").valorString);
+        p.ver(s.AgregarCarpeta("C", "Otros Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Otros Archivos en unidad C: " + s.AgregarCarpeta("C", "Otros Archivos").valorString);
         //      Listamos par ver si la estructura es correcta
-        p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los documentos de la carpeta Archivos");
-
-        //      ELIMINAR CARPETA DE LA ESTRUCTURA DE CARPETAS
-        //      Agregamos una nueva carpeta y posteriormente la elimino
-        p.ver(s.AgregarCarpeta("C", "Carpeta Y").resultado, Retorno.Resultado.OK, "Se creo la carpeta Carpeta Y en unidad C");
-        p.ver(s.EliminarCarpeta("C", "Carpeta Y").resultado, Retorno.Resultado.OK, "Se elimina la carpeta Carpeta Y en unidad C");
-        //      Listamos la carpeta para ver que fue eliminada
-        p.ver(s.ListarEstructura("C", "Carpeta Y").resultado, Retorno.Resultado.OK, "No existe la carpeta Carpeta Y");
-
-        //      AGREGAR ARCHIVO/MENSAJE
-        //      Agregamos mensajes a una carpeta
-        p.ver(s.AgregarMensaje("C", "Archivos", "mensaje1").resultado, Retorno.Resultado.OK, "Se agrega mensaje 1 en carpeta Archivos");
-        p.ver(s.AgregarMensaje("C", "Archivos", "mensaje2").resultado, Retorno.Resultado.OK, "Se agrega mensaje 2 en carpeta Archivos");
-        p.ver(s.AgregarMensaje("C", "Archivos", "mensaje3").resultado, Retorno.Resultado.OK, "Se agrega mensaje 3 en carpeta Archivos");
-        //      Listamos la carpeta Archivos para ver si estan los mensajes agregados.
-        p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los documentos de la carpeta Archivos");
-
-        //      ELIMINAR ARCHIVO/MENSAJE
-        //      Agregamos un nuevo mensaje y posteriormente lo elimino 
-        p.ver(s.AgregarMensaje("C", "Archivos", "mensajex").resultado, Retorno.Resultado.OK, "Se agrega mensaje x en carpeta Archivos");
-        p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los documentos de la carpeta Archivos");
-        p.ver(s.EliminarMensaje("C", "Archivos", "mensajex").resultado, Retorno.Resultado.OK, "Se  elimina mensaje x en carpeta Archivos ");
-        //      Listamos la carpeta nuevamente para ver si estan los archivos correctos.
-        p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los documentos de la carpeta Archivos");
-
-        //      LISTAR LA ESTRUCTURA DE CARPETAS Y SUS ARCHIVOS
-        p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los documentos de la carpeta Archivos");
-        p.ver(s.ListarEstructura("C", "Documentos").resultado, Retorno.Resultado.OK, "Se listan los documentos de la carpeta Archivos");
-        p.ver(s.ListarEstructura("C", "Mensajes").resultado, Retorno.Resultado.OK, "Se listan los documentos de la carpeta Archivos");
-        p.ver(s.ListarEstructura("C", "Otros Archivos").resultado, Retorno.Resultado.OK, "Se listan los documentos de la carpeta Archivos");
+        //p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los documentos de la carpeta Archivos");
+        p.ver(s.ListarEstructuraUnidad("C").resultado, Retorno.Resultado.OK, "Se listan las carpetas de la unidad c: " + s.ListarEstructuraUnidad("C").valorString);
         
-        
-        
-        // *******************************************************************************************************************************************
-        // ********* Aca iria la linea de codigo para indicar en que unidad, carpeta y documento(mensaje) ingresariamos las lineas, palabras *********
-        // *******************************************************************************************************************************************     
-        NodoCarpeta mensaje = (NodoCarpeta) s.unidad.getListaCarpeta().obtenerElemento("Archivos").getListamensaje().obtenerElemento("mensaje1");
-        
+        //System.out.println("Prueba agregar carpeta " + s.AgregarCarpeta("C", "Prueba").valorString);
+
+//        //      ELIMINAR CARPETA DE LA ESTRUCTURA DE CARPETAS
+//        //      Agregamos una nueva carpeta y posteriormente la elimino
+//        p.ver(s.AgregarCarpeta("C", "Carpeta Y").resultado, Retorno.Resultado.OK, "Se creo la carpeta Carpeta Y en unidad C");
+//        p.ver(s.EliminarCarpeta("C", "Carpeta Y").resultado, Retorno.Resultado.OK, "Se elimina la carpeta Carpeta Y en unidad C");
+//        //      Listamos la carpeta para ver que fue eliminada
+//        p.ver(s.ListarEstructura("C", "Carpeta Y").resultado, Retorno.Resultado.OK, "No existe la carpeta Carpeta Y");
+//
+//        //      AGREGAR ARCHIVO/MENSAJE
+//        //      Agregamos mensajes a una carpeta
+//        p.ver(s.AgregarMensaje("C", "Archivos", "mensaje1").resultado, Retorno.Resultado.OK, "Se agrega mensaje 1 en carpeta Archivos");
+//        p.ver(s.AgregarMensaje("C", "Archivos", "mensaje2").resultado, Retorno.Resultado.OK, "Se agrega mensaje 2 en carpeta Archivos");
+//        p.ver(s.AgregarMensaje("C", "Archivos", "mensaje3").resultado, Retorno.Resultado.OK, "Se agrega mensaje 3 en carpeta Archivos");
+//        //      Listamos la carpeta Archivos para ver si estan los mensajes agregados.
+//        p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los documentos de la carpeta Archivos");
+//
+//        //      ELIMINAR ARCHIVO/MENSAJE
+//        //      Agregamos un nuevo mensaje y posteriormente lo elimino 
+//        p.ver(s.AgregarMensaje("C", "Archivos", "mensajex").resultado, Retorno.Resultado.OK, "Se agrega mensaje x en carpeta Archivos");
+//        p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los documentos de la carpeta Archivos");
+//        p.ver(s.EliminarMensaje("C", "Archivos", "mensajex").resultado, Retorno.Resultado.OK, "Se  elimina mensaje x en carpeta Archivos ");
+//        //      Listamos la carpeta nuevamente para ver si estan los archivos correctos.
+//        p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los documentos de la carpeta Archivos");
+//
+//        //      LISTAR LA ESTRUCTURA DE CARPETAS Y SUS ARCHIVOS
+//        p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los documentos de la carpeta Archivos");
+//        p.ver(s.ListarEstructura("C", "Documentos").resultado, Retorno.Resultado.OK, "Se listan los documentos de la carpeta Archivos");
+//        p.ver(s.ListarEstructura("C", "Mensajes").resultado, Retorno.Resultado.OK, "Se listan los documentos de la carpeta Archivos");
+//        p.ver(s.ListarEstructura("C", "Otros Archivos").resultado, Retorno.Resultado.OK, "Se listan los documentos de la carpeta Archivos");
+//        
+//        
+//        
+//        // *******************************************************************************************************************************************
+//        // ********* Aca iria la linea de codigo para indicar en que unidad, carpeta y documento(mensaje) ingresariamos las lineas, palabras *********
+//        // *******************************************************************************************************************************************     
+//        NodoCarpeta mensaje = (NodoCarpeta) s.unidad.getListaCarpeta().obtenerElemento("Archivos").getListamensaje().obtenerElemento("mensaje1");
+//        
         
         
 //        // OPERACIONES RELATIVAS A LAS LINEAS ----------------------------------------------------------------------------------------------------------------
@@ -244,7 +247,7 @@ public class ObligatorioM2020 {
 //        
 //      
         // EJERCICIO COMPLEMENTARIO --------------------------------------------------------------------------------------------------------------------------
-        p.ver(s.BuscarCamino(s.Ciudades, "Montevideo", "NewYork").resultado, Retorno.Resultado.OK, s.BuscarCamino(s.Ciudades, "Montevideo", "NewYork").valorString);
+//        p.ver(s.BuscarCamino(s.Ciudades, "Montevideo", "NewYork").resultado, Retorno.Resultado.OK, s.BuscarCamino(s.Ciudades, "Montevideo", "NewYork").valorString);
 //
 //        
 //        // CASOS DE ERROR

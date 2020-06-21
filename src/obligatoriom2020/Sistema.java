@@ -37,7 +37,7 @@ public class Sistema implements ISistema {
         if (!this.unidad.getListaCarpeta().buscarelemento(carpeta)) {
             this.unidad.getListaCarpeta().agregarOrd(carpeta);
         }
-        ret.valorString = "se agregó la carpeta" + carpeta;
+        ret.valorString = "se agregó la carpeta " + carpeta;
     
         return ret;
 
@@ -67,6 +67,39 @@ public class Sistema implements ISistema {
     @Override
     public Retorno ListarEstructura(String unidad, String carpeta) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+        
+        Object ubicacion = new Object(),
+                miUnidad = unidad,
+                miCarpeta = carpeta;
+        
+        Nodo aux = new Nodo(ubicacion);
+                     
+        while (aux!=null){
+               ret.valorString = (String) aux.getDato();
+               aux=aux.siguiente;            
+        }
+
+        
+        return ret;
+
+    }
+    
+    public Retorno ListarEstructuraUnidad(String unidad) {
+        Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+        
+        Object ubicacion = new Object(),
+                miUnidad = unidad;
+        
+        Nodo aux = new Nodo(ubicacion);
+        
+        
+                     
+        while (aux!=null){
+               ret.valorString=(aux.getDato().toString());
+               aux=aux.siguiente;            
+        }
+
+        
         return ret;
 
     }
