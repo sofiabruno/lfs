@@ -1,12 +1,12 @@
 package obligatoriom2020;
 
 public class Sistema implements ISistema {
-    
-    int Ciudades [][] = new int[6][6];
+
+    int Ciudades[][] = new int[6][6];
     NodoUnidad unidad = new NodoUnidad("C");
-    ListaCarpeta listacarpeta;  
+    ListaCarpeta listacarpeta;
     ListaMensaje listamensaje;
-    
+
     int MAX_CANT_PALABRAS_X_LINEA;
     ListaPalabra diccionario;
     ListaUnidad listaUnidades = null;
@@ -34,8 +34,8 @@ public class Sistema implements ISistema {
     public void setDiccionario(ListaPalabra diccionario) {
         this.diccionario = diccionario;
     }
-    
-       public Sistema(int MAX_CANT_PALABRAS_X_LINEA) {
+
+    public Sistema(int MAX_CANT_PALABRAS_X_LINEA) {
         this.MAX_CANT_PALABRAS_X_LINEA = MAX_CANT_PALABRAS_X_LINEA;
     }
 
@@ -46,24 +46,21 @@ public class Sistema implements ISistema {
     public void setMAX_CANT_PALABRAS_X_LINEA(int MAX_CANT_PALABRAS_X_LINEA) {
         this.MAX_CANT_PALABRAS_X_LINEA = MAX_CANT_PALABRAS_X_LINEA;
     }
-    
-    
-    
+
     @Override
     public Retorno crearSistemaMensajes() {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
 //        sofi
-          listaUnidades = new ListaUnidad();  
-          NodoUnidad unidad = new NodoUnidad("C");
-          listaUnidades.agregarFinal(unidad);
-          
-           diccionario =  new ListaPalabra();
+        listaUnidades = new ListaUnidad();
+        NodoUnidad unidad = new NodoUnidad("C");
+        listaUnidades.agregarFinal(unidad);
+
+        diccionario = new ListaPalabra();
 //
         CargarDistancias(Ciudades);
         listacarpeta = new ListaCarpeta();
         listamensaje = new ListaMensaje();
-              
-         
+
         return ret;
 
     }
@@ -72,12 +69,12 @@ public class Sistema implements ISistema {
     public Retorno destruirSistemaMensajes() {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
 //        sofi
-         listaUnidades = null;
+        listaUnidades = null;
 
 //
         listacarpeta = null;
         listamensaje = null;
-        
+
         return ret;
 
     }
@@ -85,30 +82,29 @@ public class Sistema implements ISistema {
     @Override
     public Retorno AgregarCarpeta(String unidad, String carpeta) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
-        
+//        sofi
         NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
-        if ( uni != null) {
+        if (uni != null) {
             if (!uni.listaCarpeta.buscarelemento(carpeta)) {
                 uni.listaCarpeta.agregarFinal(carpeta);
                 ret.valorString = "Se agrego la carpeta +" + carpeta + "a la unidad " + unidad;
-            }
-            else{
-                 ret.resultado = Retorno.Resultado.ERROR;
+            } else {
+                ret.resultado = Retorno.Resultado.ERROR;
 //                 ret.valorString = "La carpeta +" + carpeta + "ya existe en la unidad " + unidad;
             }
-        }else{
-                         ret.resultado = Retorno.Resultado.ERROR;
+        } else {
+            ret.resultado = Retorno.Resultado.ERROR;
 //                 ret.valorString = "No existe la unidad";
 
         }
-        
-        ret.valorString = "No se pudo agregar la carpeta" + carpeta +"porque ya exuste";
+//        fin sofi
+
+        ret.valorString = "No se pudo agregar la carpeta" + carpeta + "porque ya exuste";
         if (!this.unidad.getListaCarpeta().buscarelemento(carpeta)) {
             this.unidad.getListaCarpeta().agregarOrd(carpeta);
             ret.valorString = "se agregó la carpeta " + carpeta;
         }
-        
-    
+
         return ret;
 
     }
@@ -116,6 +112,12 @@ public class Sistema implements ISistema {
     @Override
     public Retorno EliminarCarpeta(String unidad, String carpeta) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+        NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
+        if (uni!=null) {
+            if (uni.listaCarpeta.buscarelemento(carpeta)) {
+                uni.listaCarpeta.borrarElemento(carpeta);
+            }
+        }
         return ret;
 
     }
@@ -154,35 +156,31 @@ public class Sistema implements ISistema {
         if (unidad != null) {
             if (carpeta != null) {
                 ret.valorString = (String) carpeta.getDato();
-                
-            }else{
-                ret.valorString ="No existe la carpeta";
+
+            } else {
+                ret.valorString = "No existe la carpeta";
             }
-        }else{
-            ret.valorString ="No existe la unidad";
+        } else {
+            ret.valorString = "No existe la unidad";
         }
 
-        
         return ret;
 
     }
-    
+
     public Retorno ListarEstructuraUnidad(String unidad) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
-        
+
         Object ubicacion = new Object(),
                 miUnidad = unidad;
-        
+
         Nodo aux = new Nodo(ubicacion);
-        
-        
-                     
-        while (aux!=null){
-               ret.valorString=(aux.getDato().toString());
-               aux=aux.siguiente;            
+
+        while (aux != null) {
+            ret.valorString = (aux.getDato().toString());
+            aux = aux.siguiente;
         }
 
-        
         return ret;
 
     }
@@ -295,52 +293,52 @@ public class Sistema implements ISistema {
     @Override
     public Retorno CargarDistancias(int[][] Ciudades) {
         Retorno ret = new Retorno(Retorno.Resultado.OK);
-        
+
         Ciudades[0][1] = 10;
         Ciudades[1][0] = 10;
-    
+
         Ciudades[0][2] = 25;
         Ciudades[2][0] = 25;
-        
+
         Ciudades[0][3] = 15;
         Ciudades[3][0] = 15;
-        
+
         Ciudades[0][4] = 30;
         Ciudades[4][0] = 30;
-        
+
         Ciudades[0][5] = 0;
         Ciudades[5][0] = 0;
-                
+
         Ciudades[1][2] = 20;
         Ciudades[2][1] = 20;
-        
+
         Ciudades[1][3] = 0;
         Ciudades[3][1] = 0;
-        
-        Ciudades[1][4] = 0;                                                                   
+
+        Ciudades[1][4] = 0;
         Ciudades[4][1] = 0;
-        
-        Ciudades[1][5] = 0;                                                                   
+
+        Ciudades[1][5] = 0;
         Ciudades[5][1] = 0;
-        
+
         Ciudades[2][3] = 0;
         Ciudades[3][2] = 0;
-        
+
         Ciudades[2][4] = 0;
         Ciudades[4][2] = 0;
-        
+
         Ciudades[2][5] = 40;
         Ciudades[5][2] = 40;
-        
+
         Ciudades[3][4] = 0;
         Ciudades[4][3] = 0;
-        
+
         Ciudades[3][5] = 45;
         Ciudades[5][3] = 45;
-        
+
         Ciudades[4][5] = 25;
         Ciudades[5][4] = 25;
-              
+
         return ret;
 
     }
@@ -416,9 +414,5 @@ public class Sistema implements ISistema {
 
         return "";
     }
-    
-    
-    
-    
-    
+
 }
