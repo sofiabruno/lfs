@@ -36,8 +36,9 @@ public class Sistema implements ISistema {
         ret.valorString = "No se pudo agregar la carpeta" + carpeta +"porque ya exuste";
         if (!this.unidad.getListaCarpeta().buscarelemento(carpeta)) {
             this.unidad.getListaCarpeta().agregarOrd(carpeta);
+            ret.valorString = "se agregó la carpeta " + carpeta;
         }
-        ret.valorString = "se agregó la carpeta " + carpeta;
+        
     
         return ret;
 
