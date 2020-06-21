@@ -52,7 +52,7 @@ public class Sistema implements ISistema {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
 //        sofi
         listaUnidades = new ListaUnidad();
-        NodoUnidad unidad = new NodoUnidad("C");
+        this.unidad = new NodoUnidad("C");
         listaUnidades.agregarFinal(unidad);
 
         diccionario = new ListaPalabra();
@@ -210,6 +210,9 @@ public class Sistema implements ISistema {
 
     }
 
+//    Estos metodos supongo que ya lo estoy aplicando en una unidad/Carpeta/mensaje
+    
+    
     @Override
     public Retorno InsertarLinea() {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
