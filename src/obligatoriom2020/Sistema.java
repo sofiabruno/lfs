@@ -113,7 +113,7 @@ public class Sistema implements ISistema {
     public Retorno EliminarCarpeta(String unidad, String carpeta) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
         NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
-        if (uni!=null) {
+        if (uni != null) {
             if (uni.listaCarpeta.buscarelemento(carpeta)) {
                 uni.listaCarpeta.borrarElemento(carpeta);
             }
@@ -125,6 +125,23 @@ public class Sistema implements ISistema {
     @Override
     public Retorno AgregarMensaje(String unidad, String carpeta, String mensaje) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+
+        NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
+        NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
+        if (uni != null && carpe != null) {
+            if (carpe.listamensaje.obtenerElemento(mensaje) != null) {
+                carpe.listamensaje.agregarFinal(mensaje);
+//                mensaje agregado                
+            } else {
+                ret.resultado = Retorno.Resultado.ERROR;
+
+//            el mensaje ya existe
+            }
+        } else {
+            ret.resultado = Retorno.Resultado.ERROR;
+//                la carpeta o la unidad no existen
+        }
+
         return ret;
 
     }
