@@ -157,8 +157,27 @@ public class Lista implements ILista {
 
     //PRE: lista ordenada
     //POS: Borra la primer ocurrencia de un elemento dado
-    public void borrarElemento(int n) {
-        // implementar el metodo
+   public boolean borrarElemento(Object n) {
+        this.actual--;
+        if (this.esVacia()) {
+            return true;
+        }
+        if (this.inicio.getDato() == n) {
+            this.borrarInicio();
+        } else {
+            NodoLista aux = this.inicio;
+            while (aux.getSig() != null && aux.getSig().getDato() != n) {
+                aux = aux.getSig();
+            }
+            //lo encontré o llegué al final de la lista
+            if (aux.getSig() != null) {
+                NodoLista borrar = aux.getSig();
+                aux.setSig(borrar.getSig());
+                borrar.setSig(null);
+                return true;
+            }
+        }
+        return false;
     }
 
     //PRE: 

@@ -28,5 +28,11 @@ public class ListaLinea extends Lista {
         this.Ultimo = Ultimo;
     }
     
+      public Retorno InsertarLinea() {
+        Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+        return ret;
+
+    }
+    
     
 }
