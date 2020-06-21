@@ -176,11 +176,11 @@ public class Sistema implements ISistema {
 //               aux=aux.siguiente;            
 //        }
 
-        NodoUnidad unidad = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
-        NodoCarpeta carpeta = unidad.listaCarpeta.obtenerElemetno(carpeta);
-        if (unidad != null) {
-            if (carpeta != null) {
-                ret.valorString = (String) carpeta.getDato();
+        NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
+        NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
+        if (uni != null) {
+            if (carpe != null) {
+                ret.valorString = (String) carpe.getDato();
 
             } else {
                 ret.valorString = "No existe la carpeta";
