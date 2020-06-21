@@ -7,6 +7,47 @@ public class Sistema implements ISistema {
     ListaCarpeta listacarpeta;  
     ListaMensaje listamensaje;
     
+    int MAX_CANT_PALABRAS_X_LINEA;
+    ListaPalabra diccionario;
+
+    public ListaCarpeta getListacarpeta() {
+        return listacarpeta;
+    }
+
+    public void setListacarpeta(ListaCarpeta listacarpeta) {
+        this.listacarpeta = listacarpeta;
+    }
+
+    public ListaMensaje getListamensaje() {
+        return listamensaje;
+    }
+
+    public void setListamensaje(ListaMensaje listamensaje) {
+        this.listamensaje = listamensaje;
+    }
+
+    public ListaPalabra getDiccionario() {
+        return diccionario;
+    }
+
+    public void setDiccionario(ListaPalabra diccionario) {
+        this.diccionario = diccionario;
+    }
+    
+       public Sistema(int MAX_CANT_PALABRAS_X_LINEA) {
+        this.MAX_CANT_PALABRAS_X_LINEA = MAX_CANT_PALABRAS_X_LINEA;
+    }
+
+    public int getMAX_CANT_PALABRAS_X_LINEA() {
+        return MAX_CANT_PALABRAS_X_LINEA;
+    }
+
+    public void setMAX_CANT_PALABRAS_X_LINEA(int MAX_CANT_PALABRAS_X_LINEA) {
+        this.MAX_CANT_PALABRAS_X_LINEA = MAX_CANT_PALABRAS_X_LINEA;
+    }
+    
+    
+    
     @Override
     public Retorno crearSistemaMensajes() {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
