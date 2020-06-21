@@ -66,6 +66,8 @@ public class ObligatorioM2020 {
 //        // *******************************************************************************************************************************************     
 //        NodoCarpeta mensaje = (NodoCarpeta) s.unidad.getListaCarpeta().obtenerElemento("Archivos").getListamensaje().obtenerElemento("mensaje1");
 //        
+//
+
         
         
 //        // OPERACIONES RELATIVAS A LAS LINEAS ----------------------------------------------------------------------------------------------------------------

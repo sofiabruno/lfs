@@ -3,29 +3,29 @@ package obligatoriom2020;
 public class Sistema implements ISistema {
 
     int Ciudades[][] = new int[6][6];
-    NodoUnidad unidad = new NodoUnidad("C");
-    ListaCarpeta listacarpeta;
-    ListaMensaje listamensaje;
+//    NodoUnidad unidad = new NodoUnidad("C");
+//    ListaCarpeta listacarpeta;
+//    ListaMensaje listamensaje;
 
     int MAX_CANT_PALABRAS_X_LINEA;
     ListaPalabra diccionario;
     ListaUnidad listaUnidades = null;
 
-    public ListaCarpeta getListacarpeta() {
-        return listacarpeta;
-    }
-
-    public void setListacarpeta(ListaCarpeta listacarpeta) {
-        this.listacarpeta = listacarpeta;
-    }
-
-    public ListaMensaje getListamensaje() {
-        return listamensaje;
-    }
-
-    public void setListamensaje(ListaMensaje listamensaje) {
-        this.listamensaje = listamensaje;
-    }
+//    public ListaCarpeta getListacarpeta() {
+//        return listacarpeta;
+//    }
+//
+//    public void setListacarpeta(ListaCarpeta listacarpeta) {
+//        this.listacarpeta = listacarpeta;
+//    }
+//
+//    public ListaMensaje getListamensaje() {
+//        return listamensaje;
+//    }
+//
+//    public void setListamensaje(ListaMensaje listamensaje) {
+//        this.listamensaje = listamensaje;
+//    }
 
     public ListaPalabra getDiccionario() {
         return diccionario;

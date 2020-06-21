@@ -140,14 +140,14 @@ public class Lista implements ILista {
     public void agregarOrd(Object dato) {
         Nodo n = new Nodo(dato);
         if (this.esVacia() || this.inicio.getDato().toString().compareToIgnoreCase(n.getDato().toString()) > 0) {
-        // A.compareToIgnoreCase(B) - Si A > B entonces el valor retorno es +1, siendo B el dato nuevo a ingresar  
-            this.agregarInicio(n);           
-        } else if (this.fin.getDato().toString().compareToIgnoreCase(n.getDato().toString()) < 0) { 
-        // A.compareToIgnoreCase(B) - Si A < B entonces el valor retorno es -1, siendo B el dato nuevo a ingresar
-            this.agregarFinal(n);           
+            // A.compareToIgnoreCase(B) - Si A > B entonces el valor retorno es +1, siendo B el dato nuevo a ingresar  
+            this.agregarInicio(n);
+        } else if (this.fin.getDato().toString().compareToIgnoreCase(n.getDato().toString()) < 0) {
+            // A.compareToIgnoreCase(B) - Si A < B entonces el valor retorno es -1, siendo B el dato nuevo a ingresar
+            this.agregarFinal(n);
         } else {
             Nodo aux = this.inicio;
-            while (aux.getSiguiente() != null && aux.getSiguiente().getDato().toString().compareToIgnoreCase(n.getDato().toString()) < 0) {             
+            while (aux.getSiguiente() != null && aux.getSiguiente().getDato().toString().compareToIgnoreCase(n.getDato().toString()) < 0) {
                 aux.getSiguiente();
             }
             n.setSiguiente(aux.getSiguiente());
@@ -157,27 +157,28 @@ public class Lista implements ILista {
 
     //PRE: lista ordenada
     //POS: Borra la primer ocurrencia de un elemento dado
-   public boolean borrarElemento(Object n) {
-        this.actual--;
-        if (this.esVacia()) {
-            return true;
-        }
-        if (this.inicio.getDato() == n) {
-            this.borrarInicio();
-        } else {
-            NodoLista aux = this.inicio;
-            while (aux.getSig() != null && aux.getSig().getDato() != n) {
-                aux = aux.getSig();
+    public void borrarElemento(Object dato) {
+        // implementar el metodo
+
+        if (this.inicio != null) {
+            Nodo aux = this.inicio;
+
+            while (aux != null) {
+                if (aux.getDato().equals(dato)) {
+                    this.borrarInicio();
+                } else {
+                    while (aux.getSiguiente() != null && aux.getSiguiente().getDato() != dato) {
+                        aux = aux.getSiguiente();
+                    }
+                    if (aux.getSiguiente() != null) {
+                        Nodo borrar = aux.getSiguiente();
+                        aux.setSiguiente(borrar.getSiguiente());
+                        borrar.setSiguiente(null);
+                    }
+                }
+                aux = aux.getSiguiente();
             }
-            //lo encontré o llegué al final de la lista
-            if (aux.getSig() != null) {
-                NodoLista borrar = aux.getSig();
-                aux.setSig(borrar.getSig());
-                borrar.setSig(null);
-                return true;
-            }
         }
-        return false;
     }
 
     //PRE: 
