@@ -9,6 +9,7 @@ public class Sistema implements ISistema {
     
     int MAX_CANT_PALABRAS_X_LINEA;
     ListaPalabra diccionario;
+    ListaUnidad listaUnidades = null;
 
     public ListaCarpeta getListacarpeta() {
         return listacarpeta;
@@ -51,11 +52,18 @@ public class Sistema implements ISistema {
     @Override
     public Retorno crearSistemaMensajes() {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
-        
+//        sofi
+          listaUnidades = new ListaUnidad();  
+          NodoUnidad unidad = new NodoUnidad("C");
+          listaUnidades.agregarFinal(unidad);
+          
+           diccionario =  new ListaPalabra();
+//
         CargarDistancias(Ciudades);
         listacarpeta = new ListaCarpeta();
         listamensaje = new ListaMensaje();
-        
+              
+         
         return ret;
 
     }
@@ -63,7 +71,10 @@ public class Sistema implements ISistema {
     @Override
     public Retorno destruirSistemaMensajes() {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
-        
+//        sofi
+         listaUnidades = null;
+
+//
         listacarpeta = null;
         listamensaje = null;
         
@@ -74,6 +85,23 @@ public class Sistema implements ISistema {
     @Override
     public Retorno AgregarCarpeta(String unidad, String carpeta) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+        
+        NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
+        if ( uni != null) {
+            if (!uni.listaCarpeta.buscarelemento(carpeta)) {
+                uni.listaCarpeta.agregarFinal(carpeta);
+                ret.valorString = "Se agrego la carpeta +" + carpeta + "a la unidad " + unidad;
+            }
+            else{
+                 ret.resultado = Retorno.Resultado.ERROR;
+//                 ret.valorString = "La carpeta +" + carpeta + "ya existe en la unidad " + unidad;
+            }
+        }else{
+                         ret.resultado = Retorno.Resultado.ERROR;
+//                 ret.valorString = "No existe la unidad";
+
+        }
+        
         ret.valorString = "No se pudo agregar la carpeta" + carpeta +"porque ya exuste";
         if (!this.unidad.getListaCarpeta().buscarelemento(carpeta)) {
             this.unidad.getListaCarpeta().agregarOrd(carpeta);
@@ -109,16 +137,29 @@ public class Sistema implements ISistema {
     @Override
     public Retorno ListarEstructura(String unidad, String carpeta) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
-        
-        Object ubicacion = new Object(),
-                miUnidad = unidad,
-                miCarpeta = carpeta;
-        
-        Nodo aux = new Nodo(ubicacion);
-                     
-        while (aux!=null){
-               ret.valorString = (String) aux.getDato();
-               aux=aux.siguiente;            
+//        
+//        Object ubicacion = new Object(),
+//                miUnidad = unidad,
+//                miCarpeta = carpeta;
+//        
+//        Nodo aux = new Nodo(ubicacion);
+//                     
+//        while (aux!=null){
+//               ret.valorString = (String) aux.getDato();
+//               aux=aux.siguiente;            
+//        }
+
+        NodoUnidad unidad = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
+        NodoCarpeta carpeta = unidad.listaCarpeta.obtenerElemetno(carpeta);
+        if (unidad != null) {
+            if (carpeta != null) {
+                ret.valorString = (String) carpeta.getDato();
+                
+            }else{
+                ret.valorString ="No existe la carpeta";
+            }
+        }else{
+            ret.valorString ="No existe la unidad";
         }
 
         

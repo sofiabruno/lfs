@@ -4,7 +4,7 @@ public class ObligatorioM2020 {
 
     public static void main(String[] args) {
         // TODO code application logic here
-        Sistema s = new Sistema();
+        Sistema s = new Sistema(10);
         Prueba p = new Prueba();
         prueba1(s, p);
     }
