@@ -149,6 +149,14 @@ public class Sistema implements ISistema {
     @Override
     public Retorno EliminarMensaje(String unidad, String carpeta, String mensaje) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+        NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
+        NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
+        if (uni != null && carpe != null) {
+            if (carpe.listamensaje.obtenerElemento(mensaje) != null) {
+                carpe.listamensaje.borrarElemento(mensaje);
+            }
+        }
+
         return ret;
 
     }
