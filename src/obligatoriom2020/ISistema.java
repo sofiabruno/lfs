@@ -17,7 +17,8 @@ public interface ISistema {
  Retorno InsertarLinea(String unidad,String carpeta, String mensaje); 
 // Retorno InsertarLineaEnPosicion(int posicionLinea); 
   Retorno InsertarLineaEnPosicion(String unidad,String carpeta, String mensaje,int posicionLinea);
- Retorno BorrarLinea(int posicionLinea);
+// Retorno BorrarLinea(int posicionLinea);
+  Retorno BorrarLinea(String unidad,String carpeta, String mensaje,int posicionLinea);
  Retorno BorrarTodo(); 
  Retorno BorrarOcurrenciasPalabraEnTexto(String palabraABorrar);
  Retorno ImprimirTexto();

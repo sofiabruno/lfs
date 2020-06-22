@@ -137,7 +137,7 @@ public class ListaLinea implements ILista {
             n.setSiguiente(aux.getSiguiente());
             aux.setSiguiente(n);
         }
-        
+
 //        ojo  q no afecta la cant elementos 
     }
 
@@ -196,6 +196,37 @@ public class ListaLinea implements ILista {
             mostrarREC(l.getSiguiente());
 
         }
+    }
+
+    public NodoLinea buscarPorPosicion(int posicionLinea) {
+
+        if (posicionLinea >= 1 && posicionLinea <= this.cantelementos ) {
+           if (posicionLinea == 1){
+                return this.Primero;
+            }
+           else{
+               NodoLinea aux = this.Primero;
+               for (int i = 0; i < posicionLinea; i++) {
+                   aux = aux.getSiguiente();
+               }
+               return aux;
+           }else{
+                  return null; 
+           }
+
+        }
+
+        NodoLinea salida = null;
+
+        for (int i = 0; i < this.cantelementos; i++) {
+            if (i == posicionLinea) {
+                salida =
+            }
+
+        }
+
+        return salida;
+
     }
 
 }
