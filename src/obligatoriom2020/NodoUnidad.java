@@ -1,8 +1,32 @@
 package obligatoriom2020;
 
-public class NodoUnidad extends Nodo{
+public class NodoUnidad {
+    Object dato;
+    NodoUnidad siguiente;
     ListaCarpeta listaCarpeta;
 
+    public Object getDato() {
+        return dato;
+    }
+
+    public void setDato(Object dato) {
+        this.dato = dato;
+    }
+
+    public NodoUnidad getSiguiente() {
+        return siguiente;
+    }
+
+    public void setSiguiente(NodoUnidad siguiente) {
+        this.siguiente = siguiente;
+    }
+
+    public NodoUnidad(Object dato) {
+        this.dato = dato;
+        this.siguiente = null;
+        this.listaCarpeta = new ListaCarpeta();
+    }
+      
     public ListaCarpeta getListaCarpeta() {
         return listaCarpeta;
     }
@@ -11,11 +35,6 @@ public class NodoUnidad extends Nodo{
         this.listaCarpeta = listaCarpeta;
         
     }
-    
-    public NodoUnidad(Object dato) {
-        super(dato);
-        this.listaCarpeta = new ListaCarpeta();
-    
-    }
+ 
     
 }

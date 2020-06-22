@@ -1,6 +1,6 @@
 package obligatoriom2020;
 
-public class Lista implements ILista {
+public class Lista implements IListaUnidad {
 
     private Nodo Primero;
     private Nodo Ultimo;
