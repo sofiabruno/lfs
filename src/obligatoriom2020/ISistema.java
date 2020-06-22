@@ -15,7 +15,8 @@ public interface ISistema {
  // Funcionalidades referentes a lineas, palabras, diccionario
 // Retorno InsertarLinea(); 
  Retorno InsertarLinea(String unidad,String carpeta, String mensaje); 
- Retorno InsertarLineaEnPosicion(int posicionLinea); 
+// Retorno InsertarLineaEnPosicion(int posicionLinea); 
+  Retorno InsertarLineaEnPosicion(String unidad,String carpeta, String mensaje,int posicionLinea);
  Retorno BorrarLinea(int posicionLinea);
  Retorno BorrarTodo(); 
  Retorno BorrarOcurrenciasPalabraEnTexto(String palabraABorrar);

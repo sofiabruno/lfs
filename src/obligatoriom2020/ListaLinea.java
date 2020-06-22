@@ -4,6 +4,7 @@ public class ListaLinea implements ILista {
 
     NodoLinea Primero;
     NodoLinea Ultimo;
+    public int cantelementos;
 
     public NodoLinea getPrimero() {
         return Primero;
@@ -24,6 +25,7 @@ public class ListaLinea implements ILista {
     public ListaLinea() {
         this.Primero = null;
         this.Ultimo = null;
+        this.cantelementos = 0;
     }
 
 //    Metodos
@@ -44,7 +46,7 @@ public class ListaLinea implements ILista {
             this.Ultimo = nuevo;
         }
 
-//        this.cantelementos = this.cantelementos + 1;
+        this.cantelementos = this.cantelementos + 1;
     }
 
     //PRE:
@@ -53,7 +55,7 @@ public class ListaLinea implements ILista {
     public void borrarInicio() {
         if (!this.esVacia()) {
             this.Primero = this.Primero.getSiguiente();
-//            this.cantelementos = this.cantelementos - 1;
+            this.cantelementos = this.cantelementos - 1;
         }
     }
     //PRE:
@@ -63,7 +65,7 @@ public class ListaLinea implements ILista {
     public void vaciar() {
         this.Primero = null;
         this.Ultimo = null;
-//        this.cantelementos = 0;
+        this.cantelementos = 0;
     }
 
     //PRE:
@@ -92,7 +94,7 @@ public class ListaLinea implements ILista {
             NodoLinea nuevo = (NodoLinea) dato;
             Ultimo.setSiguiente(nuevo);
             Ultimo = nuevo;
-//            this.cantelementos = this.cantelementos + 1;
+            this.cantelementos = this.cantelementos + 1;
         }
 
     }
@@ -111,7 +113,7 @@ public class ListaLinea implements ILista {
                 }
                 this.Ultimo = aux;
                 this.Ultimo.setSiguiente(null);
-//                this.cantelementos = this.cantelementos - 1;
+                this.cantelementos = this.cantelementos - 1;
             }
         }
     }
@@ -135,6 +137,8 @@ public class ListaLinea implements ILista {
             n.setSiguiente(aux.getSiguiente());
             aux.setSiguiente(n);
         }
+        
+//        ojo  q no afecta la cant elementos 
     }
 
     //PRE: lista ordenada

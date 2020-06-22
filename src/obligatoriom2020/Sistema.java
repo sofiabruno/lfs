@@ -184,7 +184,7 @@ public class Sistema implements ISistema {
             mensAux = mensAux.siguiente;
         }
         ret.valorString = listaMensajes;
-        
+
         return ret;
 
     }
@@ -207,25 +207,42 @@ public class Sistema implements ISistema {
 //    Estos metodos supongo que ya lo estoy aplicando en una unidad/Carpeta/mensaje
     @Override
     //insertar una linea nueva vacia al final del texto
-    public Retorno InsertarLinea(String unidad,String carpeta, String mensaje) {
+    public Retorno InsertarLinea(String unidad, String carpeta, String mensaje) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
-        
+
         NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
         NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
         NodoMensaje mensAux = (NodoMensaje) carpe.listamensaje.obtenerElemento(mensaje);
-        
+
         NodoLinea lineaVacia = new NodoLinea("");
-        
+
         mensAux.listaLineas.agregarFinal(lineaVacia);
-        
-        
+
         return ret;
 
     }
 
     @Override
-    public Retorno InsertarLineaEnPosicion(String unidad,String carpeta, String mensaje,int posicionLinea) {
+
+//Inserta una línea vacía en la posición indicada y mueve todas las líneas que se encuentran a
+// partir de la posición indicada, una posición más adelante.
+//La posición es válida solamente si (posicionLinea >= 1) y 
+//        (posicionLinea <= cantidad de líneas + 1)
+    public Retorno InsertarLineaEnPosicion(String unidad, String carpeta, String mensaje, int posicionLinea) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+
+        NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
+        NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
+        NodoMensaje mensAux = (NodoMensaje) carpe.listamensaje.obtenerElemento(mensaje);
+        int cantLineas = mensAux.listaLineas.cantelementos;
+        if (posicionLinea >= 1 && posicionLinea <= cantLineas) {
+            
+
+        } else {
+            ret.resultado = Retorno.Resultado.ERROR;
+            ret.valorString = "La posición no es válida";
+        }
+
         return ret;
 
     }
