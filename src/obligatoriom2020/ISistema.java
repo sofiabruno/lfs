@@ -30,19 +30,19 @@ public interface ISistema {
 
     Retorno BorrarTodo(String unidad, String carpeta, String mensaje);
 
-    Retorno BorrarOcurrenciasPalabraEnTexto(String palabraABorrar);
+    Retorno BorrarOcurrenciasPalabraEnTexto(String unidad, String carpeta, String mensaje, String palabraABorrar);
 
-    Retorno ImprimirTexto();
+    Retorno ImprimirTexto(String unidad, String carpeta, String mensaje);
 
-    Retorno InsertarPalabraEnLinea(int posicionLinea, int posicionPalabra, String palabraAIngresar);
+    Retorno InsertarPalabraEnLinea(String unidad, String carpeta, String mensaje, int posicionLinea, int posicionPalabra, String palabraAIngresar);
 
-    Retorno InsertarPalabraYDesplazar(int posicionLinea, int posicionPalabra, String palabraAIngresar);
+    Retorno InsertarPalabraYDesplazar(String unidad, String carpeta, String mensaje, int posicionLinea, int posicionPalabra, String palabraAIngresar);
 
-    Retorno BorrarPalabra(int posicionLinea, int posicionPalabra);
+    Retorno BorrarPalabra(String unidad, String carpeta, String mensaje, int posicionLinea, int posicionPalabra);
 
-    Retorno BorrarOcurrenciasPalabraEnLinea(int posicionLinea, String palabraABorrar);
+    Retorno BorrarOcurrenciasPalabraEnLinea(String unidad, String carpeta, String mensaje, int posicionLinea, String palabraABorrar);
 
-    Retorno ImprimirLinea(int posicionLinea);
+    Retorno ImprimirLinea(String unidad, String carpeta, String mensaje, int posicionLinea);
 
     Retorno IngresarPalabraDiccionario(String palabraAIngresar);
 
@@ -53,6 +53,12 @@ public interface ISistema {
     Retorno ImprimirTextoIncorrecto();
 
     // Funcionalidades referentes a ejercicio complementario
+    
+    
+//    OJO XQ SI USAMOS ESTE SISTEMA HAY Q CORREGIR EL EJERCICIO 3
+//     Retorno CargarDistancias(int[][] Ciudades, String origen, String destino, int duracion);
+//     Retorno BuscarCamino ( int [][] M, String origen, String destino);
+    
     Retorno CargarDistancias(int[][] Ciudades);
 
     Retorno BuscarCamino(int[][] M, String origen, String destino);

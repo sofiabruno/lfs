@@ -310,29 +310,21 @@ public class Sistema implements ISistema {
     }
 
     @Override
-    public Retorno BorrarOcurrenciasPalabraEnTexto(String palabraABorrar) {
+    public Retorno BorrarOcurrenciasPalabraEnTexto(String unidad, String carpeta, String mensaje, String palabraABorrar) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
         return ret;
 
     }
 
     @Override
-    public Retorno ImprimirTexto() {
+    public Retorno ImprimirTexto(String unidad, String carpeta, String mensaje) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
         return ret;
 
     }
 
     @Override
-    public Retorno InsertarPalabraEnLinea(int posicionLinea, int posicionPalabra, String palabraAIngresar) {
-        Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
-
-        return ret;
-
-    }
-
-    @Override
-    public Retorno InsertarPalabraYDesplazar(int posicionLinea, int posicionPalabra, String palabraAIngresar) {
+    public Retorno InsertarPalabraEnLinea(String unidad, String carpeta, String mensaje, int posicionLinea, int posicionPalabra, String palabraAIngresar) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
 
         return ret;
@@ -340,21 +332,29 @@ public class Sistema implements ISistema {
     }
 
     @Override
-    public Retorno BorrarPalabra(int posicionLinea, int posicionPalabra) {
+    public Retorno InsertarPalabraYDesplazar(String unidad, String carpeta, String mensaje, int posicionLinea, int posicionPalabra, String palabraAIngresar) {
+        Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+
+        return ret;
+
+    }
+
+    @Override
+    public Retorno BorrarPalabra(String unidad, String carpeta, String mensaje, int posicionLinea, int posicionPalabra) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
         return ret;
 
     }
 
     @Override
-    public Retorno BorrarOcurrenciasPalabraEnLinea(int posicionLinea, String palabraABorrar) {
+    public Retorno BorrarOcurrenciasPalabraEnLinea(String unidad, String carpeta, String mensaje, int posicionLinea, String palabraABorrar) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
         return ret;
 
     }
 
     @Override
-    public Retorno ImprimirLinea(int posicionLinea) {
+    public Retorno ImprimirLinea(String unidad, String carpeta, String mensaje, int posicionLinea) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
         return ret;
 

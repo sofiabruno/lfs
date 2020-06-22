@@ -216,24 +216,4 @@ public class ListaLinea implements ILista {
         }
 
     }
-
-    NodoLinea salida = null;
-
-    for (int i = 0;
-    i< 
-    this.cantelementos ;
-    i
-
-    
-        ++) {
-            if (i == posicionLinea) {
-            salida =
-        }
-
-    }
-
-    return salida ;
-
-}
-
 }
