@@ -228,7 +228,6 @@ public class Sistema implements ISistema {
 // partir de la posición indicada, una posición más adelante.
 //La posición es válida solamente si (posicionLinea >= 1) y 
 //(posicionLinea <= cantidad de líneas + 1)
-    
     public Retorno InsertarLineaEnPosicion(String unidad, String carpeta, String mensaje, int posicionLinea) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
 
@@ -237,7 +236,6 @@ public class Sistema implements ISistema {
         NodoMensaje mensAux = (NodoMensaje) carpe.listamensaje.obtenerElemento(mensaje);
         int cantLineas = mensAux.listaLineas.cantelementos;
         if (posicionLinea >= 1 && posicionLinea <= cantLineas) {
-            
 
         } else {
             ret.resultado = Retorno.Resultado.ERROR;
@@ -249,15 +247,37 @@ public class Sistema implements ISistema {
     }
 
     @Override
-    public Retorno BorrarLinea(String unidad,String carpeta, String mensaje,int posicionLinea) {
+
+//    Borra la línea en la posición indicada y mueve todas las líneas que se encuentran a partir de la posición indicada, una posición más hacia arriba.
+//La posición es válida solamente si posicionLinea existe en el texto, esto es, si posicionLinea >= 1 y posicionLinea <= cantidad de líneas.
+    public Retorno BorrarLinea(String unidad, String carpeta, String mensaje, int posicionLinea) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
-        
+
         NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
         NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
         NodoMensaje mensAux = (NodoMensaje) carpe.listamensaje.obtenerElemento(mensaje);
-        
-        NodoLinea nodoAborrar = mensAux.listaLineas.
-        
+
+        NodoLinea nodoAborrar = mensAux.listaLineas.buscarPorPosicion(posicionLinea);
+        if (posicionLinea >= 1 && posicionLinea <= mensAux.listaLineas.cantelementos) {
+//            si existe la ubicacion de la linea
+            if (uni != null && carpe != null && mensAux != null) {
+                if (nodoAborrar != null) {
+
+                } else {
+//                    el nodo a borrar en la posicion indicada esta vacio
+                    ret.resultado = Retorno.Resultado.ERROR;
+                    ret.valorString = "El nodo que quiere borrar no existe en este mensaje";
+                }
+                mensAux.listaLineas.borrarElemento(nodoAborrar);
+
+            } else {
+//            no existe la ubicacion de linea
+                ret.resultado = Retorno.Resultado.ERROR;
+                ret.valorString = "No existe la unidad o la carpeta";
+            }
+
+        }
+
         return ret;
 
     }
