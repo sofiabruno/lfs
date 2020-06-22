@@ -118,23 +118,27 @@ public class Sistema implements ISistema {
 
     @Override
     public Retorno AgregarMensaje(String unidad, String carpeta, String mensaje) {
-        Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+        Retorno ret = new Retorno(Retorno.Resultado.OK);
         NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
         NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
         if (uni != null && carpe != null) {
             //ver si el mensaje ya noe xiste
             if (carpe.listamensaje.obtenerElemento(mensaje) == null) {
                 carpe.listamensaje.agregarFinal(mensaje);
+                ret.resultado = Retorno.Resultado.OK;
+
 //                mensaje agregado                
             } else {
                 ret.resultado = Retorno.Resultado.ERROR;
+                ret.valorString = "El mensaje ya existe en esta carpeta";
+
 //            el mensaje ya existe
             }
         } else {
             ret.resultado = Retorno.Resultado.ERROR;
+            ret.valorString = "No existe la unidad o la carpeta";
 //                la carpeta o la unidad no existen
         }
-
         return ret;
 
     }
@@ -157,21 +161,22 @@ public class Sistema implements ISistema {
     @Override
     public Retorno ListarEstructura(String unidad, String carpeta) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
-        
+
         NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
         NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
         NodoMensaje mensAux = (NodoMensaje) carpe.listamensaje.Primero;
-        String listaMensajes="";
-                      
-        while (mensAux!=null){
-               listaMensajes+= mensAux.getDato() + " - ";
+        String listaMensajes = "";
+
+        while (mensAux != null) {
+            listaMensajes += mensAux.getDato() + " - ";
 //               ret.valorString = (String) mensAux.getDato();
-               mensAux=mensAux.siguiente;            
-        }        
-       ret.valorString = listaMensajes;
-       
-       return ret;
-       
+            mensAux = mensAux.siguiente;
+        }
+        ret.valorString = listaMensajes;
+        ret.resultado = Retorno.Resultado.OK;
+
+        return ret;
+
     }
 
     public Retorno ListarEstructuraUnidad(String unidad) {

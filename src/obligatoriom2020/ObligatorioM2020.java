@@ -48,6 +48,12 @@ public class ObligatorioM2020 {
         p.ver(s.AgregarMensaje("C", "Archivos", "mensaje3").resultado, Retorno.Resultado.OK, "Se agrega mensaje3 en carpeta Archivos");
         p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los mensajes de la unidad C: " + s.ListarEstructura("C", "Archivos").valorString);
 
+        //para q falle
+        //agregar mensaje a una carpeta q no existe
+        p.ver(s.AgregarMensaje("C", "Fotitos", "mensaje4").resultado, Retorno.Resultado.OK, "Se intenta agregar mensaje4 en carpeta Fotitos " + s.AgregarMensaje("C", "Fotitos", "mensaje4").valorString);
+        //el mensaje ya existe
+        p.ver(s.AgregarMensaje("C", "Archivos", "mensaje3").resultado, Retorno.Resultado.OK, "Se intenta agregar mensaje3 en carpeta Archivos " + s.AgregarMensaje("C", "Archivos", "mensaje3").valorString);
+
 //        p.ver(s.AgregarCarpeta("C", "Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Archivos en unidad C: " + s.AgregarCarpeta("C", "Archivos").valorString);
 ////      p.ver(s.AgregarCarpeta("C", "Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Archivos en unidad C: " + s.AgregarCarpeta("C", "Archivos").valorString);
 //        p.ver(s.AgregarCarpeta("C", "Documentos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Documentos en unidad C: " + s.AgregarCarpeta("C", "Documentos").valorString);
