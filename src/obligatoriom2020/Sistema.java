@@ -26,7 +26,6 @@ public class Sistema implements ISistema {
 //    public void setListamensaje(ListaMensaje listamensaje) {
 //        this.listamensaje = listamensaje;
 //    }
-
     public ListaPalabra getDiccionario() {
         return diccionario;
     }
@@ -50,15 +49,14 @@ public class Sistema implements ISistema {
     @Override
     public Retorno crearSistemaMensajes() {
         Retorno ret = new Retorno(Retorno.Resultado.OK);
-       
+
         listaUnidades = new ListaUnidad();
-        NodoUnidad uni = new NodoUnidad("C");              
+        NodoUnidad uni = new NodoUnidad("C");
         listaUnidades.agregarInicio(uni);
-        
+
         diccionario = new ListaPalabra();
 
         CargarDistancias(Ciudades);
-
 
         return ret;
 
@@ -77,22 +75,20 @@ public class Sistema implements ISistema {
     @Override
     public Retorno AgregarCarpeta(String unidad, String carpeta) {
         Retorno ret = new Retorno(Retorno.Resultado.OK);
-
         NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
         if (uni != null) {
             if (!uni.listaCarpeta.buscarelemento(carpeta)) {
                 uni.listaCarpeta.agregarFinal(carpeta);
-                ret.valorString = "Se agrego la carpeta +" + carpeta + "a la unidad " + unidad;
+                ret.valorString = "Se agregó la carpeta +" + carpeta + "a la unidad " + unidad;
             } else {
 //                ret.resultado = Retorno.Resultado.ERROR;
-                 ret.valorString = "La carpeta +" + carpeta + "ya existe en la unidad " + unidad;
+                ret.valorString = " La carpeta " + carpeta + " ya existe en la unidad " + unidad;
             }
         } else {
 //            ret.resultado = Retorno.Resultado.ERROR;
-                 ret.valorString = "No existe la unidad";
+            ret.valorString = "No existe la unidad " + unidad ;
 
         }
-
 
         return ret;
 
@@ -114,7 +110,6 @@ public class Sistema implements ISistema {
     @Override
     public Retorno AgregarMensaje(String unidad, String carpeta, String mensaje) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
-
         NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
         NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
         if (uni != null && carpe != null) {
@@ -184,30 +179,20 @@ public class Sistema implements ISistema {
 
     public Retorno ListarEstructuraUnidad(String unidad) {
         Retorno ret = new Retorno(Retorno.Resultado.OK);
-
         NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
-        
         ListaCarpeta capretasEnLaUni = uni.listaCarpeta;
-        
-        NodoCarpeta primero = (NodoCarpeta) capretasEnLaUni.Primero ;
-        
+        NodoCarpeta primero = (NodoCarpeta) capretasEnLaUni.Primero;
         String salida = "";
-        
         while (primero != null) {
             salida += primero.getDato().toString() + " - ";
-//            ret.valorString = (primero.getDato().toString());
             primero = primero.siguiente;
         }
-        
         ret.valorString = salida;
-        
         return ret;
 
     }
 
 //    Estos metodos supongo que ya lo estoy aplicando en una unidad/Carpeta/mensaje
-    
-    
     @Override
     public Retorno InsertarLinea() {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
@@ -253,7 +238,7 @@ public class Sistema implements ISistema {
     @Override
     public Retorno InsertarPalabraEnLinea(int posicionLinea, int posicionPalabra, String palabraAIngresar) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
-               
+
         return ret;
 
     }
@@ -261,9 +246,7 @@ public class Sistema implements ISistema {
     @Override
     public Retorno InsertarPalabraYDesplazar(int posicionLinea, int posicionPalabra, String palabraAIngresar) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
-        
-        
-        
+
         return ret;
 
     }
