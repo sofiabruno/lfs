@@ -122,12 +122,12 @@ public class Sistema implements ISistema {
         NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
         NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
         if (uni != null && carpe != null) {
-            if (carpe.listamensaje.obtenerElemento(mensaje) != null) {
+            //ver si el mensaje ya noe xiste
+            if (carpe.listamensaje.obtenerElemento(mensaje) == null) {
                 carpe.listamensaje.agregarFinal(mensaje);
 //                mensaje agregado                
             } else {
                 ret.resultado = Retorno.Resultado.ERROR;
-
 //            el mensaje ya existe
             }
         } else {
@@ -160,7 +160,7 @@ public class Sistema implements ISistema {
         
         NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
         NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
-        NodoMensaje mensAux = carpe.listamensaje.Primero;
+        NodoMensaje mensAux = (NodoMensaje) carpe.listamensaje.Primero;
         String listaMensajes="";
                       
         while (mensAux!=null){
