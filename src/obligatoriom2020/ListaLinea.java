@@ -200,33 +200,40 @@ public class ListaLinea implements ILista {
 
     public NodoLinea buscarPorPosicion(int posicionLinea) {
 
-        if (posicionLinea >= 1 && posicionLinea <= this.cantelementos ) {
-           if (posicionLinea == 1){
+        if (posicionLinea >= 1 && posicionLinea <= this.cantelementos) {
+            if (posicionLinea == 1) {
                 return this.Primero;
+            } else {
+                NodoLinea aux = this.Primero;
+                for (int i = 0; i < posicionLinea; i++) {
+                    aux = aux.getSiguiente();
+                }
+                return aux;
             }
-           else{
-               NodoLinea aux = this.Primero;
-               for (int i = 0; i < posicionLinea; i++) {
-                   aux = aux.getSiguiente();
-               }
-               return aux;
-           }else{
-                  return null; 
-           }
-
+        } else {
+            NodoLinea aux = null;
+            return aux;
         }
-
-        NodoLinea salida = null;
-
-        for (int i = 0; i < this.cantelementos; i++) {
-            if (i == posicionLinea) {
-                salida =
-            }
-
-        }
-
-        return salida;
 
     }
+
+    NodoLinea salida = null;
+
+    for (int i = 0;
+    i< 
+    this.cantelementos ;
+    i
+
+    
+        ++) {
+            if (i == posicionLinea) {
+            salida =
+        }
+
+    }
+
+    return salida ;
+
+}
 
 }
