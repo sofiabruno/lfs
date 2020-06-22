@@ -38,6 +38,11 @@ public class ObligatorioM2020 {
 //        eliminar carpeta de una unidad que no existe
         p.ver(s.EliminarCarpeta("D", "Fotos").resultado, Retorno.Resultado.ERROR, "Intentar eliminar Fotos en unidad D " + s.EliminarCarpeta("D", "Fotos").valorString);
 
+        //agregar mensaje
+        p.ver(s.ListarEstructuraUnidad("C").resultado, Retorno.Resultado.OK, "Se listan las carpetas de la unidad c: " + s.ListarEstructuraUnidad("C").valorString);
+
+        p.ver(s.AgregarMensaje("C", "Archivos", "mensaje1").resultado, Retorno.Resultado.OK, "Se agrega mensaje 1 en carpeta Archivos");
+
 //        p.ver(s.AgregarCarpeta("C", "Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Archivos en unidad C: " + s.AgregarCarpeta("C", "Archivos").valorString);
 ////      p.ver(s.AgregarCarpeta("C", "Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Archivos en unidad C: " + s.AgregarCarpeta("C", "Archivos").valorString);
 //        p.ver(s.AgregarCarpeta("C", "Documentos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Documentos en unidad C: " + s.AgregarCarpeta("C", "Documentos").valorString);

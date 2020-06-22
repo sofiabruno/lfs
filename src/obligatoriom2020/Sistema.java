@@ -157,33 +157,21 @@ public class Sistema implements ISistema {
     @Override
     public Retorno ListarEstructura(String unidad, String carpeta) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
-//        
-//        Object ubicacion = new Object(),
-//                miUnidad = unidad,
-//                miCarpeta = carpeta;
-//        
-//        Nodo aux = new Nodo(ubicacion);
-//                     
-//        while (aux!=null){
-//               ret.valorString = (String) aux.getDato();
-//               aux=aux.siguiente;            
-//        }
-
+        
         NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
         NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
-        if (uni != null) {
-            if (carpe != null) {
-                ret.valorString = (String) carpe.getDato();
-
-            } else {
-                ret.valorString = "No existe la carpeta";
-            }
-        } else {
-            ret.valorString = "No existe la unidad";
-        }
-
-        return ret;
-
+        NodoMensaje mensAux = carpe.listamensaje.Primero;
+        String listaMensajes="";
+                      
+        while (mensAux!=null){
+               listaMensajes+= mensAux.getDato() + " - ";
+//               ret.valorString = (String) mensAux.getDato();
+               mensAux=mensAux.siguiente;            
+        }        
+       ret.valorString = listaMensajes;
+       
+       return ret;
+       
     }
 
     public Retorno ListarEstructuraUnidad(String unidad) {
