@@ -202,6 +202,16 @@ public class ListaCarpeta implements ILista {
         }
     }
     
-    
+      public boolean buscarelemento(Object dato) {
+        NodoCarpeta aux = this.Primero;
+        while (aux != null) {
+            if (aux.getDato() == dato) {
+                return true;
+            }
+            aux = aux.siguiente;
+        }
+        return false;
+    }
+
     
 }

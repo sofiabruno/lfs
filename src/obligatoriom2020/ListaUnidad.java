@@ -39,7 +39,7 @@ public class ListaUnidad implements ILista {
     //POS: Agrega un nuevo Nodo al principio de la lista
     @Override
     public void agregarInicio(Object dato) {
-        NodoUnidad nuevo = new NodoUnidad(dato);
+        NodoUnidad nuevo = (NodoUnidad) dato;
         nuevo.setSiguiente(Primero);
         this.Primero = nuevo;
         if (this.Ultimo == null)//estoy insertando el primer nodo
