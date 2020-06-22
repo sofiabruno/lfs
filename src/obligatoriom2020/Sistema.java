@@ -171,7 +171,7 @@ public class Sistema implements ISistema {
 
     @Override
     public Retorno ListarEstructura(String unidad, String carpeta) {
-        Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+        Retorno ret = new Retorno(Retorno.Resultado.OK);
 
         NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
         NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
@@ -184,8 +184,7 @@ public class Sistema implements ISistema {
             mensAux = mensAux.siguiente;
         }
         ret.valorString = listaMensajes;
-        ret.resultado = Retorno.Resultado.OK;
-
+        
         return ret;
 
     }
