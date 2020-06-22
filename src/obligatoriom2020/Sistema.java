@@ -285,26 +285,25 @@ public class Sistema implements ISistema {
 //    Borra todas las líneas del texto.
     public Retorno BorrarTodo(String unidad, String carpeta, String mensaje) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
-        
+
         NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
         NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
         NodoMensaje mensAux = (NodoMensaje) carpe.listamensaje.obtenerElemento(mensaje);
-        
-             
-        if (uni != null && carpe != null ) {
-                if (mensAux != null) {
-                           mensAux.listaLineas.vaciar();
-                } else {
-//                    el mensaje a borrar en la posicion indicada esta vacio
-                    ret.resultado = Retorno.Resultado.ERROR;
-                    ret.valorString = "El mensaje que quiere borrar no existe en esta unidad/Carpeta";
-                }
+
+        if (uni != null && carpe != null) {
+            if (mensAux != null) {
+                mensAux.listaLineas.vaciar();
             } else {
-//            no existe la ubicacion de linea
+//                    el mensaje a borrar en la posicion indicada esta vacio
                 ret.resultado = Retorno.Resultado.ERROR;
-                ret.valorString = "No existe la unidad o la carpeta";
+                ret.valorString = "El mensaje que quiere borrar no existe en esta unidad/Carpeta";
             }
-        
+        } else {
+//            no existe la ubicacion de linea
+            ret.resultado = Retorno.Resultado.ERROR;
+            ret.valorString = "No existe la unidad o la carpeta";
+        }
+
         return ret;
 
     }
@@ -317,8 +316,17 @@ public class Sistema implements ISistema {
     }
 
     @Override
+
+//Muestra todas las líneas del texto con sus respectivas palabras.
+//Se debe imprimir el número de línea, para cada línea
+//Cuando el texto no tiene líneas se debe mostrar el mensaje "Texto vacio".
     public Retorno ImprimirTexto(String unidad, String carpeta, String mensaje) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+
+        NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
+        NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
+        NodoMensaje mensAux = (NodoMensaje) carpe.listamensaje.obtenerElemento(mensaje)
+        
         return ret;
 
     }
