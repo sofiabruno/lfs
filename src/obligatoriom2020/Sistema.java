@@ -145,13 +145,24 @@ public class Sistema implements ISistema {
 
     @Override
     public Retorno EliminarMensaje(String unidad, String carpeta, String mensaje) {
-        Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+        Retorno ret = new Retorno(Retorno.Resultado.OK);
         NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
         NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
         if (uni != null && carpe != null) {
+            //si existe todo y lo busco y no esta vacio
             if (carpe.listamensaje.obtenerElemento(mensaje) != null) {
                 carpe.listamensaje.borrarElemento(mensaje);
+                //lo borro
+                ret.resultado = Retorno.Resultado.OK;
+            } //            Si lo busco xo no existía el mensaje
+            else {
+                ret.resultado = Retorno.Resultado.ERROR;
+                ret.valorString = "El mensaje que quiere borrar no existe en esta carpeta";
             }
+        } else {
+            ret.resultado = Retorno.Resultado.ERROR;
+            ret.valorString = "No existe la unidad o la carpeta";
+//                la carpeta o la unidad no existen
         }
 
         return ret;
