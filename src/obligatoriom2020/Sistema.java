@@ -325,8 +325,10 @@ public class Sistema implements ISistema {
 
         NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
         NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
-        NodoMensaje mensAux = (NodoMensaje) carpe.listamensaje.obtenerElemento(mensaje)
-        
+        NodoMensaje mensAux = (NodoMensaje) carpe.listamensaje.obtenerElemento(mensaje);
+
+        mensAux.listaLineas.mostrar();
+
         return ret;
 
     }
@@ -334,6 +336,11 @@ public class Sistema implements ISistema {
     @Override
     public Retorno InsertarPalabraEnLinea(String unidad, String carpeta, String mensaje, int posicionLinea, int posicionPalabra, String palabraAIngresar) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+
+        NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
+        NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
+        NodoMensaje mensAux = (NodoMensaje) carpe.listamensaje.obtenerElemento(mensaje);
+        NodoLinea listAux = (NodoLinea) mensAux.listaLineas.buscarPorPosicion(posicionLinea);
 
         return ret;
 
