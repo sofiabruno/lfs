@@ -13,7 +13,8 @@ public interface ISistema {
  Retorno ListarEstructura(String unidad, String carpeta);
  
  // Funcionalidades referentes a lineas, palabras, diccionario
- Retorno InsertarLinea(); 
+// Retorno InsertarLinea(); 
+ Retorno InsertarLinea(String unidad,String carpeta, String mensaje); 
  Retorno InsertarLineaEnPosicion(int posicionLinea); 
  Retorno BorrarLinea(int posicionLinea);
  Retorno BorrarTodo(); 

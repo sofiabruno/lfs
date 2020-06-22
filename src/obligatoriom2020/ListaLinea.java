@@ -5,7 +5,6 @@ public class ListaLinea implements ILista {
     NodoLinea Primero;
     NodoLinea Ultimo;
 
-   
     public NodoLinea getPrimero() {
         return Primero;
     }
@@ -14,7 +13,6 @@ public class ListaLinea implements ILista {
         this.Primero = Primero;
     }
 
-    
     public NodoLinea getUltimo() {
         return Ultimo;
     }
@@ -29,8 +27,7 @@ public class ListaLinea implements ILista {
     }
 
 //    Metodos
-    
-     @Override
+    @Override
     public boolean esVacia() {
         return (this.Primero == null);
     }
@@ -89,11 +86,10 @@ public class ListaLinea implements ILista {
     //POS: Agrega un nuevo Nodo al Ultimoal de la lista
     @Override
     public void agregarFinal(Object dato) {
-        //NodoLista nuevo= new NodoLista(n);
         if (this.esVacia()) {
             this.agregarInicio(dato); // el agregar Primero suma 1 a cantelementos
         } else {
-            NodoLinea nuevo = new NodoLinea(dato);
+            NodoLinea nuevo = (NodoLinea) dato;
             Ultimo.setSiguiente(nuevo);
             Ultimo = nuevo;
 //            this.cantelementos = this.cantelementos + 1;
@@ -172,20 +168,16 @@ public class ListaLinea implements ILista {
 //    public int cantElementos() {
 //        return this.cantelementos;
 //    }
-
     //PRE: //POS:
     //PRE: //POS:
-  
     public NodoLinea obtenerElemento(Object dato) {
         NodoLinea aux = this.Primero;
-        while (aux != null && aux.getDato() !=  dato) {
+        while (aux != null && aux.getDato() != dato) {
             aux = aux.getSiguiente();
         }
         //encontre dato o llegue al Ultimoal
         return aux;
     }
-    
-  
 
     /**
      * *** para resolver en forma recursiva Métodos RECURSIVOS
@@ -194,14 +186,12 @@ public class ListaLinea implements ILista {
      */
     //PRE:
     //POS: muestra los datos de la lista en orden de enlace
-    public void mostrarREC(Nodo l) {
+    public void mostrarREC(NodoLinea l) {
         if (l != null) {
             System.out.println(l.getDato());
             mostrarREC(l.getSiguiente());
 
         }
     }
-    
-    
-    
+
 }

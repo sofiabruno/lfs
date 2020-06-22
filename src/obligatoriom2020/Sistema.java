@@ -206,14 +206,25 @@ public class Sistema implements ISistema {
 
 //    Estos metodos supongo que ya lo estoy aplicando en una unidad/Carpeta/mensaje
     @Override
-    public Retorno InsertarLinea() {
+    //insertar una linea nueva vacia al final del texto
+    public Retorno InsertarLinea(String unidad,String carpeta, String mensaje) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+        
+        NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
+        NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
+        NodoMensaje mensAux = (NodoMensaje) carpe.listamensaje.obtenerElemento(mensaje);
+        
+        NodoLinea lineaVacia = new NodoLinea("");
+        
+        mensAux.listaLineas.agregarFinal(lineaVacia);
+        
+        
         return ret;
 
     }
 
     @Override
-    public Retorno InsertarLineaEnPosicion(int posicionLinea) {
+    public Retorno InsertarLineaEnPosicion(String unidad,String carpeta, String mensaje,int posicionLinea) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
         return ret;
 
