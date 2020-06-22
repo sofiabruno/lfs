@@ -262,14 +262,13 @@ public class Sistema implements ISistema {
 //            si existe la ubicacion de la linea
             if (uni != null && carpe != null && mensAux != null) {
                 if (nodoAborrar != null) {
-
+                    mensAux.listaLineas.borrarElemento(nodoAborrar);
+//                    con el borrar ya se cumple lo de q todos se corren??
                 } else {
 //                    el nodo a borrar en la posicion indicada esta vacio
                     ret.resultado = Retorno.Resultado.ERROR;
                     ret.valorString = "El nodo que quiere borrar no existe en este mensaje";
                 }
-                mensAux.listaLineas.borrarElemento(nodoAborrar);
-
             } else {
 //            no existe la ubicacion de linea
                 ret.resultado = Retorno.Resultado.ERROR;
@@ -283,8 +282,29 @@ public class Sistema implements ISistema {
     }
 
     @Override
-    public Retorno BorrarTodo() {
+//    Borra todas las líneas del texto.
+    public Retorno BorrarTodo(String unidad, String carpeta, String mensaje) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+        
+        NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
+        NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
+        NodoMensaje mensAux = (NodoMensaje) carpe.listamensaje.obtenerElemento(mensaje);
+        
+             
+        if (uni != null && carpe != null ) {
+                if (mensAux != null) {
+                           mensAux.listaLineas.vaciar();
+                } else {
+//                    el mensaje a borrar en la posicion indicada esta vacio
+                    ret.resultado = Retorno.Resultado.ERROR;
+                    ret.valorString = "El mensaje que quiere borrar no existe en esta unidad/Carpeta";
+                }
+            } else {
+//            no existe la ubicacion de linea
+                ret.resultado = Retorno.Resultado.ERROR;
+                ret.valorString = "No existe la unidad o la carpeta";
+            }
+        
         return ret;
 
     }
