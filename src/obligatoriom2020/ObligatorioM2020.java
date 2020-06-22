@@ -19,23 +19,24 @@ public class ObligatorioM2020 {
         // OPERACIONES RELATIVAS A LA ESTRUCTURA -------------------------------------------------------------------------------------------------------------
         //      AGREGAR CARPETA A LA ESTRUCTURA DE CARPETAS     
         //      Agregar carpetas 
-        
         p.ver(s.AgregarCarpeta("C", "Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Archivos en unidad C");
         p.ver(s.AgregarCarpeta("C", "Docs").resultado, Retorno.Resultado.OK, "Se creo la carpeta Docs en unidad C");
         p.ver(s.AgregarCarpeta("C", "Descargas").resultado, Retorno.Resultado.OK, "Se creo la carpeta Descargas en unidad C");
-        
-//        p.ver(s.AgregarCarpeta("C", "Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Archivos en unidad C: " + s.AgregarCarpeta("C", "Archivos").valorString);
 
-////        p.ver(s.AgregarCarpeta("C", "Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Archivos en unidad C: " + s.AgregarCarpeta("C", "Archivos").valorString);
+//        Para que falle xq ya existe, no la agrega xo no te avisa
+      p.ver(s.AgregarCarpeta("C", "Docs").resultado, Retorno.Resultado.ERROR, "Se creo la carpeta Docs en unidad C" + s.AgregarCarpeta("C", "Docs").valorString);
+
+//        p.ver(s.AgregarCarpeta("C", "Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Archivos en unidad C: " + s.AgregarCarpeta("C", "Archivos").valorString);
+////      p.ver(s.AgregarCarpeta("C", "Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Archivos en unidad C: " + s.AgregarCarpeta("C", "Archivos").valorString);
 //        p.ver(s.AgregarCarpeta("C", "Documentos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Documentos en unidad C: " + s.AgregarCarpeta("C", "Documentos").valorString);
 //        p.ver(s.AgregarCarpeta("C", "Mensajes").resultado, Retorno.Resultado.OK, "Se creo la carpeta Mensajes en unidad C: " + s.AgregarCarpeta("C", "Mensajes").valorString);
 //        p.ver(s.AgregarCarpeta("C", "Otros Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Otros Archivos en unidad C: " + s.AgregarCarpeta("C", "Otros Archivos").valorString);
+
 //        //      Listamos par ver si la estructura es correcta
 //        //p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los documentos de la carpeta Archivos");
-//        p.ver(s.ListarEstructuraUnidad("C").resultado, Retorno.Resultado.OK, "Se listan las carpetas de la unidad c: " + s.ListarEstructuraUnidad("C").valorString);
+      p.ver(s.ListarEstructuraUnidad("C").resultado, Retorno.Resultado.OK, "Se listan las carpetas de la unidad c: " + s.ListarEstructuraUnidad("C").valorString);
 //        
         //System.out.println("Prueba agregar carpeta " + s.AgregarCarpeta("C", "Prueba").valorString);
-
 //        //      ELIMINAR CARPETA DE LA ESTRUCTURA DE CARPETAS
 //        //      Agregamos una nueva carpeta y posteriormente la elimino
 //        p.ver(s.AgregarCarpeta("C", "Carpeta Y").resultado, Retorno.Resultado.OK, "Se creo la carpeta Carpeta Y en unidad C");

@@ -182,22 +182,28 @@ public class Sistema implements ISistema {
 
     }
 
-//    public Retorno ListarEstructuraUnidad(String unidad) {
-//        Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
-//
-//        Object ubicacion = new Object(),
-//                miUnidad = unidad;
-//
-//        Nodo aux = new Nodo(ubicacion);
-//
-//        while (aux != null) {
-//            ret.valorString = (aux.getDato().toString());
-//            aux = aux.siguiente;
-//        }
-//
-//        return ret;
-//
-//    }
+    public Retorno ListarEstructuraUnidad(String unidad) {
+        Retorno ret = new Retorno(Retorno.Resultado.OK);
+
+        NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
+        
+        ListaCarpeta capretasEnLaUni = uni.listaCarpeta;
+        
+        NodoCarpeta primero = (NodoCarpeta) capretasEnLaUni.Primero ;
+        
+        String salida = "";
+        
+        while (primero != null) {
+            salida += primero.getDato().toString() + " - ";
+//            ret.valorString = (primero.getDato().toString());
+            primero = primero.siguiente;
+        }
+        
+        ret.valorString = salida;
+        
+        return ret;
+
+    }
 
 //    Estos metodos supongo que ya lo estoy aplicando en una unidad/Carpeta/mensaje
     
