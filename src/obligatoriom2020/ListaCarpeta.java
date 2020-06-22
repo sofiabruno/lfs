@@ -194,7 +194,7 @@ public class ListaCarpeta implements ILista {
      */
     //PRE:
     //POS: muestra los datos de la lista en orden de enlace
-    public void mostrarREC(Nodo l) {
+    public void mostrarREC(NodoCarpeta l) {
         if (l != null) {
             System.out.println(l.getDato());
             mostrarREC(l.getSiguiente());

@@ -13,13 +13,19 @@ public class ObligatorioM2020 {
 
         // FUNCIONALIDAD DEL SISTEMA -------------------------------------------------------------------------------------------------------------------------
         //      CREAR SISTEMA DE MENSAJES
-        p.ver(s.crearSistemaMensajes().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Se crea sistema de mensajes");
+        p.ver(s.crearSistemaMensajes().resultado, Retorno.Resultado.OK, "Se crea sistema de mensajes");
 
         // CASOS OK     
         // OPERACIONES RELATIVAS A LA ESTRUCTURA -------------------------------------------------------------------------------------------------------------
         //      AGREGAR CARPETA A LA ESTRUCTURA DE CARPETAS     
         //      Agregar carpetas 
+        
+        p.ver(s.AgregarCarpeta("C", "Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Archivos en unidad C");
+        p.ver(s.AgregarCarpeta("C", "Docs").resultado, Retorno.Resultado.OK, "Se creo la carpeta Docs en unidad C");
+        p.ver(s.AgregarCarpeta("C", "Descargas").resultado, Retorno.Resultado.OK, "Se creo la carpeta Descargas en unidad C");
+        
 //        p.ver(s.AgregarCarpeta("C", "Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Archivos en unidad C: " + s.AgregarCarpeta("C", "Archivos").valorString);
+
 ////        p.ver(s.AgregarCarpeta("C", "Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Archivos en unidad C: " + s.AgregarCarpeta("C", "Archivos").valorString);
 //        p.ver(s.AgregarCarpeta("C", "Documentos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Documentos en unidad C: " + s.AgregarCarpeta("C", "Documentos").valorString);
 //        p.ver(s.AgregarCarpeta("C", "Mensajes").resultado, Retorno.Resultado.OK, "Se creo la carpeta Mensajes en unidad C: " + s.AgregarCarpeta("C", "Mensajes").valorString);

@@ -49,7 +49,7 @@ public class Sistema implements ISistema {
 
     @Override
     public Retorno crearSistemaMensajes() {
-        Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+        Retorno ret = new Retorno(Retorno.Resultado.OK);
        
         listaUnidades = new ListaUnidad();
         NodoUnidad uni = new NodoUnidad("C");              
@@ -66,7 +66,7 @@ public class Sistema implements ISistema {
 
     @Override
     public Retorno destruirSistemaMensajes() {
-        Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+        Retorno ret = new Retorno(Retorno.Resultado.OK);
 
         listaUnidades = null;
 
@@ -76,7 +76,7 @@ public class Sistema implements ISistema {
 
     @Override
     public Retorno AgregarCarpeta(String unidad, String carpeta) {
-        Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+        Retorno ret = new Retorno(Retorno.Resultado.OK);
 
         NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
         if (uni != null) {
@@ -182,22 +182,22 @@ public class Sistema implements ISistema {
 
     }
 
-    public Retorno ListarEstructuraUnidad(String unidad) {
-        Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
-
-        Object ubicacion = new Object(),
-                miUnidad = unidad;
-
-        Nodo aux = new Nodo(ubicacion);
-
-        while (aux != null) {
-            ret.valorString = (aux.getDato().toString());
-            aux = aux.siguiente;
-        }
-
-        return ret;
-
-    }
+//    public Retorno ListarEstructuraUnidad(String unidad) {
+//        Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+//
+//        Object ubicacion = new Object(),
+//                miUnidad = unidad;
+//
+//        Nodo aux = new Nodo(ubicacion);
+//
+//        while (aux != null) {
+//            ret.valorString = (aux.getDato().toString());
+//            aux = aux.siguiente;
+//        }
+//
+//        return ret;
+//
+//    }
 
 //    Estos metodos supongo que ya lo estoy aplicando en una unidad/Carpeta/mensaje
     
