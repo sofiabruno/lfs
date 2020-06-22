@@ -10,7 +10,7 @@ public class ObligatorioM2020 {
     }
 
     public static void prueba1(Sistema s, Prueba p) {
-        
+
         // FUNCIONALIDAD DEL SISTEMA -------------------------------------------------------------------------------------------------------------------------
         //      CREAR SISTEMA DE MENSAJES
         p.ver(s.crearSistemaMensajes().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Se crea sistema de mensajes");
@@ -20,14 +20,14 @@ public class ObligatorioM2020 {
         //      AGREGAR CARPETA A LA ESTRUCTURA DE CARPETAS     
         //      Agregar carpetas 
         p.ver(s.AgregarCarpeta("C", "Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Archivos en unidad C: " + s.AgregarCarpeta("C", "Archivos").valorString);
-        p.ver(s.AgregarCarpeta("C", "Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Archivos en unidad C: " + s.AgregarCarpeta("C", "Archivos").valorString);
-        p.ver(s.AgregarCarpeta("C", "Documentos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Documentos en unidad C: " + s.AgregarCarpeta("C", "Documentos").valorString);
-        p.ver(s.AgregarCarpeta("C", "Mensajes").resultado, Retorno.Resultado.OK, "Se creo la carpeta Mensajes en unidad C: " + s.AgregarCarpeta("C", "Mensajes").valorString);
-        p.ver(s.AgregarCarpeta("C", "Otros Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Otros Archivos en unidad C: " + s.AgregarCarpeta("C", "Otros Archivos").valorString);
-        //      Listamos par ver si la estructura es correcta
-        //p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los documentos de la carpeta Archivos");
-        p.ver(s.ListarEstructuraUnidad("C").resultado, Retorno.Resultado.OK, "Se listan las carpetas de la unidad c: " + s.ListarEstructuraUnidad("C").valorString);
-        
+////        p.ver(s.AgregarCarpeta("C", "Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Archivos en unidad C: " + s.AgregarCarpeta("C", "Archivos").valorString);
+//        p.ver(s.AgregarCarpeta("C", "Documentos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Documentos en unidad C: " + s.AgregarCarpeta("C", "Documentos").valorString);
+//        p.ver(s.AgregarCarpeta("C", "Mensajes").resultado, Retorno.Resultado.OK, "Se creo la carpeta Mensajes en unidad C: " + s.AgregarCarpeta("C", "Mensajes").valorString);
+//        p.ver(s.AgregarCarpeta("C", "Otros Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Otros Archivos en unidad C: " + s.AgregarCarpeta("C", "Otros Archivos").valorString);
+//        //      Listamos par ver si la estructura es correcta
+//        //p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los documentos de la carpeta Archivos");
+//        p.ver(s.ListarEstructuraUnidad("C").resultado, Retorno.Resultado.OK, "Se listan las carpetas de la unidad c: " + s.ListarEstructuraUnidad("C").valorString);
+//        
         //System.out.println("Prueba agregar carpeta " + s.AgregarCarpeta("C", "Prueba").valorString);
 
 //        //      ELIMINAR CARPETA DE LA ESTRUCTURA DE CARPETAS
@@ -67,9 +67,6 @@ public class ObligatorioM2020 {
 //        NodoCarpeta mensaje = (NodoCarpeta) s.unidad.getListaCarpeta().obtenerElemento("Archivos").getListamensaje().obtenerElemento("mensaje1");
 //        
 //
-
-        
-        
 //        // OPERACIONES RELATIVAS A LAS LINEAS ----------------------------------------------------------------------------------------------------------------
 //        //      INSERTA UNA NUEVA LINEA VACIA AL FINAL DEL TEXTO
 //        //      Insertamos dos linea vacia
@@ -269,12 +266,9 @@ public class ObligatorioM2020 {
 //        //      Linea
 //        //      Palabra
 //        //      Diccionario
-        
-        
         // FUNCIONALIDAD DEL SISTEMA -------------------------------------------------------------------------------------------------------------------------
         //      DESTRUIR SISTEMA DE MENSAJES
-        p.ver(s.destruirSistemaMensajes().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Se destruye sistema");
-
+//        p.ver(s.destruirSistemaMensajes().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Se destruye sistema");
         p.imprimirResultadosPrueba();
 
     }

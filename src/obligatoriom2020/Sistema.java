@@ -50,16 +50,16 @@ public class Sistema implements ISistema {
     @Override
     public Retorno crearSistemaMensajes() {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
-//        sofi
+       
         listaUnidades = new ListaUnidad();
-        this.unidad = new NodoUnidad("C");
-        listaUnidades.agregarFinal(unidad);
-
+        NodoUnidad uni = new NodoUnidad("C");              
+        listaUnidades.agregarInicio(uni);
+        
         diccionario = new ListaPalabra();
-//
+
         CargarDistancias(Ciudades);
-        listacarpeta = new ListaCarpeta();
-        listamensaje = new ListaMensaje();
+//        listacarpeta = new ListaCarpeta();
+//        listamensaje = new ListaMensaje();
 
         return ret;
 
@@ -68,12 +68,8 @@ public class Sistema implements ISistema {
     @Override
     public Retorno destruirSistemaMensajes() {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
-//        sofi
-        listaUnidades = null;
 
-//
-        listacarpeta = null;
-        listamensaje = null;
+        listaUnidades = null;
 
         return ret;
 
@@ -89,21 +85,21 @@ public class Sistema implements ISistema {
                 uni.listaCarpeta.agregarFinal(carpeta);
                 ret.valorString = "Se agrego la carpeta +" + carpeta + "a la unidad " + unidad;
             } else {
-                ret.resultado = Retorno.Resultado.ERROR;
-//                 ret.valorString = "La carpeta +" + carpeta + "ya existe en la unidad " + unidad;
+//                ret.resultado = Retorno.Resultado.ERROR;
+                 ret.valorString = "La carpeta +" + carpeta + "ya existe en la unidad " + unidad;
             }
         } else {
-            ret.resultado = Retorno.Resultado.ERROR;
-//                 ret.valorString = "No existe la unidad";
+//            ret.resultado = Retorno.Resultado.ERROR;
+                 ret.valorString = "No existe la unidad";
 
         }
 //        fin sofi
 
-        ret.valorString = "No se pudo agregar la carpeta" + carpeta + "porque ya exuste";
-        if (!this.unidad.getListaCarpeta().buscarelemento(carpeta)) {
-            this.unidad.getListaCarpeta().agregarOrd(carpeta);
-            ret.valorString = "se agregó la carpeta " + carpeta;
-        }
+//        ret.valorString = "No se pudo agregar la carpeta" + carpeta + "porque ya exuste";
+//        if (!this.unidad.getListaCarpeta().buscarelemento(carpeta)) {
+//            this.unidad.getListaCarpeta().agregarOrd(carpeta);
+//            ret.valorString = "se agregó la carpeta " + carpeta;
+//        }
 
         return ret;
 
@@ -258,6 +254,7 @@ public class Sistema implements ISistema {
     @Override
     public Retorno InsertarPalabraEnLinea(int posicionLinea, int posicionPalabra, String palabraAIngresar) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+               
         return ret;
 
     }
@@ -265,6 +262,9 @@ public class Sistema implements ISistema {
     @Override
     public Retorno InsertarPalabraYDesplazar(int posicionLinea, int posicionPalabra, String palabraAIngresar) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+        
+        
+        
         return ret;
 
     }

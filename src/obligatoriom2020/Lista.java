@@ -2,34 +2,34 @@ package obligatoriom2020;
 
 public class Lista implements ILista {
 
-    private Nodo inicio;
-    private Nodo fin;
+    private Nodo Primero;
+    private Nodo Ultimo;
+
+    public Nodo getPrimero() {
+        return Primero;
+    }
+
+    public void setPrimero(Nodo Primero) {
+        this.Primero = Primero;
+    }
+
+    public Nodo getUltimo() {
+        return Ultimo;
+    }
+
+    public void setUltimo(Nodo Ultimo) {
+        this.Ultimo = Ultimo;
+    }
     private int cantelementos;
 
     //Constructor
     public void Lista() {
-        this.inicio = null;
-        this.fin = null;
+        this.Primero = null;
+        this.Ultimo = null;
         this.cantelementos = 0;
     }
 
-    //Inicio
-    public void setInicio(Nodo i) {
-        inicio = i;
-    }
-
-    public Nodo getInicio() {
-        return inicio;
-    }
-
-    //Fin
-    public void setFin(Nodo f) {
-        fin = f;
-    }
-
-    public Nodo getFin() {
-        return fin;
-    }
+  
 
     public int getCantelementos() {
         return cantelementos;
@@ -46,7 +46,7 @@ public class Lista implements ILista {
     //POS: Retorna true si la lista no tiene nodos
     @Override
     public boolean esVacia() {
-        return (this.inicio == null);
+        return (this.Primero == null);
     }
 
     //PRE: 
@@ -54,11 +54,11 @@ public class Lista implements ILista {
     @Override
     public void agregarInicio(Object dato) {
         Nodo nuevo = new Nodo(dato);
-        nuevo.setSiguiente(inicio);
-        this.inicio = nuevo;
-        if (this.fin == null)//estoy insertando el primer nodo
+        nuevo.setSiguiente(Primero);
+        this.Primero = nuevo;
+        if (this.Ultimo == null)//estoy insertando el primer nodo
         {
-            this.fin = nuevo;
+            this.Ultimo = nuevo;
         }
 
         this.cantelementos = this.cantelementos + 1;
@@ -69,7 +69,7 @@ public class Lista implements ILista {
     @Override
     public void borrarInicio() {
         if (!this.esVacia()) {
-            this.inicio = this.inicio.getSiguiente();
+            this.Primero = this.Primero.getSiguiente();
             this.cantelementos = this.cantelementos - 1;
         }
     }
@@ -78,8 +78,8 @@ public class Lista implements ILista {
 
     @Override
     public void vaciar() {
-        this.inicio = null;
-        this.fin = null;
+        this.Primero = null;
+        this.Ultimo = null;
         this.cantelementos = 0;
     }
 
@@ -90,7 +90,7 @@ public class Lista implements ILista {
         if (this.esVacia()) {
             System.out.println("Lista es vacía");
         } else {
-            Nodo aux = this.inicio;
+            Nodo aux = this.Primero;
             while (aux != null) {
                 System.out.println(aux.getDato());
                 aux = aux.getSiguiente();
@@ -100,16 +100,16 @@ public class Lista implements ILista {
 
     /*Variantes agregadas a los metodos basicos.*/
     //PRE:
-    //POS: Agrega un nuevo Nodo al final de la lista
+    //POS: Agrega un nuevo Nodo al Ultimoal de la lista
     @Override
     public void agregarFinal(Object dato) {
         //NodoLista nuevo= new NodoLista(n);
         if (this.esVacia()) {
-            this.agregarInicio(dato); // el agregar inicio suma 1 a cantelementos
+            this.agregarInicio(dato); // el agregar Primero suma 1 a cantelementos
         } else {
             Nodo nuevo = new Nodo(dato);
-            fin.setSiguiente(nuevo);
-            fin = nuevo;
+            Ultimo.setSiguiente(nuevo);
+            Ultimo = nuevo;
             this.cantelementos = this.cantelementos + 1;
         }
 
@@ -120,15 +120,15 @@ public class Lista implements ILista {
     @Override
     public void borrarFin() {
         if (!this.esVacia()) {
-            if (this.inicio == this.fin) {
+            if (this.Primero == this.Ultimo) {
                 this.borrarInicio();  // actualiza canelementos
             } else {
-                Nodo aux = this.inicio;
+                Nodo aux = this.Primero;
                 while (aux.getSiguiente().getSiguiente() != null) {
                     aux = aux.getSiguiente();
                 }
-                this.fin = aux;
-                this.fin.setSiguiente(null);
+                this.Ultimo = aux;
+                this.Ultimo.setSiguiente(null);
                 this.cantelementos = this.cantelementos - 1;
             }
         }
@@ -139,14 +139,14 @@ public class Lista implements ILista {
     @Override
     public void agregarOrd(Object dato) {
         Nodo n = new Nodo(dato);
-        if (this.esVacia() || this.inicio.getDato().toString().compareToIgnoreCase(n.getDato().toString()) > 0) {
+        if (this.esVacia() || this.Primero.getDato().toString().compareToIgnoreCase(n.getDato().toString()) > 0) {
             // A.compareToIgnoreCase(B) - Si A > B entonces el valor retorno es +1, siendo B el dato nuevo a ingresar  
             this.agregarInicio(n);
-        } else if (this.fin.getDato().toString().compareToIgnoreCase(n.getDato().toString()) < 0) {
+        } else if (this.Ultimo.getDato().toString().compareToIgnoreCase(n.getDato().toString()) < 0) {
             // A.compareToIgnoreCase(B) - Si A < B entonces el valor retorno es -1, siendo B el dato nuevo a ingresar
             this.agregarFinal(n);
         } else {
-            Nodo aux = this.inicio;
+            Nodo aux = this.Primero;
             while (aux.getSiguiente() != null && aux.getSiguiente().getDato().toString().compareToIgnoreCase(n.getDato().toString()) < 0) {
                 aux.getSiguiente();
             }
@@ -160,8 +160,8 @@ public class Lista implements ILista {
     public void borrarElemento(Object dato) {
         // implementar el metodo
 
-        if (this.inicio != null) {
-            Nodo aux = this.inicio;
+        if (this.Primero != null) {
+            Nodo aux = this.Primero;
 
             while (aux != null) {
                 if (aux.getDato().equals(dato)) {
@@ -191,13 +191,15 @@ public class Lista implements ILista {
     //PRE: //POS:
     @Override
     public Nodo obtenerElemento(Object dato) {
-        Nodo aux = this.inicio;
-        while (aux != null && aux.getDato() != dato) {
+        Nodo aux = this.Primero;
+        while (aux != null && aux.getDato() !=  dato) {
             aux = aux.getSiguiente();
         }
-        //encontrÃ© dato o lleguÃ© al final
+        //encontrÃ© dato o lleguÃ© al Ultimoal
         return aux;
     }
+    
+  
 
     /**
      * *** para resolver en forma recursiva Métodos RECURSIVOS
