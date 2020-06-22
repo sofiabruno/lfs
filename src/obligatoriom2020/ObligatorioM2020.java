@@ -50,7 +50,7 @@ public class ObligatorioM2020 {
         p.ver(s.AgregarMensaje("C", "Archivos", "mensaje4").resultado, Retorno.Resultado.OK, "Se agrega mensaje4 en carpeta Archivos");
         p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los mensajes de la unidad C: " + s.ListarEstructura("C", "Archivos").valorString);
 
-        //para q falle el agregar
+        //para q falle el agregar mensaje
         //agregar mensaje a una carpeta q no existe
         p.ver(s.AgregarMensaje("C", "Fotitos", "mensaje4").resultado, Retorno.Resultado.OK, "Se intenta agregar mensaje4 en carpeta Fotitos " + s.AgregarMensaje("C", "Fotitos", "mensaje4").valorString);
         //el mensaje ya existe
@@ -61,6 +61,13 @@ public class ObligatorioM2020 {
         p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los mensajes de la unidad C: " + s.ListarEstructura("C", "Archivos").valorString);
         p.ver(s.EliminarMensaje("C", "Archivos", "mensaje1").resultado, Retorno.Resultado.OK, "Se elimina el mensaje1 de la carpeta Archivos");
         p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los mensajes de la unidad C: " + s.ListarEstructura("C", "Archivos").valorString);
+
+        //para que falle eliminar mensaje
+        //eliminar mensaje mensaje a una carpeta q no existe
+        p.ver(s.EliminarMensaje("C", "Fotitos", "mensaje3").resultado, Retorno.Resultado.OK, "Se intenta eliminar mensaje3 en carpeta Fotitos " + s.EliminarMensaje("C", "Fotitos", "mensaje3").valorString);
+        //no existe el mensaje que se desea eliminar
+        p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los mensajes de la unidad C: " + s.ListarEstructura("C", "Archivos").valorString);
+        p.ver(s.EliminarMensaje("C", "Archivos", "mensaje4").resultado, Retorno.Resultado.OK, "Se intenta eliminar mensaje4 en carpeta Archivos " + s.EliminarMensaje("C", "Archivos", "mensaje4").valorString);
 
 //        p.ver(s.AgregarCarpeta("C", "Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Archivos en unidad C: " + s.AgregarCarpeta("C", "Archivos").valorString);
 ////      p.ver(s.AgregarCarpeta("C", "Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Archivos en unidad C: " + s.AgregarCarpeta("C", "Archivos").valorString);
