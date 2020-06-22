@@ -15,7 +15,6 @@ public class ObligatorioM2020 {
         //      CREAR SISTEMA DE MENSAJES
         p.ver(s.crearSistemaMensajes().resultado, Retorno.Resultado.OK, "Se crea sistema de mensajes");
 
-         
         // OPERACIONES RELATIVAS A LA ESTRUCTURA -------------------------------------------------------------------------------------------------------------
         //      AGREGAR CARPETA A LA ESTRUCTURA DE CARPETAS     
         //      Agregar carpetas 
@@ -27,16 +26,18 @@ public class ObligatorioM2020 {
         p.ver(s.AgregarCarpeta("C", "Docs").resultado, Retorno.Resultado.ERROR, "Intentar crear Docs en unidad C " + s.AgregarCarpeta("C", "Docs").valorString);
 //      Para que falle xq no existe la unidad
         p.ver(s.AgregarCarpeta("D", "Fotos").resultado, Retorno.Resultado.ERROR, "Intentar crear Fotos en unidad D " + s.AgregarCarpeta("D", "Fotos").valorString);
-        
-        
+
         p.ver(s.AgregarCarpeta("C", "Otros Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Otros Archivos en unidad C");
         p.ver(s.ListarEstructuraUnidad("C").resultado, Retorno.Resultado.OK, "Se listan las carpetas de la unidad c: " + s.ListarEstructuraUnidad("C").valorString);
 
         p.ver(s.EliminarCarpeta("C", "Descargas").resultado, Retorno.Resultado.OK, "Se eliminó la carpeta Descargas de la unidad C");
         p.ver(s.ListarEstructuraUnidad("C").resultado, Retorno.Resultado.OK, "Se listan las carpetas de la unidad c: " + s.ListarEstructuraUnidad("C").valorString);
 
+//      eliminar carpeta que no existe
+        p.ver(s.EliminarCarpeta("C", "Fotos").resultado, Retorno.Resultado.ERROR, "Intentar eliminar Fotos en unidad C " + s.EliminarCarpeta("C", "Fotos").valorString);
+//        eliminar carpeta de una unidad que no existe
+        p.ver(s.EliminarCarpeta("D", "Fotos").resultado, Retorno.Resultado.ERROR, "Intentar eliminar Fotos en unidad D " + s.EliminarCarpeta("D", "Fotos").valorString);
 
-//      
 //        p.ver(s.AgregarCarpeta("C", "Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Archivos en unidad C: " + s.AgregarCarpeta("C", "Archivos").valorString);
 ////      p.ver(s.AgregarCarpeta("C", "Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Archivos en unidad C: " + s.AgregarCarpeta("C", "Archivos").valorString);
 //        p.ver(s.AgregarCarpeta("C", "Documentos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Documentos en unidad C: " + s.AgregarCarpeta("C", "Documentos").valorString);
@@ -44,7 +45,6 @@ public class ObligatorioM2020 {
 //        p.ver(s.AgregarCarpeta("C", "Otros Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Otros Archivos en unidad C: " + s.AgregarCarpeta("C", "Otros Archivos").valorString);
 //        //      Listamos par ver si la estructura es correcta
 //        //p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los documentos de la carpeta Archivos");
-
         //System.out.println("Prueba agregar carpeta " + s.AgregarCarpeta("C", "Prueba").valorString);
 //        //      ELIMINAR CARPETA DE LA ESTRUCTURA DE CARPETAS
 //        //      Agregamos una nueva carpeta y posteriormente la elimino

@@ -86,7 +86,7 @@ public class Sistema implements ISistema {
             }
         } else {
 //            ret.resultado = Retorno.Resultado.ERROR;
-            ret.valorString = "No existe la unidad " + unidad ;
+            ret.valorString = "No existe la unidad " + unidad;
 
         }
 
@@ -96,12 +96,21 @@ public class Sistema implements ISistema {
 
     @Override
     public Retorno EliminarCarpeta(String unidad, String carpeta) {
-        Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+        Retorno ret = new Retorno(Retorno.Resultado.OK);
         NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
         if (uni != null) {
             if (uni.listaCarpeta.buscarelemento(carpeta)) {
                 uni.listaCarpeta.borrarElemento(carpeta);
+                ret.valorString = "Se eliminó la carpeta +" + carpeta + "de la unidad " + unidad;
+
+            } else {
+//                no existe la carpeta en la unidad 
+                ret.valorString = " La carpeta " + carpeta + " NO existe en la unidad " + unidad;
+
             }
+        } else {
+//            la unidad esta vacia o no existe
+            ret.valorString = "No existe la unidad " + unidad;
         }
         return ret;
 
