@@ -66,7 +66,7 @@ public class ListaUnidad implements ILista {
     public void vaciar() {
         this.Primero = null;
         this.Ultimo = null;
-        this.cantelementos = 0;
+//        this.cantelementos = 0;
     }
 
     //PRE:
@@ -76,7 +76,7 @@ public class ListaUnidad implements ILista {
         if (this.esVacia()) {
             System.out.println("Lista es vacía");
         } else {
-            Nodo aux = this.Primero;
+            NodoUnidad aux = this.Primero;
             while (aux != null) {
                 System.out.println(aux.getDato());
                 aux = aux.getSiguiente();
@@ -93,10 +93,10 @@ public class ListaUnidad implements ILista {
         if (this.esVacia()) {
             this.agregarInicio(dato); // el agregar Primero suma 1 a cantelementos
         } else {
-            Nodo nuevo = new Nodo(dato);
+            NodoUnidad nuevo = new NodoUnidad(dato);
             Ultimo.setSiguiente(nuevo);
             Ultimo = nuevo;
-            this.cantelementos = this.cantelementos + 1;
+//            this.cantelementos = this.cantelementos + 1;
         }
 
     }
@@ -109,13 +109,13 @@ public class ListaUnidad implements ILista {
             if (this.Primero == this.Ultimo) {
                 this.borrarInicio();  // actualiza canelementos
             } else {
-                Nodo aux = this.Primero;
+                NodoUnidad aux = this.Primero;
                 while (aux.getSiguiente().getSiguiente() != null) {
                     aux = aux.getSiguiente();
                 }
                 this.Ultimo = aux;
                 this.Ultimo.setSiguiente(null);
-                this.cantelementos = this.cantelementos - 1;
+//                this.cantelementos = this.cantelementos - 1;
             }
         }
     }
@@ -124,7 +124,7 @@ public class ListaUnidad implements ILista {
     //POS: inserta nuevo elemento en orden ascendente
     @Override
     public void agregarOrd(Object dato) {
-        Nodo n = new Nodo(dato);
+        NodoUnidad n = new NodoUnidad(dato);
         if (this.esVacia() || this.Primero.getDato().toString().compareToIgnoreCase(n.getDato().toString()) > 0) {
             // A.compareToIgnoreCase(B) - Si A > B entonces el valor retorno es +1, siendo B el dato nuevo a ingresar  
             this.agregarInicio(n);
@@ -132,7 +132,7 @@ public class ListaUnidad implements ILista {
             // A.compareToIgnoreCase(B) - Si A < B entonces el valor retorno es -1, siendo B el dato nuevo a ingresar
             this.agregarFinal(n);
         } else {
-            Nodo aux = this.Primero;
+            NodoUnidad aux = this.Primero;
             while (aux.getSiguiente() != null && aux.getSiguiente().getDato().toString().compareToIgnoreCase(n.getDato().toString()) < 0) {
                 aux.getSiguiente();
             }
@@ -147,7 +147,7 @@ public class ListaUnidad implements ILista {
         // implementar el metodo
 
         if (this.Primero != null) {
-            Nodo aux = this.Primero;
+            NodoUnidad aux = this.Primero;
 
             while (aux != null) {
                 if (aux.getDato().equals(dato)) {
@@ -157,7 +157,7 @@ public class ListaUnidad implements ILista {
                         aux = aux.getSiguiente();
                     }
                     if (aux.getSiguiente() != null) {
-                        Nodo borrar = aux.getSiguiente();
+                        NodoUnidad borrar = aux.getSiguiente();
                         aux.setSiguiente(borrar.getSiguiente());
                         borrar.setSiguiente(null);
                     }
@@ -169,19 +169,19 @@ public class ListaUnidad implements ILista {
 
     //PRE: 
     //POS: Retorna la cantidad de nodos que tiene la lista
-    public int cantElementos() {
-        return this.cantelementos;
-    }
+//    public int cantElementos() {
+//        return this.cantelementos;
+//    }
 
     //PRE: //POS:
     //PRE: //POS:
-    @Override
-    public Nodo obtenerElemento(Object dato) {
-        Nodo aux = this.Primero;
+  
+    public NodoUnidad obtenerElemento(Object dato) {
+        NodoUnidad aux = this.Primero;
         while (aux != null && aux.getDato() !=  dato) {
             aux = aux.getSiguiente();
         }
-        //encontrÃ© dato o lleguÃ© al Ultimoal
+        //encontre dato o llegue al Ultimoal
         return aux;
     }
     

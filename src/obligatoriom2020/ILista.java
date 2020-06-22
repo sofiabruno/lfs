@@ -11,6 +11,6 @@ interface ILista {
     public void vaciar();
     public void mostrar();
     public void agregarOrd(Object dato);
-    public Nodo obtenerElemento(Object dato);
+    //public Nodo obtenerElemento(Object dato);
     
 }
