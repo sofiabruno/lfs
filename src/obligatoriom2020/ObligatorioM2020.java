@@ -123,6 +123,8 @@ public class ObligatorioM2020 {
    
         p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje2", 1, 1,"Palabra1").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
         p.ver(s.ImprimirTexto("C", "Archivos", "mensaje2").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
+        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje2", 1, 2,"Palabra2").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+        p.ver(s.ImprimirTexto("C", "Archivos", "mensaje2").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
 
 
 
