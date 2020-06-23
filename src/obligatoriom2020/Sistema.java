@@ -362,9 +362,13 @@ public class Sistema implements ISistema {
             if (posicionPalabra >= 1) {
 //                si la posicion de la palabra es valida
                 if (lineAux.listaPalabras.cantelementos < MAX_CANT_PALABRAS_X_LINEA) {
-                    lineAux.listaPalabras.agregarPalabraPorPosicion(posicionPalabra, palabraAIngresar);
-                    ret.resultado = Retorno.Resultado.OK;
-
+                    if (posicionPalabra <= MAX_CANT_PALABRAS_X_LINEA + 1) {
+                        lineAux.listaPalabras.agregarPalabraPorPosicion(posicionPalabra, palabraAIngresar);
+                        ret.resultado = Retorno.Resultado.OK;
+                    } else {
+                        ret.resultado = Retorno.Resultado.ERROR;
+                        ret.valorString = "La posicion de la palabra no puede mayor que el limite de palabras";
+                    }
                 } else {
                     //la linea ya tiene un maximo de palabras entonces no se puede insertar
                     ret.resultado = Retorno.Resultado.ERROR;
