@@ -223,7 +223,8 @@ public class Sistema implements ISistema {
 
     @Override
 
-//Inserta una línea vacía en la posición indicada y mueve todas las líneas que se encuentran a
+//Inserta una línea vacía en la posición indicada y 
+//   mueve todas las líneas que se encuentran a
 // partir de la posición indicada, una posición más adelante.
 //La posición es válida solamente si (posicionLinea >= 1) y 
 //(posicionLinea <= cantidad de líneas + 1)
@@ -234,7 +235,9 @@ public class Sistema implements ISistema {
         NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
         NodoMensaje mensAux = (NodoMensaje) carpe.listamensaje.obtenerElemento(mensaje);
         int cantLineas = mensAux.listaLineas.cantelementos;
-        if (posicionLinea >= 1 && posicionLinea <= cantLineas) {
+        if (posicionLinea >= 1 && posicionLinea <= cantLineas + 1) {
+            mensAux.listaLineas.agregarLineaPorPosicion(posicionLinea);
+            ret.resultado = Retorno.Resultado.OK;
 
         } else {
             ret.resultado = Retorno.Resultado.ERROR;
@@ -361,7 +364,7 @@ public class Sistema implements ISistema {
             //si la posicion en la linea existe
             if (posicionPalabra >= 1) {
 //                si la posicion de la palabra es valida
-                if (lineAux.listaPalabras.cantelementos < MAX_CANT_PALABRAS_X_LINEA) {                    
+                if (lineAux.listaPalabras.cantelementos < MAX_CANT_PALABRAS_X_LINEA) {
 //                    (posicionPalabra <=cantidad de palabras en la línea + 1).
                     if (posicionPalabra <= lineAux.listaPalabras.cantelementos + 1) {
                         lineAux.listaPalabras.agregarPalabraPorPosicion(posicionPalabra, palabraAIngresar);

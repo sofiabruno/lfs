@@ -218,4 +218,32 @@ public class ListaLinea implements ILista {
         }
 
     }
+    
+     public void agregarLineaPorPosicion(int posicion) {
+        //no controlo q la posicion sea 0 porque eso hace sistema 
+        NodoLinea nuevaLinea = new NodoLinea("");
+
+        if (this.Primero == null) {
+            this.Primero = nuevaLinea;
+            this.cantelementos = this.cantelementos + 1;
+
+        } else {
+            //ahora voy a recorrer la lista desde el principio
+            NodoLinea actual = this.Primero;
+            NodoLinea previo = null;
+
+            int i = 0;
+            while (i < posicion ) {
+                previo = actual;
+                actual = actual.siguiente;
+                if (actual == null) {
+                    break;
+                }
+                i++;
+            }
+            nuevaLinea.siguiente = actual;
+            previo.siguiente = nuevaLinea;
+            this.cantelementos = this.cantelementos + 1;
+        }
+    }
 }

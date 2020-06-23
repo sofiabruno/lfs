@@ -229,7 +229,7 @@ public class ListaPalabra implements ILista {
             NodoPalabra previo = null;
 
             int i = 0;
-            while (i < posicion - 1) {
+            while (i < posicion) {
                 previo = actual;
                 actual = actual.siguiente;
                 if (actual == null) {
