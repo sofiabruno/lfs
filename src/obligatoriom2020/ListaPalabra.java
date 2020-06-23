@@ -216,7 +216,7 @@ public class ListaPalabra implements ILista {
     }
 
     public void agregarPalabraPorPosicion(int posicion, String Palabra) {
-
+        //no controlo q la posicion sea 0 porque eso hace sistema 
         NodoPalabra nuevaPalabra = new NodoPalabra(Palabra);
 
         if (this.Primero == null) {
