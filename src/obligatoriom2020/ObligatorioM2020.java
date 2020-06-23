@@ -4,7 +4,7 @@ public class ObligatorioM2020 {
 
     public static void main(String[] args) {
         // TODO code application logic here
-        Sistema s = new Sistema(10);
+        Sistema s = new Sistema(3);
         Prueba p = new Prueba();
         prueba1(s, p);
     }
@@ -119,7 +119,7 @@ public class ObligatorioM2020 {
 //        //      Insertamos dos linea vacia
         p.ver(s.InsertarLinea("C", "Archivos", "mensaje2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");
         p.ver(s.InsertarLinea("C", "Archivos", "mensaje2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");
-        p.ver(s.ImprimirTexto("C", "Archivos", "mensaje2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Texto impreso correctamente");
+        p.ver(s.ImprimirTexto("C", "Archivos", "mensaje2").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
 //        
 //        //      INSERTA UNA NUEVA LINEA VACIA EN LA POSICION INDICADA
 //        //      Insertamos una nueva linea vacia en posicion 1 y la linea que contiene "Palabra 1" se mueve a la posicion 2

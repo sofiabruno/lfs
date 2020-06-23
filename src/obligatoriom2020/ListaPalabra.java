@@ -4,6 +4,7 @@ public class ListaPalabra implements ILista {
 
     NodoPalabra Primero;
     NodoPalabra Ultimo;
+    public int cantelementos;
 
     public NodoPalabra getPrimero() {
         return Primero;
@@ -24,6 +25,8 @@ public class ListaPalabra implements ILista {
     public ListaPalabra() {
         this.Primero = null;
         this.Ultimo = null;
+        this.cantelementos = 0;
+
     }
 
 //    Metodos
@@ -44,7 +47,7 @@ public class ListaPalabra implements ILista {
             this.Ultimo = nuevo;
         }
 
-//        this.cantelementos = this.cantelementos + 1;
+        this.cantelementos = this.cantelementos + 1;
     }
 
     //PRE:
@@ -53,7 +56,7 @@ public class ListaPalabra implements ILista {
     public void borrarInicio() {
         if (!this.esVacia()) {
             this.Primero = this.Primero.getSiguiente();
-//            this.cantelementos = this.cantelementos - 1;
+            this.cantelementos = this.cantelementos - 1;
         }
     }
     //PRE:
@@ -63,7 +66,7 @@ public class ListaPalabra implements ILista {
     public void vaciar() {
         this.Primero = null;
         this.Ultimo = null;
-//        this.cantelementos = 0;
+        this.cantelementos = 0;
     }
 
     //PRE:
@@ -84,11 +87,11 @@ public class ListaPalabra implements ILista {
     public String mostrarPalabras() {
         String salida = "";
         if (this.esVacia()) {
-            salida= "";
+            salida = "";
         } else {
             NodoPalabra aux = this.Primero;
             while (aux != null) {
-                salida+= " " + aux.getDato();                
+                salida += " " + aux.getDato();
                 aux = aux.getSiguiente();
             }
         }
@@ -107,7 +110,7 @@ public class ListaPalabra implements ILista {
             NodoPalabra nuevo = new NodoPalabra(dato);
             Ultimo.setSiguiente(nuevo);
             Ultimo = nuevo;
-//            this.cantelementos = this.cantelementos + 1;
+            this.cantelementos = this.cantelementos + 1;
         }
 
     }
@@ -126,7 +129,7 @@ public class ListaPalabra implements ILista {
                 }
                 this.Ultimo = aux;
                 this.Ultimo.setSiguiente(null);
-//                this.cantelementos = this.cantelementos - 1;
+                this.cantelementos = this.cantelementos - 1;
             }
         }
     }
@@ -175,6 +178,8 @@ public class ListaPalabra implements ILista {
                 }
                 aux = aux.getSiguiente();
             }
+
+//            ojo q debe actualizar cant elementos
         }
     }
 
@@ -207,6 +212,28 @@ public class ListaPalabra implements ILista {
             mostrarREC(l.getSiguiente());
 
         }
+    }
+
+    public void agregarPalabraPorPosicion(int posicion, String Palabra) {
+
+        NodoPalabra nuevaPalabra = new NodoPalabra(Palabra);
+
+        if (this.Primero == null) {
+            this.Primero = nuevaPalabra;
+        }
+        
+        //ahora voy a recorrer la lista desde el principio
+        NodoPalabra actual = this.Primero;
+        
+
+        int i = 0;
+        while (i < posicion -1 ) {
+          actual = actual.siguiente;
+          i++;
+        }
+        nuevaPalabra.siguiente = actual.siguiente;
+        actual.siguiente = nuevaPalabra;
+    
     }
 
 }

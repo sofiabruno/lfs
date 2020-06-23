@@ -320,25 +320,28 @@ public class Sistema implements ISistema {
 //Se debe imprimir el número de línea, para cada línea
 //Cuando el texto no tiene líneas se debe mostrar el mensaje "Texto vacio".
     public Retorno ImprimirTexto(String unidad, String carpeta, String mensaje) {
-        Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+        Retorno ret = new Retorno(Retorno.Resultado.OK);
 
         NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
         NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
         NodoMensaje mensAux = (NodoMensaje) carpe.listamensaje.obtenerElemento(mensaje);
 
         if (mensAux.listaLineas.cantelementos == 0) {
-            ret.resultado = Retorno.Resultado.ERROR;
-            ret.valorString = "Texto vacío";
+            ret.resultado = Retorno.Resultado.OK;
+//            ret.valorString = "Texto vacío";
+            System.out.println("Texto vacío");
+
         } else {
             NodoLinea aux = mensAux.listaLineas.Primero;
             int contador = 1;
             while (aux != null) {
                 System.out.println(contador + ": " + aux.listaPalabras.mostrarPalabras());
                 aux = aux.getSiguiente();
+                ret.resultado = Retorno.Resultado.OK;
 
             }
 
-        }       
+        }
         return ret;
 
     }
@@ -350,7 +353,33 @@ public class Sistema implements ISistema {
         NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
         NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
         NodoMensaje mensAux = (NodoMensaje) carpe.listamensaje.obtenerElemento(mensaje);
-        NodoLinea listAux = (NodoLinea) mensAux.listaLineas.buscarPorPosicion(posicionLinea);
+        NodoLinea lineAux = (NodoLinea) mensAux.listaLineas.buscarPorPosicion(posicionLinea);
+
+        if (lineAux != null) {
+            //si la posicion en la linea existe
+            if (posicionPalabra >= 1) {
+//                si la posicion de la palabra es valida
+                if (lineAux.listaPalabras.cantelementos < MAX_CANT_PALABRAS_X_LINEA) {
+                        
+                    
+                    
+                    
+                } else {
+                    //la linea ya tiene un maximo de palabras entonces no se puede insertar
+                    ret.resultado = Retorno.Resultado.ERROR;
+                    ret.valorString = "La línea a ingresar ya tiene su maximo de palabras";
+
+                }
+            } else {
+                ret.resultado = Retorno.Resultado.ERROR;
+                ret.valorString = "La posición de la palabra no existe";
+
+            }
+
+        } else {
+            ret.resultado = Retorno.Resultado.ERROR;
+            ret.valorString = "La posición de línea no existe en el mensaje";
+        }
 
         return ret;
 
