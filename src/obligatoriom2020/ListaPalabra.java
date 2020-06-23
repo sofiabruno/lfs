@@ -221,19 +221,19 @@ public class ListaPalabra implements ILista {
 
         if (this.Primero == null) {
             this.Primero = nuevaPalabra;
+        } else {
+            //ahora voy a recorrer la lista desde el principio
+            NodoPalabra actual = this.Primero;
+
+            int i = 0;
+            while (i < posicion - 1) {
+                actual = actual.siguiente;
+                i++;
+            }
+            nuevaPalabra.siguiente = actual.siguiente;
+            actual.siguiente = nuevaPalabra;
+            this.cantelementos = this.cantelementos + 1;
         }
-        
-        //ahora voy a recorrer la lista desde el principio
-        NodoPalabra actual = this.Primero;
-        
-        int i = 0;
-        while (i < posicion -1 ) {
-          actual = actual.siguiente;
-          i++;
-        }
-        nuevaPalabra.siguiente = actual.siguiente;
-        actual.siguiente = nuevaPalabra;
-        this.cantelementos = this.cantelementos + 1;
     }
 
 }
