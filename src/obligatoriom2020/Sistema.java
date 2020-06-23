@@ -327,7 +327,9 @@ public class Sistema implements ISistema {
         NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
         NodoMensaje mensAux = (NodoMensaje) carpe.listamensaje.obtenerElemento(mensaje);
 
-        mensAux.listaLineas.mostrar();
+        //mensAux.listaLineas.mostrar();
+        
+        mensAux.getListaLineas().mostrar();
 
         return ret;
 

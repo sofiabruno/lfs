@@ -117,9 +117,9 @@ public class ObligatorioM2020 {
 //        // OPERACIONES RELATIVAS A LAS LINEAS ----------------------------------------------------------------------------------------------------------------
 //        //      INSERTA UNA NUEVA LINEA VACIA AL FINAL DEL TEXTO
 //        //      Insertamos dos linea vacia
-//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");
-//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente";
-//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Texto impreso correctamente");
+        p.ver(s.InsertarLinea("C", "Archivos", "mensaje2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");
+        p.ver(s.InsertarLinea("C", "Archivos", "mensaje2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");
+        p.ver(s.ImprimirTexto("C", "Archivos", "mensaje2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Texto impreso correctamente");
 //        
 //        //      INSERTA UNA NUEVA LINEA VACIA EN LA POSICION INDICADA
 //        //      Insertamos una nueva linea vacia en posicion 1 y la linea que contiene "Palabra 1" se mueve a la posicion 2

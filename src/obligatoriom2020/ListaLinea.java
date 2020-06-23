@@ -76,9 +76,11 @@ public class ListaLinea implements ILista {
             System.out.println("Lista es vacía");
         } else {
             NodoLinea aux = this.Primero;
+            int contador = 1;
             while (aux != null) {
-                System.out.println(aux.getDato());
+                System.out.println(contador + ": " + aux.getDato());
                 aux = aux.getSiguiente();
+                contador ++;
             }
         }
     }
