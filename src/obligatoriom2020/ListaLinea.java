@@ -38,7 +38,7 @@ public class ListaLinea implements ILista {
     //POS: Agrega un nuevo Nodo al principio de la lista
     @Override
     public void agregarInicio(Object dato) {
-        NodoLinea nuevo = new NodoLinea(dato);
+        NodoLinea nuevo = (NodoLinea) dato;
         nuevo.setSiguiente(Primero);
         this.Primero = nuevo;
         if (this.Ultimo == null)//estoy insertando el primer nodo

@@ -93,6 +93,7 @@ public class ListaPalabra implements ILista {
             while (aux != null) {
                 salida += " " + aux.getDato();
                 aux = aux.getSiguiente();
+                //looop
             }
         }
         return salida;
@@ -232,7 +233,7 @@ public class ListaPalabra implements ILista {
         }
         nuevaPalabra.siguiente = actual.siguiente;
         actual.siguiente = nuevaPalabra;
-    
+        this.cantelementos = this.cantelementos + 1;
     }
 
 }
