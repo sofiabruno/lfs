@@ -232,7 +232,7 @@ public class ListaLinea implements ILista {
             NodoLinea actual = this.Primero;
             NodoLinea previo = null;
 
-            int i = 0;
+            int i = 1;
             while (i < posicion ) {
                 previo = actual;
                 actual = actual.siguiente;
@@ -241,9 +241,19 @@ public class ListaLinea implements ILista {
                 }
                 i++;
             }
-            nuevaLinea.siguiente = actual;
-            previo.siguiente = nuevaLinea;
-            this.cantelementos = this.cantelementos + 1;
+            //caso particular donde previo es null
+            if (previo == null) {
+                nuevaLinea.siguiente = this.Primero;
+                this.Primero = nuevaLinea;
+                this.cantelementos = this.cantelementos + 1;
+            }
+            else{
+                nuevaLinea.siguiente = actual;
+                previo.siguiente = nuevaLinea;
+                this.cantelementos = this.cantelementos + 1;
+            }
+                    
+            
         }
     }
 }
