@@ -204,7 +204,6 @@ public class Sistema implements ISistema {
 
     }
 
-//    Estos metodos supongo que ya lo estoy aplicando en una unidad/Carpeta/mensaje
     @Override
     //insertar una linea nueva vacia al final del texto
     public Retorno InsertarLinea(String unidad, String carpeta, String mensaje) {
@@ -327,10 +326,19 @@ public class Sistema implements ISistema {
         NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
         NodoMensaje mensAux = (NodoMensaje) carpe.listamensaje.obtenerElemento(mensaje);
 
-        //mensAux.listaLineas.mostrar();
-        
-        mensAux.getListaLineas().mostrar();
+        if (mensAux.listaLineas.cantelementos == 0) {
+            ret.resultado = Retorno.Resultado.ERROR;
+            ret.valorString = "Texto vacío";
+        } else {
+            NodoLinea aux = mensAux.listaLineas.Primero;
+            int contador = 1;
+            while (aux != null) {
+                System.out.println(contador + ": " + aux.listaPalabras.mostrarPalabras());
+                aux = aux.getSiguiente();
 
+            }
+
+        }       
         return ret;
 
     }

@@ -5,7 +5,6 @@ public class ListaPalabra implements ILista {
     NodoPalabra Primero;
     NodoPalabra Ultimo;
 
-   
     public NodoPalabra getPrimero() {
         return Primero;
     }
@@ -14,7 +13,6 @@ public class ListaPalabra implements ILista {
         this.Primero = Primero;
     }
 
-    
     public NodoPalabra getUltimo() {
         return Ultimo;
     }
@@ -29,8 +27,7 @@ public class ListaPalabra implements ILista {
     }
 
 //    Metodos
-    
-     @Override
+    @Override
     public boolean esVacia() {
         return (this.Primero == null);
     }
@@ -82,6 +79,20 @@ public class ListaPalabra implements ILista {
                 aux = aux.getSiguiente();
             }
         }
+    }
+
+    public String mostrarPalabras() {
+        String salida = "";
+        if (this.esVacia()) {
+            salida= "";
+        } else {
+            NodoPalabra aux = this.Primero;
+            while (aux != null) {
+                salida+= " " + aux.getDato();                
+                aux = aux.getSiguiente();
+            }
+        }
+        return salida;
     }
 
     /*Variantes agregadas a los metodos basicos.*/
@@ -172,20 +183,16 @@ public class ListaPalabra implements ILista {
 //    public int cantElementos() {
 //        return this.cantelementos;
 //    }
-
     //PRE: //POS:
     //PRE: //POS:
-  
     public NodoPalabra obtenerElemento(Object dato) {
         NodoPalabra aux = this.Primero;
-        while (aux != null && aux.getDato() !=  dato) {
+        while (aux != null && aux.getDato() != dato) {
             aux = aux.getSiguiente();
         }
         //encontre dato o llegue al Ultimoal
         return aux;
     }
-    
-  
 
     /**
      * *** para resolver en forma recursiva Métodos RECURSIVOS
@@ -201,7 +208,5 @@ public class ListaPalabra implements ILista {
 
         }
     }
-    
-    
-    
+
 }

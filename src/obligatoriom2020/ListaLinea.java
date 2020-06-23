@@ -78,7 +78,7 @@ public class ListaLinea implements ILista {
             NodoLinea aux = this.Primero;
             int contador = 1;
             while (aux != null) {
-                System.out.println(contador + ": " + aux.getDato());
+                System.out.println(contador + ": " + aux.getDato().toString());
                 aux = aux.getSiguiente();
                 contador ++;
             }
@@ -87,7 +87,7 @@ public class ListaLinea implements ILista {
 
     /*Variantes agregadas a los metodos basicos.*/
     //PRE:
-    //POS: Agrega un nuevo Nodo al Ultimoal de la lista
+    //POS: Agrega un nuevo Nodo al Ultimo de la lista
     @Override
     public void agregarFinal(Object dato) {
         if (this.esVacia()) {

@@ -5,7 +5,6 @@ public class ListaCarpeta implements ILista {
     NodoCarpeta Primero;
     NodoCarpeta Ultimo;
 
-   
     public NodoCarpeta getPrimero() {
         return Primero;
     }
@@ -14,7 +13,6 @@ public class ListaCarpeta implements ILista {
         this.Primero = Primero;
     }
 
-    
     public NodoCarpeta getUltimo() {
         return Ultimo;
     }
@@ -29,8 +27,7 @@ public class ListaCarpeta implements ILista {
     }
 
 //    Metodos
-    
-     @Override
+    @Override
     public boolean esVacia() {
         return (this.Primero == null);
     }
@@ -94,6 +91,7 @@ public class ListaCarpeta implements ILista {
             this.agregarInicio(dato); // el agregar Primero suma 1 a cantelementos
         } else {
             NodoCarpeta nuevo = new NodoCarpeta(dato);
+
             Ultimo.setSiguiente(nuevo);
             Ultimo = nuevo;
 //            this.cantelementos = this.cantelementos + 1;
@@ -172,20 +170,16 @@ public class ListaCarpeta implements ILista {
 //    public int cantElementos() {
 //        return this.cantelementos;
 //    }
-
     //PRE: //POS:
     //PRE: //POS:
-  
     public NodoCarpeta obtenerElemento(Object dato) {
         NodoCarpeta aux = this.Primero;
-        while (aux != null && aux.getDato() !=  dato) {
+        while (aux != null && aux.getDato() != dato) {
             aux = aux.getSiguiente();
         }
         //encontre dato o llegue al Ultimoal
         return aux;
     }
-    
-  
 
     /**
      * *** para resolver en forma recursiva Métodos RECURSIVOS
@@ -201,8 +195,8 @@ public class ListaCarpeta implements ILista {
 
         }
     }
-    
-      public boolean buscarelemento(Object dato) {
+
+    public boolean buscarelemento(Object dato) {
         NodoCarpeta aux = this.Primero;
         while (aux != null) {
             if (aux.getDato() == dato) {
@@ -213,5 +207,4 @@ public class ListaCarpeta implements ILista {
         return false;
     }
 
-    
 }
