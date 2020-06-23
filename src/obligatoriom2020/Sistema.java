@@ -361,8 +361,9 @@ public class Sistema implements ISistema {
             //si la posicion en la linea existe
             if (posicionPalabra >= 1) {
 //                si la posicion de la palabra es valida
-                if (lineAux.listaPalabras.cantelementos < MAX_CANT_PALABRAS_X_LINEA) {
-                    if (posicionPalabra <= MAX_CANT_PALABRAS_X_LINEA + 1) {
+                if (lineAux.listaPalabras.cantelementos < MAX_CANT_PALABRAS_X_LINEA) {                    
+//                    (posicionPalabra <=cantidad de palabras en la línea + 1).
+                    if (posicionPalabra <= lineAux.listaPalabras.cantelementos + 1) {
                         lineAux.listaPalabras.agregarPalabraPorPosicion(posicionPalabra, palabraAIngresar);
                         ret.resultado = Retorno.Resultado.OK;
                     } else {
