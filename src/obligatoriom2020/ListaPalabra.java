@@ -225,7 +225,6 @@ public class ListaPalabra implements ILista {
         //ahora voy a recorrer la lista desde el principio
         NodoPalabra actual = this.Primero;
         
-
         int i = 0;
         while (i < posicion -1 ) {
           actual = actual.siguiente;
