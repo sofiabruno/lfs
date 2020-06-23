@@ -336,8 +336,10 @@ public class Sistema implements ISistema {
             int contador = 1;
             while (aux != null) {
                 System.out.println(contador + ": " + aux.listaPalabras.mostrarPalabras());
-                aux = aux.getSiguiente();
+//                System.out.println(contador + ": " );
+                aux = aux.siguiente;
                 ret.resultado = Retorno.Resultado.OK;
+                contador++;
 
             }
 
