@@ -264,7 +264,7 @@ public class Sistema implements ISistema {
 //            si existe la ubicacion de la linea
             if (uni != null && carpe != null && mensAux != null) {
                 if (nodoAborrar != null) {
-                    mensAux.listaLineas.borrarElemento(nodoAborrar);
+                    mensAux.listaLineas.borrarPorPosicion(posicionLinea);
 //                    con el borrar ya se cumple lo de q todos se corren??
                 } else {
 //                    el nodo a borrar en la posicion indicada esta vacio
