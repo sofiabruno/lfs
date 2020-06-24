@@ -486,10 +486,12 @@ public class Sistema implements ISistema {
 
     @Override
     public Retorno IngresarPalabraDiccionario(String palabraAIngresar) {
-        Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+        Retorno ret = new Retorno(Retorno.Resultado.OK);
 
+        //NodoPalabra aux = (NodoPalabra) diccionario.Primero;
+        
         if (diccionario.obtenerElemento(palabraAIngresar) == null) {
-            diccionario.agregarInicio(palabraAIngresar);
+            diccionario.agregarFinal(palabraAIngresar);
             ret.resultado = Retorno.Resultado.OK;
         } else {
             ret.valorString = "La palabra a ingresar ya existe en el diccionario";
@@ -508,7 +510,7 @@ public class Sistema implements ISistema {
 
     @Override
     public Retorno ImprimirDiccionario() {
-        Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+        Retorno ret = new Retorno(Retorno.Resultado.OK);
 
         if (diccionario.cantelementos == 0) {
             System.out.println("Diccionario vacío");

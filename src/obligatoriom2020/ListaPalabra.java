@@ -39,7 +39,7 @@ public class ListaPalabra implements ILista {
     //POS: Agrega un nuevo Nodo al principio de la lista
     @Override
     public void agregarInicio(Object dato) {
-        NodoPalabra nuevo = (NodoPalabra) dato;
+        NodoPalabra nuevo = new NodoPalabra(dato); //(NodoPalabra) dato;
         nuevo.setSiguiente(Primero);
         this.Primero = nuevo;
         if (this.Ultimo == null)//estoy insertando el primer nodo

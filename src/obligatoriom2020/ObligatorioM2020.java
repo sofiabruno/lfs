@@ -337,9 +337,9 @@ public class ObligatorioM2020 {
 //        p.ver(s.ImprimirDiccionario().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Diccionario impreso correctamente");
 //        //      Ingresamos tres palabras al diccionario y luego imprimimos en pantalla las palabras que tiene el diccionario ordenadas alfabeticamente
 //        p.ver(s.IngresarPalabraDiccionario("Hoja").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
-//        p.ver(s.IngresarPalabraDiccionario("Hojalata").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
-//        p.ver(s.IngresarPalabraDiccionario("Bosque").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
-//        p.ver(s.ImprimirDiccionario().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Diccionario impreso correctamente");
+        p.ver(s.IngresarPalabraDiccionario("Hojalata").resultado, Retorno.Resultado.OK, "Palabra ingresada correctamente");
+        p.ver(s.IngresarPalabraDiccionario("Bosque").resultado, Retorno.Resultado.OK, "Palabra ingresada correctamente");
+        p.ver(s.ImprimirDiccionario().resultado, Retorno.Resultado.OK, "Diccionario impreso correctamente");
 //        
 //        //      MUESTRA LAS PALABRAS DEL TEXTO QUE NO SE ENCUENTRAN EN EL DICCIONARIO
 //        //      Insertamos tres lineas y seis palabras 
