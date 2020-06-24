@@ -447,26 +447,35 @@ public class Sistema implements ISistema {
                     } else {
                         NodoPalabra palabra = new NodoPalabra(palabraAIngresar);
                         //si la palabra no entra xq ya habia un maximo 
-                        if (lineAux.siguiente == null) {
-                            NodoLinea aux = new NodoLinea("");
-                            mensAux.listaLineas.agregarFinal(aux);
-                            mensAux.listaLineas.obtenerElemento(aux).listaPalabras.agregarInicio(palabra);
-                        } else if (lineAux.siguiente.listaPalabras.cantelementos == 0) {
-                            mensAux.listaLineas.obtenerElemento(lineAux.siguiente).listaPalabras.agregarInicio(palabra);
+                        if (lineAux.siguiente == null && lineAux.listaPalabras.cantelementos == MAX_CANT_PALABRAS_X_LINEA ) {
+                            InsertarLinea(unidad, carpeta, mensaje);
+                            //lo que hbaia en la posciion q yo quiero insertar
+                            NodoPalabra elQseVa = lineAux.listaPalabras.buscarPorPosicion(posicionPalabra);
+                            String PalabraAcorrer = elQseVa.dato.toString();
+                            //ingreso la que yo quiero
+                            lineAux.listaPalabras.buscarPorPosicion(posicionPalabra).setDato(palabraAIngresar);
+                            
+                            if (posicionPalabra == MAX_CANT_PALABRAS_X_LINEA) {
+                                InsertarPalabraYDesplazar(unidad, carpeta, mensaje, posicionLinea + 1, 1, PalabraAcorrer);
+                            } else {
+                                InsertarPalabraYDesplazar(unidad, carpeta, mensaje, posicionLinea, posicionPalabra + 1, PalabraAcorrer);
+                            }
+//                        } else if (lineAux.siguiente.listaPalabras.cantelementos == 0 && lineAux.listaPalabras.cantelementos == MAX_CANT_PALABRAS_X_LINEA) {
+//                            mensAux.listaLineas.obtenerElemento(lineAux.siguiente).listaPalabras.agregarInicio(palabra);
                         } else {
                             //lo que hbaia en la posciion q yo quiero insertar
                             NodoPalabra elQseVa = lineAux.listaPalabras.buscarPorPosicion(posicionPalabra);
+                            String PalabraAcorrer = elQseVa.dato.toString();
                             //ingreso la que yo quiero
                             lineAux.listaPalabras.buscarPorPosicion(posicionPalabra).setDato(palabraAIngresar);
                             if (posicionPalabra == MAX_CANT_PALABRAS_X_LINEA) {
-                                InsertarPalabraYDesplazar(unidad, carpeta, mensaje, posicionLinea +1, 1, lineAux.listaPalabras.buscarPorPosicion(posicionPalabra).dato.toString());
+                                InsertarPalabraYDesplazar(unidad, carpeta, mensaje, posicionLinea + 1, 1, PalabraAcorrer);
+                            } else {
+                                InsertarPalabraYDesplazar(unidad, carpeta, mensaje, posicionLinea, posicionPalabra + 1, PalabraAcorrer);
 
-                            }else{
-                                  InsertarPalabraYDesplazar(unidad, carpeta, mensaje, posicionLinea, posicionPalabra + 1, lineAux.listaPalabras.buscarPorPosicion(posicionPalabra).dato.toString());
-                       
                             }
 //                            
-                       }
+                        }
                     }
                 } else {
                     ret.resultado = Retorno.Resultado.ERROR;
