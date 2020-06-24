@@ -39,7 +39,7 @@ public class ListaPalabra implements ILista {
     //POS: Agrega un nuevo Nodo al principio de la lista
     @Override
     public void agregarInicio(Object dato) {
-        NodoPalabra nuevo = (NodoPalabra) dato; //new NodoPalabra(dato); //
+        NodoPalabra nuevo = (NodoPalabra) dato; // new NodoPalabra(dato); //
         nuevo.setSiguiente(Primero);
         this.Primero = nuevo;
         if (this.Ultimo == null)//estoy insertando el primer nodo
@@ -123,7 +123,7 @@ public class ListaPalabra implements ILista {
         if (this.esVacia()) {
             this.agregarInicio(dato); // el agregar Primero suma 1 a cantelementos
         } else {
-            NodoPalabra nuevo = new NodoPalabra(dato);
+            NodoPalabra nuevo = (NodoPalabra) dato; // new NodoPalabra(dato);
             Ultimo.setSiguiente(nuevo);
             Ultimo = nuevo;
             this.cantelementos = this.cantelementos + 1;
@@ -154,7 +154,7 @@ public class ListaPalabra implements ILista {
     //POS: inserta nuevo elemento en orden ascendente
     @Override
     public void agregarOrd(Object dato) {
-        NodoPalabra n = new NodoPalabra(dato);
+        NodoPalabra n = (NodoPalabra) dato; // new NodoPalabra(dato);
         if (this.esVacia() || this.Primero.getDato().toString().compareToIgnoreCase(n.getDato().toString()) > 0) {
             // A.compareToIgnoreCase(B) - Si A > B entonces el valor retorno es +1, siendo B el dato nuevo a ingresar  
             this.agregarInicio(n);

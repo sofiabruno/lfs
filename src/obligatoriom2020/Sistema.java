@@ -518,10 +518,10 @@ public class Sistema implements ISistema {
     @Override
     public Retorno IngresarPalabraDiccionario(String palabraAIngresar) {
         Retorno ret = new Retorno(Retorno.Resultado.OK);
-
+        NodoPalabra palabraAingresar = new NodoPalabra (palabraAIngresar);
         //NodoPalabra aux = (NodoPalabra) diccionario.Primero;
-        if (diccionario.obtenerElemento(palabraAIngresar) == null) {
-            diccionario.agregarFinal(palabraAIngresar);
+        if (diccionario.obtenerElemento(palabraAingresar) == null) {
+            diccionario.agregarOrd(palabraAingresar);
             ret.resultado = Retorno.Resultado.OK;
         } else {
             ret.valorString = "La palabra a ingresar ya existe en el diccionario";
