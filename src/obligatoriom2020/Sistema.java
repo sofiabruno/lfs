@@ -459,10 +459,10 @@ public class Sistema implements ISistema {
                             //ingreso la que yo quiero
                             lineAux.listaPalabras.buscarPorPosicion(posicionPalabra).setDato(palabraAIngresar);
                             if (posicionPalabra == MAX_CANT_PALABRAS_X_LINEA) {
-                                InsertarPalabraYDesplazar(unidad, carpeta, mensaje, posicionLinea +1, 1, elQseVa.getDato().toString());
+                                InsertarPalabraYDesplazar(unidad, carpeta, mensaje, posicionLinea +1, 1, lineAux.listaPalabras.buscarPorPosicion(posicionPalabra).dato.toString());
 
                             }else{
-                                  InsertarPalabraYDesplazar(unidad, carpeta, mensaje, posicionLinea, posicionPalabra + 1, elQseVa.getDato().toString());
+                                  InsertarPalabraYDesplazar(unidad, carpeta, mensaje, posicionLinea, posicionPalabra + 1, lineAux.listaPalabras.buscarPorPosicion(posicionPalabra).dato.toString());
                        
                             }
 //                            
