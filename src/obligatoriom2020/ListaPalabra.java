@@ -253,6 +253,47 @@ public class ListaPalabra implements ILista {
         }
     }
     
+       public void borrarPorPosicion(int pos){
+        
+        if (pos>= 1 && pos <= this.cantelementos) {
+            //si es el primero
+            if (pos==1) {
+                this.Primero = this.Primero.siguiente;
+            }
+            else if( pos == this.cantelementos){
+                this.borrarFin();
+            }
+            else{
+                NodoPalabra previo = this.buscarPorPosicion(pos-1);
+                previo.setSiguiente(previo.siguiente.siguiente);
+//              previo.setSiguiente(this.buscarPorPosicion(pos).siguiente);        
+               }
+            
+            this.cantelementos = this.cantelementos - 1;
+        }       
+    
+    }
+       
+          public NodoPalabra buscarPorPosicion(int posicionPalabra) {
+
+        if (posicionPalabra >= 1 && posicionPalabra <= this.cantelementos) {
+            if (posicionPalabra == 1) {
+                return this.Primero;
+            } else {
+                NodoPalabra aux = this.Primero;
+                for (int i = 1; i < posicionPalabra; i++) {
+                    aux = aux.getSiguiente();
+                }
+                return aux;
+            }
+        } else {
+            NodoPalabra aux = null;
+            return aux;
+        }
+
+    }
+    
+    
         public void agregarPalabraPorPosicionYDesplazar(int posicion, String Palabra) {
         //no controlo q la posicion sea 0 porque eso hace sistema 
         NodoPalabra nuevaPalabra = new NodoPalabra(Palabra);

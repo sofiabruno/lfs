@@ -329,7 +329,7 @@ public class Sistema implements ISistema {
         NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
         NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
         NodoMensaje mensAux = (NodoMensaje) carpe.listamensaje.obtenerElemento(mensaje);
-        
+
         if (mensAux.listaLineas.cantelementos == 0) {
             ret.resultado = Retorno.Resultado.OK;
 //            ret.valorString = "Texto vacío";
@@ -398,7 +398,7 @@ public class Sistema implements ISistema {
     @Override
     public Retorno InsertarPalabraYDesplazar(String unidad, String carpeta, String mensaje, int posicionLinea, int posicionPalabra, String palabraAIngresar) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
-        
+
         NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
         NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
         NodoMensaje mensAux = (NodoMensaje) carpe.listamensaje.obtenerElemento(mensaje);
@@ -441,6 +441,20 @@ public class Sistema implements ISistema {
     @Override
     public Retorno BorrarPalabra(String unidad, String carpeta, String mensaje, int posicionLinea, int posicionPalabra) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+
+        NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
+        NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
+        NodoMensaje mensAux = (NodoMensaje) carpe.listamensaje.obtenerElemento(mensaje);
+        NodoLinea lineAux = (NodoLinea) mensAux.listaLineas.buscarPorPosicion(posicionLinea);
+
+        //si la sdos posiciones son válidas
+        if (posicionLinea >= 1 && posicionPalabra <= MAX_CANT_PALABRAS_X_LINEA) {
+            lineAux.listaPalabras.borrarPorPosicion(posicionPalabra);   
+            ret.resultado = Retorno.Resultado.OK;
+        }else{
+            ret.resultado = Retorno.Resultado.ERROR;
+        }
+
         return ret;
 
     }
@@ -466,11 +480,11 @@ public class Sistema implements ISistema {
         if (diccionario.obtenerElemento(palabraAIngresar) == null) {
             diccionario.agregarInicio(palabraAIngresar);
             ret.resultado = Retorno.Resultado.OK;
-        } else {          
+        } else {
             ret.valorString = "La palabra a ingresar ya existe en el diccionario";
             ret.resultado = Retorno.Resultado.ERROR;
         }
-     
+
         return ret;
     }
 
@@ -484,12 +498,12 @@ public class Sistema implements ISistema {
     @Override
     public Retorno ImprimirDiccionario() {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
-        
+
         if (diccionario.cantelementos == 0) {
             System.out.println("Diccionario vacío");
         } else {
             NodoPalabra aux = diccionario.Primero;
-            while (aux != null){
+            while (aux != null) {
                 System.out.println(diccionario.mostrarPalabras());
                 aux = aux.siguiente;
                 ret.resultado = Retorno.Resultado.OK;

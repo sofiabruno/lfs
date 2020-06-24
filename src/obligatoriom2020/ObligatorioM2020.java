@@ -193,9 +193,11 @@ public class ObligatorioM2020 {
         p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje3", 2, 1, "NodoLineaDos").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
         p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje3", 3, 1, "NodoLineaCuatro").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
         p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje3", 1, 3, "NodoLineaUnoTerceraPalabra").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
-        p.ver(s.InsertarPalabraYDesplazar("C", "Archivos", "mensaje3", 1, 3, "NodoLineaUnoNuevaTerceraPalabra").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
-        p.ver(s.ImprimirTexto("C", "Archivos", "mensaje3").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
-
+       // p.ver(s.InsertarPalabraYDesplazar("C", "Archivos", "mensaje3", 1, 3, "NodoLineaUnoNuevaTerceraPalabra").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+       //String unidad, String carpeta, String mensaje, int posicionLinea, int posicionPalabra
+       p.ver(s.BorrarPalabra("C", "Archivos", "mensaje3", 3, 1).resultado, Retorno.Resultado.NO_IMPLEMENTADA,"Se intenta borrar NodoLineaCuatro");
+       p.ver(s.ImprimirTexto("C", "Archivos", "mensaje3").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
+        
         
         
 //        
