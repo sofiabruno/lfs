@@ -317,11 +317,11 @@ public class ObligatorioM2020 {
 //        
 //        //      BORRA UNA PALABRA DEL DICCIONARIO
 //        //      Ingresamos tres palabras al diccionario y luego borramos una palabra
-//        p.ver(s.IngresarPalabraDiccionario("Hoja").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
+        p.ver(s.IngresarPalabraDiccionario("Hoja").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
 //        p.ver(s.IngresarPalabraDiccionario("Hojalata").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
 //        p.ver(s.IngresarPalabraDiccionario("Bosque").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
 //        p.ver(s.BorrarPalabraDiccionario("Hoja").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra borrada correctamente");
-//        p.ver(s.ImprimirDiccionario().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Diccionario impreso correctamente");
+        p.ver(s.ImprimirDiccionario().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Diccionario impreso correctamente");
 //        
 //        //      MUESTRA LAS PALABRAS DEL DICCIONARIO ALFABETICAMENTE
 //        //      Imprimimos en pantalla el diccionario vacio
