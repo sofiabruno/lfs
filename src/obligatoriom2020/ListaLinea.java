@@ -80,7 +80,7 @@ public class ListaLinea implements ILista {
             while (aux != null) {
                 System.out.println(contador + ": " + aux.getDato().toString());
                 aux = aux.getSiguiente();
-                contador ++;
+                contador++;
             }
         }
     }
@@ -120,10 +120,30 @@ public class ListaLinea implements ILista {
         }
     }
 
+    public void borrarElemento(Object n) {
+        if (!this.esVacia()) {
+            if (this.Primero.getDato() == n) {
+                this.borrarInicio();
+            } else {
+                NodoLinea aux = this.Primero;
+                while (aux.getSiguiente().getSiguiente()!= null && aux.getSiguiente().getDato() != n) {
+                    aux = aux.getSiguiente();
+                }
+                //lo encontré o llegué al final de la lista
+                if (aux.getSiguiente() != null) {
+                    NodoLinea borrar = aux.getSiguiente();
+                    aux.setSiguiente(borrar.getSiguiente());
+                    borrar.setSiguiente(null);
+                }
+            }
+        }
+    }
+
     //PRE: lista ordenada => mantiena orden
     //POS: inserta nuevo elemento en orden ascendente
     @Override
-    public void agregarOrd(Object dato) {
+    public void agregarOrd(Object dato
+    ) {
         NodoLinea n = new NodoLinea(dato);
         if (this.esVacia() || this.Primero.getDato().toString().compareToIgnoreCase(n.getDato().toString()) > 0) {
             // A.compareToIgnoreCase(B) - Si A > B entonces el valor retorno es +1, siendo B el dato nuevo a ingresar  
@@ -143,37 +163,12 @@ public class ListaLinea implements ILista {
 //        ojo  q no afecta la cant elementos 
     }
 
-    //PRE: lista ordenada
-    //POS: Borra la primer ocurrencia de un elemento dado
-    public void borrarElemento(Object dato) {
-        // implementar el metodo
-
-        if (this.Primero != null) {
-            NodoLinea aux = this.Primero;
-
-            while (aux != null) {
-                if (aux.getDato().equals(dato)) {
-                    this.borrarInicio();
-                } else {
-                    while (aux.getSiguiente() != null && aux.getSiguiente().getDato() != dato) {
-                        aux = aux.getSiguiente();
-                    }
-                    if (aux.getSiguiente() != null) {
-                        NodoLinea borrar = aux.getSiguiente();
-                        aux.setSiguiente(borrar.getSiguiente());
-                        borrar.setSiguiente(null);
-                    }
-                }
-                aux = aux.getSiguiente();
-            }
-        }
-    }
 
     //PRE: 
     //POS: Retorna la cantidad de nodos que tiene la lista
-//    public int cantElementos() {
-//        return this.cantelementos;
-//    }
+    //    public int cantElementos() {
+    //        return this.cantelementos;
+    //    }
     //PRE: //POS:
     //PRE: //POS:
     public NodoLinea obtenerElemento(Object dato) {
@@ -218,8 +213,8 @@ public class ListaLinea implements ILista {
         }
 
     }
-    
-     public void agregarLineaPorPosicion(int posicion) {
+
+    public void agregarLineaPorPosicion(int posicion) {
         //no controlo q la posicion sea 0 porque eso hace sistema 
         NodoLinea nuevaLinea = new NodoLinea("");
 
@@ -233,7 +228,7 @@ public class ListaLinea implements ILista {
             NodoLinea previo = null;
 
             int i = 1;
-            while (i < posicion ) {
+            while (i < posicion) {
                 previo = actual;
                 actual = actual.siguiente;
                 if (actual == null) {
@@ -246,14 +241,12 @@ public class ListaLinea implements ILista {
                 nuevaLinea.siguiente = this.Primero;
                 this.Primero = nuevaLinea;
                 this.cantelementos = this.cantelementos + 1;
-            }
-            else{
+            } else {
                 nuevaLinea.siguiente = actual;
                 previo.siguiente = nuevaLinea;
                 this.cantelementos = this.cantelementos + 1;
             }
-                    
-            
+
         }
     }
 }

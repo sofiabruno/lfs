@@ -166,8 +166,8 @@ public class ObligatorioM2020 {
 //        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");
 //        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra1").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
 //        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Texto impreso correctamente");
-//        p.ver(s.BorrarLinea(1).resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea borrada correctamente");
-//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Texto impreso correctamente");
+        p.ver(s.BorrarLinea("C", "Archivos", "mensaje3", 1).resultado, Retorno.Resultado.OK, "Linea borrada correctamente");
+      p.ver(s.ImprimirTexto("C", "Archivos", "mensaje3").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
 //        
 //        //      BORRA TODAS LAS LINEAS DEL TEXTO
 //        //      Borramos todas las lineas del texto
