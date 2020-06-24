@@ -215,6 +215,26 @@ public class ObligatorioM2020 {
 //        p.ver(s.BorrarTodo().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Todas las líneas del texto han sido borradas");
 //        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Texto impreso correctamente");
 //        
+//para probar borrar ocurrencia de palabra
+//        p.ver(s.AgregarCarpeta("C", "Ocurr").resultado, Retorno.Resultado.ERROR, "Intentar crear Docs en unidad C " + s.AgregarCarpeta("C", "Docs").valorString);
+//        p.ver(s.AgregarMensaje("C", "Ocurr", "mensajeOcurrencias").resultado, Retorno.Resultado.OK, "Se agrega mensaje4 en carpeta Archivos");
+//        p.ver(s.InsertarLinea("C", "Ocurr", "mensajeOcurrencias").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");
+//        p.ver(s.InsertarLinea("C", "Ocurr", "mensajeOcurrencias").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");
+//        p.ver(s.InsertarPalabraEnLinea("C", "Ocurr", "mensajeOcurrencias", 1, 1, "Palabra1").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+//        p.ver(s.InsertarPalabraEnLinea("C", "Ocurr", "mensajeOcurrencias", 1, 2, "Palabra2").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+//        p.ver(s.InsertarPalabraEnLinea("C", "Ocurr", "mensajeOcurrencias", 2, 1, "Palabra1").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+//        p.ver(s.InsertarPalabraEnLinea("C", "Ocurr", "mensajeOcurrencias", 2, 1, "Palabra2").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+//        p.ver(s.InsertarLineaEnPosicion("C", "Ocurr", "mensajeOcurrencias", 2).resultado, Retorno.Resultado.OK, "Se agrego la linea");
+//        p.ver(s.InsertarPalabraEnLinea("C", "Ocurr", "mensajeOcurrencias", 2, 1, "Palabra2").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+//        p.ver(s.ImprimirTexto("C", "Ocurr", "mensajeOcurrencias").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
+//        p.ver(s.BorrarOcurrenciasPalabraEnTexto("C", "Ocurr", "mensajeOcurrencias", "Palabra2").resultado, Retorno.Resultado.OK, "Borro ok");
+//        p.ver(s.ImprimirTexto("C", "Ocurr", "mensajeOcurrencias").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
+//
+//
+
+
+
+
 //        //      BORRA TODAS LAS OCURRENCIAS DE UNA PALABRA EN EL TEXTO
 //        //      Borramos todas las palabras "Palabra2" y correr las palabras en la linea 
 //        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");

@@ -314,6 +314,38 @@ public class Sistema implements ISistema {
     @Override
     public Retorno BorrarOcurrenciasPalabraEnTexto(String unidad, String carpeta, String mensaje, String palabraABorrar) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+        
+        NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
+        NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
+        NodoMensaje mensAux = (NodoMensaje) carpe.listamensaje.obtenerElemento(mensaje);
+
+        if (uni != null && carpe != null) {
+            if (mensAux != null) {
+                NodoLinea aux = mensAux.listaLineas.Primero;
+                for (int i = 0; i < mensAux.listaLineas.cantelementos; i++) {
+                    NodoPalabra auxPalabra = aux.listaPalabras.Primero;
+                    for (int j = 0; j < aux.listaPalabras.cantelementos; j++) {
+                        if (auxPalabra.getDato().toString() == palabraABorrar) {
+                            aux.listaPalabras.borrarElemento(auxPalabra);
+                        }
+                        auxPalabra = auxPalabra.siguiente;
+                    }
+                    aux = aux.siguiente;
+                }
+                ret.resultado = Retorno.Resultado.OK;
+            } else {
+//                    el mensaje a borrar en la posicion indicada esta vacio
+                ret.resultado = Retorno.Resultado.ERROR;
+                ret.valorString = "El mensaje que quiere borrar no existe en esta unidad/Carpeta";
+                // Como mostramos este error en el juego de pruebas? Fede
+            }
+        } else {
+//            no existe la ubicacion de linea
+            ret.resultado = Retorno.Resultado.ERROR;
+            ret.valorString = "No existe la unidad o la carpeta";
+        }
+
+        
         return ret;
 
     }
@@ -515,12 +547,8 @@ public class Sistema implements ISistema {
         if (diccionario.cantelementos == 0) {
             System.out.println("Diccionario vacío");
         } else {
-            NodoPalabra aux = diccionario.Primero;
-            while (aux != null) {
-                System.out.println(diccionario.mostrarPalabras());
-                aux = aux.siguiente;
-                ret.resultado = Retorno.Resultado.OK;
-            }
+        System.out.println(diccionario.mostrarPalabras());
+
         }
 
         return ret;
