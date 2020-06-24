@@ -39,7 +39,7 @@ public class ListaPalabra implements ILista {
     //POS: Agrega un nuevo Nodo al principio de la lista
     @Override
     public void agregarInicio(Object dato) {
-        NodoPalabra nuevo = new NodoPalabra(dato);
+        NodoPalabra nuevo = (NodoPalabra) dato;
         nuevo.setSiguiente(Primero);
         this.Primero = nuevo;
         if (this.Ultimo == null)//estoy insertando el primer nodo
@@ -223,7 +223,10 @@ public class ListaPalabra implements ILista {
             this.Primero = nuevaPalabra;
             this.cantelementos = this.cantelementos + 1;
 
-        } else {
+        } else if (this.Primero != null && posicion == 1){
+            this.agregarInicio(nuevaPalabra);
+        }    
+        else {
             //ahora voy a recorrer la lista desde el principio
             NodoPalabra actual = this.Primero;
             NodoPalabra previo = null;
@@ -237,10 +240,16 @@ public class ListaPalabra implements ILista {
                 }
                 i++;
             }
-            nuevaPalabra.siguiente = actual;
-            previo.siguiente = nuevaPalabra;
-//            actual.siguiente = nuevaPalabra;
-            this.cantelementos = this.cantelementos + 1;
+            //caso particular donde previo es null
+            if (previo == null) {
+                nuevaPalabra.siguiente = this.Primero;
+                this.Primero = nuevaPalabra;
+                this.cantelementos = this.cantelementos + 1;
+            } else {
+                nuevaPalabra.siguiente = actual;
+                previo.siguiente = nuevaPalabra;
+                this.cantelementos = this.cantelementos + 1;
+            }
         }
     }
 

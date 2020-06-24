@@ -202,7 +202,7 @@ public class ListaLinea implements ILista {
                 return this.Primero;
             } else {
                 NodoLinea aux = this.Primero;
-                for (int i = 0; i < posicionLinea; i++) {
+                for (int i = 1; i < posicionLinea; i++) {
                     aux = aux.getSiguiente();
                 }
                 return aux;
