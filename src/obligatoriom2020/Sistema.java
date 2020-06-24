@@ -286,7 +286,7 @@ public class Sistema implements ISistema {
     @Override
 //    Borra todas las líneas del texto.
     public Retorno BorrarTodo(String unidad, String carpeta, String mensaje) {
-        Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+        Retorno ret = new Retorno(Retorno.Resultado.OK);
 
         NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
         NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
@@ -299,6 +299,7 @@ public class Sistema implements ISistema {
 //                    el mensaje a borrar en la posicion indicada esta vacio
                 ret.resultado = Retorno.Resultado.ERROR;
                 ret.valorString = "El mensaje que quiere borrar no existe en esta unidad/Carpeta";
+                // Como mostramos este error en el juego de pruebas? Fede
             }
         } else {
 //            no existe la ubicacion de linea
@@ -397,6 +398,41 @@ public class Sistema implements ISistema {
     @Override
     public Retorno InsertarPalabraYDesplazar(String unidad, String carpeta, String mensaje, int posicionLinea, int posicionPalabra, String palabraAIngresar) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+        
+        NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
+        NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
+        NodoMensaje mensAux = (NodoMensaje) carpe.listamensaje.obtenerElemento(mensaje);
+        NodoLinea lineAux = (NodoLinea) mensAux.listaLineas.buscarPorPosicion(posicionLinea);
+
+        if (lineAux != null) {
+            //si la posicion en la linea existe
+            if (posicionPalabra >= 1) {
+//                si la posicion de la palabra es valida
+                if (lineAux.listaPalabras.cantelementos < MAX_CANT_PALABRAS_X_LINEA) {
+//                    (posicionPalabra <=cantidad de palabras en la línea + 1).
+                    if (posicionPalabra <= lineAux.listaPalabras.cantelementos + 1) {
+                        lineAux.listaPalabras.agregarPalabraPorPosicionYDesplazar(posicionPalabra, palabraAIngresar);
+                        ret.resultado = Retorno.Resultado.OK;
+                    } else {
+                        ret.resultado = Retorno.Resultado.ERROR;
+                        ret.valorString = "La posicion de la palabra no puede mayor que el limite de palabras";
+                    }
+                } else {
+                    //la linea ya tiene un maximo de palabras entonces no se puede insertar
+                    ret.resultado = Retorno.Resultado.ERROR;
+                    ret.valorString = "La línea a ingresar ya tiene su maximo de palabras";
+
+                }
+            } else {
+                ret.resultado = Retorno.Resultado.ERROR;
+                ret.valorString = "La posición de la palabra no existe";
+
+            }
+
+        } else {
+            ret.resultado = Retorno.Resultado.ERROR;
+            ret.valorString = "La posición de línea no existe en el mensaje";
+        }
 
         return ret;
 

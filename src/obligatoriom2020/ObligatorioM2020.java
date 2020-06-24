@@ -175,10 +175,26 @@ public class ObligatorioM2020 {
 
         //p.ver(s.BorrarLinea("C", "Archivos", "mensaje3", 4).resultado, Retorno.Resultado.OK, "Linea borrada correctamente");
         
-        p.ver(s.BorrarTodo("C", "Archivos", "mensaje3").resultado, Retorno.Resultado.OK, "Linea borrada correctamente");
+        
+//Prueba para ver si borra todas las lineas        
+        p.ver(s.BorrarTodo("C", "Archivos", "mensaje3").resultado, Retorno.Resultado.OK, "Lineas borradas correctamente");
         p.ver(s.ImprimirTexto("C", "Archivos", "mensaje3").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
 
+//Prueba para insertar una palabra y desplazar
+        p.ver(s.InsertarLinea("C", "Archivos", "mensaje3").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");
+        p.ver(s.InsertarLinea("C", "Archivos", "mensaje3").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");
+        p.ver(s.InsertarLinea("C", "Archivos", "mensaje3").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");
+        p.ver(s.InsertarLinea("C", "Archivos", "mensaje3").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");
+        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje3", 1, 1, "NodoLineaUnoPrimeraPalabra").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje3", 1, 2, "NodoLinaUnoSegundaPalabra").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje3", 2, 1, "NodoLineaDos").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje3", 3, 1, "NodoLineaCuatro").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje3", 1, 3, "NodoLineaUnoTerceraPalabra").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+        p.ver(s.InsertarPalabraYDesplazar("C", "Archivos", "mensaje3", 1, 3, "NodoLineaUnoEntre1y3").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+        p.ver(s.ImprimirTexto("C", "Archivos", "mensaje3").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
 
+        
+        
 //        
 //        //      BORRA TODAS LAS LINEAS DEL TEXTO
 //        //      Borramos todas las lineas del texto
