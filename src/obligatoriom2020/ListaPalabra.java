@@ -79,7 +79,22 @@ public class ListaPalabra implements ILista {
             NodoPalabra aux = this.Primero;
             while (aux != null) {
                 System.out.println(aux.getDato());
-                aux = aux.getSiguiente();
+                aux = aux.siguiente;
+            }
+        }
+    }
+    
+     public void mostrarLinea() {
+        if (this.esVacia()) {
+            System.out.println("La Linea está vacía");
+        } else {
+            NodoPalabra aux = this.Primero;
+            while (aux != null) {
+                System.out.print(aux.getDato() + " ");
+                aux = aux.siguiente;
+                //para que no se junte la linea con el -------Testeo--------
+            }if(aux == null){
+            System.out.println("");
             }
         }
     }

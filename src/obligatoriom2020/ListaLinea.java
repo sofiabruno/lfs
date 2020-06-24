@@ -160,6 +160,27 @@ public class ListaLinea implements ILista {
         }       
     
     }
+    
+     public void mostrarPorPosicion(int pos){
+        
+        if (pos>= 1 && pos <= this.cantelementos) {
+            //si es el primero
+            if (pos==1) {
+                this.Primero = this.Primero.siguiente;
+            }
+            else if( pos == this.cantelementos){
+                this.borrarFin();
+            }
+            else{
+                NodoLinea previo = this.buscarPorPosicion(pos-1);
+                previo.setSiguiente(previo.siguiente.siguiente);
+//              previo.setSiguiente(this.buscarPorPosicion(pos).siguiente);        
+               }
+            
+            this.cantelementos = this.cantelementos - 1;
+        }       
+    
+    }
 
     //PRE: lista ordenada => mantiena orden
     //POS: inserta nuevo elemento en orden ascendente
@@ -270,5 +291,16 @@ public class ListaLinea implements ILista {
             }
 
         }
+    }
+    
+      public String MostrarLineas() {
+            String salida = "";
+            NodoLinea aux = this.Primero;
+            while (aux != null) {
+                salida += " " + aux.getDato();
+                aux = aux.getSiguiente();
+                //looop
+            }
+        return salida;
     }
 }

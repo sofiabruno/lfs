@@ -440,7 +440,7 @@ public class Sistema implements ISistema {
 
     @Override
     public Retorno BorrarPalabra(String unidad, String carpeta, String mensaje, int posicionLinea, int posicionPalabra) {
-        Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+        Retorno ret = new Retorno(Retorno.Resultado.OK);
 
         NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
         NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
@@ -449,12 +449,11 @@ public class Sistema implements ISistema {
 
         //si la sdos posiciones son válidas
         if (posicionLinea >= 1 && posicionPalabra <= MAX_CANT_PALABRAS_X_LINEA) {
-            lineAux.listaPalabras.borrarPorPosicion(posicionPalabra);   
+            lineAux.listaPalabras.borrarPorPosicion(posicionPalabra);
             ret.resultado = Retorno.Resultado.OK;
-        }else{
+        } else {
             ret.resultado = Retorno.Resultado.ERROR;
         }
-
         return ret;
 
     }
@@ -468,9 +467,21 @@ public class Sistema implements ISistema {
 
     @Override
     public Retorno ImprimirLinea(String unidad, String carpeta, String mensaje, int posicionLinea) {
-        Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
-        return ret;
+        Retorno ret = new Retorno(Retorno.Resultado.OK);
 
+        NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
+        NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
+        NodoMensaje mensAux = (NodoMensaje) carpe.listamensaje.obtenerElemento(mensaje);
+        NodoLinea aux = mensAux.listaLineas.buscarPorPosicion(posicionLinea);
+
+        if (posicionLinea >= 1 && posicionLinea <= MAX_CANT_PALABRAS_X_LINEA) {
+            aux.listaPalabras.mostrarLinea();
+            ret.resultado = Retorno.Resultado.OK;
+        } else {
+            ret.resultado = Retorno.Resultado.ERROR;
+        }
+
+        return ret;
     }
 
     @Override

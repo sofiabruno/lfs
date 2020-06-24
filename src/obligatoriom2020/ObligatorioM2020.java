@@ -177,8 +177,6 @@ public class ObligatorioM2020 {
         p.ver(s.ImprimirTexto("C", "Archivos", "mensaje3").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
 
         //p.ver(s.BorrarLinea("C", "Archivos", "mensaje3", 4).resultado, Retorno.Resultado.OK, "Linea borrada correctamente");
-        
-        
 //Prueba para ver si borra todas las lineas        
         p.ver(s.BorrarTodo("C", "Archivos", "mensaje3").resultado, Retorno.Resultado.OK, "Lineas borradas correctamente");
         p.ver(s.ImprimirTexto("C", "Archivos", "mensaje3").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
@@ -193,13 +191,19 @@ public class ObligatorioM2020 {
         p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje3", 2, 1, "NodoLineaDos").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
         p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje3", 3, 1, "NodoLineaCuatro").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
         p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje3", 1, 3, "NodoLineaUnoTerceraPalabra").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
-       // p.ver(s.InsertarPalabraYDesplazar("C", "Archivos", "mensaje3", 1, 3, "NodoLineaUnoNuevaTerceraPalabra").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
-       //String unidad, String carpeta, String mensaje, int posicionLinea, int posicionPalabra
-       p.ver(s.BorrarPalabra("C", "Archivos", "mensaje3", 3, 1).resultado, Retorno.Resultado.NO_IMPLEMENTADA,"Se intenta borrar NodoLineaCuatro");
-       p.ver(s.ImprimirTexto("C", "Archivos", "mensaje3").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
+        // p.ver(s.InsertarPalabraYDesplazar("C", "Archivos", "mensaje3", 1, 3, "NodoLineaUnoNuevaTerceraPalabra").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+        //String unidad, String carpeta, String mensaje, int posicionLinea, int posicionPalabra
+        p.ver(s.ImprimirTexto("C", "Archivos", "mensaje3").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
+        p.ver(s.BorrarPalabra("C", "Archivos", "mensaje3", 1, 3).resultado, Retorno.Resultado.OK, "Palabra borrada Correctamente");
         
+        p.ver(s.ImprimirTexto("C", "Archivos", "mensaje3").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
+        //borrar palabra con posición de palabra que no existe
+        p.ver(s.BorrarPalabra("C", "Archivos", "mensaje3", 1, 6).resultado, Retorno.Resultado.ERROR, "La posición de la palabra no es válida");
+        // //borrar palabra con posición de linea que no existe
+        p.ver(s.ImprimirTexto("C", "Archivos", "mensaje3").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
         
-        
+        //Borr la linea
+        p.ver(s.ImprimirLinea("C", "Archivos", "mensaje3", 3).resultado, Retorno.Resultado.OK, "Linea impresa correctamente");
 //        
 //        //      BORRA TODAS LAS LINEAS DEL TEXTO
 //        //      Borramos todas las lineas del texto
