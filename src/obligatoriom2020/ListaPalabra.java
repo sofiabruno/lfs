@@ -39,7 +39,7 @@ public class ListaPalabra implements ILista {
     //POS: Agrega un nuevo Nodo al principio de la lista
     @Override
     public void agregarInicio(Object dato) {
-        NodoPalabra nuevo = new NodoPalabra(dato); //(NodoPalabra) dato;
+        NodoPalabra nuevo = (NodoPalabra) dato; //new NodoPalabra(dato); //
         nuevo.setSiguiente(Primero);
         this.Primero = nuevo;
         if (this.Ultimo == null)//estoy insertando el primer nodo
@@ -180,6 +180,32 @@ public class ListaPalabra implements ILista {
             NodoPalabra aux = this.Primero;
 
             while (aux != null) {
+                if (aux.equals(dato)) {
+                    this.borrarInicio();
+                } else {
+                    while (aux.getSiguiente() != null && !aux.getSiguiente().equals(dato)) {
+                        aux = aux.getSiguiente();
+                    }
+                    if (aux.getSiguiente() != null) {
+                        NodoPalabra borrar = aux.getSiguiente();
+                        aux.setSiguiente(borrar.getSiguiente());
+                        borrar.setSiguiente(null);
+                    }
+                }
+                aux = aux.getSiguiente();
+            }
+
+//            ojo q debe actualizar cant elementos
+        }
+    }
+
+       public void borrarElemento1(Object dato) {
+        // implementar el metodo
+
+        if (this.Primero != null) {
+            NodoPalabra aux = this.Primero;
+
+            while (aux != null) {
                 if (aux.getDato().equals(dato)) {
                     this.borrarInicio();
                 } else {
@@ -198,7 +224,6 @@ public class ListaPalabra implements ILista {
 //            ojo q debe actualizar cant elementos
         }
     }
-
     //PRE: 
     //POS: Retorna la cantidad de nodos que tiene la lista
 //    public int cantElementos() {

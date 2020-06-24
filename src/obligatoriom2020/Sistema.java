@@ -314,7 +314,7 @@ public class Sistema implements ISistema {
     @Override
     public Retorno BorrarOcurrenciasPalabraEnTexto(String unidad, String carpeta, String mensaje, String palabraABorrar) {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
-        
+
         NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
         NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
         NodoMensaje mensAux = (NodoMensaje) carpe.listamensaje.obtenerElemento(mensaje);
@@ -345,7 +345,6 @@ public class Sistema implements ISistema {
             ret.valorString = "No existe la unidad o la carpeta";
         }
 
-        
         return ret;
 
     }
@@ -521,7 +520,6 @@ public class Sistema implements ISistema {
         Retorno ret = new Retorno(Retorno.Resultado.OK);
 
         //NodoPalabra aux = (NodoPalabra) diccionario.Primero;
-        
         if (diccionario.obtenerElemento(palabraAIngresar) == null) {
             diccionario.agregarFinal(palabraAIngresar);
             ret.resultado = Retorno.Resultado.OK;
@@ -547,7 +545,7 @@ public class Sistema implements ISistema {
         if (diccionario.cantelementos == 0) {
             System.out.println("Diccionario vacío");
         } else {
-        System.out.println(diccionario.mostrarPalabras());
+            System.out.println(diccionario.mostrarPalabras());
 
         }
 
