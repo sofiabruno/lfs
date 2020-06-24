@@ -332,50 +332,7 @@ public class ListaPalabra implements ILista {
         }
 
     }
-    
-    
-        public void agregarPalabraPorPosicionYDesplazar(int posicion, String Palabra) {
-        //no controlo q la posicion sea 0 porque eso hace sistema 
-        NodoPalabra nuevaPalabra = new NodoPalabra(Palabra);
 
-        if (this.Primero == null) {
-            this.Primero = nuevaPalabra;
-            this.cantelementos = this.cantelementos + 1;
-
-        } else if (this.Primero != null && posicion == 1){
-            this.agregarInicio(nuevaPalabra);
-        }    
-        else {
-            //ahora voy a recorrer la lista desde el principio
-            NodoPalabra actual = this.Primero;
-            NodoPalabra previo = null;
-
-            int i = 0;
-            while (i < posicion) {
-                previo = actual;
-                actual = actual.siguiente;
-                if (actual == null) {
-                    break;
-                }
-                i++;
-            }
-           //caso particular donde previo es null
-            if (previo == null) {
-                nuevaPalabra.siguiente = this.Primero;
-                this.Primero = nuevaPalabra;
-                this.cantelementos = this.cantelementos + 1;
-            } else if (this.Ultimo != null){ // Queriendo insertarme en la palabra de posicion 3 de una linea, no me da aun, y la palabra esta llevarla al primero de la linea siguiente
-                nuevaPalabra.siguiente = null;
-                previo.siguiente = nuevaPalabra;
-            } 
-            else {
-                nuevaPalabra.siguiente = actual;
-                previo.siguiente = nuevaPalabra;
-                this.cantelementos = this.cantelementos + 1;
-            }
-        }
-    }
-    
     
 
 }

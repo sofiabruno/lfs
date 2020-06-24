@@ -226,10 +226,16 @@ public class ObligatorioM2020 {
         p.ver(s.InsertarPalabraEnLinea("C", "Ocurr", "mensajeOcurrencias", 2, 1, "Palabra2").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
         p.ver(s.InsertarLineaEnPosicion("C", "Ocurr", "mensajeOcurrencias", 2).resultado, Retorno.Resultado.OK, "Se agrego la linea");
         p.ver(s.InsertarPalabraEnLinea("C", "Ocurr", "mensajeOcurrencias", 2, 1, "Palabra2").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
-        p.ver(s.ImprimirTexto("C", "Ocurr", "mensajeOcurrencias").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
-        p.ver(s.BorrarOcurrenciasPalabraEnTexto("C", "Ocurr", "mensajeOcurrencias", "Palabra1").resultado, Retorno.Resultado.OK, "Borro ok");
-        p.ver(s.ImprimirTexto("C", "Ocurr", "mensajeOcurrencias").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
+       // p.ver(s.ImprimirTexto("C", "Ocurr", "mensajeOcurrencias").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
+     //   p.ver(s.BorrarOcurrenciasPalabraEnTexto("C", "Ocurr", "mensajeOcurrencias", "Palabra1").resultado, Retorno.Resultado.OK, "Borro ok");
+       // p.ver(s.ImprimirTexto("C", "Ocurr", "mensajeOcurrencias").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
 
+        p.ver(s.InsertarPalabraYDesplazar("C", "Ocurr", "mensajeOcurrencias", 1, 3, "Palabra3").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+        //p.ver(s.InsertarPalabraEnLinea("C", "Ocurr", "mensajeOcurrencias", 1, 2, "Palabra4").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+       p.ver(s.InsertarPalabraYDesplazar("C", "Ocurr", "mensajeOcurrencias", 1, 2, "Palabra4").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+        
+        
+        p.ver(s.ImprimirTexto("C", "Ocurr", "mensajeOcurrencias").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
 
 
 

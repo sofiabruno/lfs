@@ -313,7 +313,7 @@ public class Sistema implements ISistema {
 
     @Override
     public Retorno BorrarOcurrenciasPalabraEnTexto(String unidad, String carpeta, String mensaje, String palabraABorrar) {
-        Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+        Retorno ret = new Retorno(Retorno.Resultado.OK);
 
         NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
         NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
@@ -439,19 +439,38 @@ public class Sistema implements ISistema {
             //si la posicion en la linea existe
             if (posicionPalabra >= 1) {
 //                si la posicion de la palabra es valida
-                if (lineAux.listaPalabras.cantelementos < MAX_CANT_PALABRAS_X_LINEA) {
+                if (posicionPalabra <= lineAux.listaPalabras.cantelementos + 1) {
 //                    (posicionPalabra <=cantidad de palabras en la línea + 1).
-                    if (posicionPalabra <= lineAux.listaPalabras.cantelementos + 1) {
-                        lineAux.listaPalabras.agregarPalabraPorPosicionYDesplazar(posicionPalabra, palabraAIngresar);
+                    if (lineAux.listaPalabras.cantelementos < MAX_CANT_PALABRAS_X_LINEA) {
+                        lineAux.listaPalabras.agregarPalabraPorPosicion(posicionPalabra, palabraAIngresar);
                         ret.resultado = Retorno.Resultado.OK;
                     } else {
-                        ret.resultado = Retorno.Resultado.ERROR;
-                        ret.valorString = "La posicion de la palabra no puede mayor que el limite de palabras";
+                        NodoPalabra palabra = new NodoPalabra(palabraAIngresar);
+                        //si la palabra no entra xq ya habia un maximo 
+                        if (lineAux.siguiente == null) {
+                            NodoLinea aux = new NodoLinea("");
+                            mensAux.listaLineas.agregarFinal(aux);
+                            mensAux.listaLineas.obtenerElemento(aux).listaPalabras.agregarInicio(palabra);
+                        } else if (lineAux.siguiente.listaPalabras.cantelementos == 0) {
+                            mensAux.listaLineas.obtenerElemento(lineAux.siguiente).listaPalabras.agregarInicio(palabra);
+                        } else {
+                            //lo que hbaia en la posciion q yo quiero insertar
+                            NodoPalabra elQseVa = lineAux.listaPalabras.buscarPorPosicion(posicionPalabra);
+                            //ingreso la que yo quiero
+                            lineAux.listaPalabras.buscarPorPosicion(posicionPalabra).setDato(palabraAIngresar);
+                            if (posicionPalabra == MAX_CANT_PALABRAS_X_LINEA) {
+                                InsertarPalabraYDesplazar(unidad, carpeta, mensaje, posicionLinea +1, 1, elQseVa.getDato().toString());
+
+                            }else{
+                                  InsertarPalabraYDesplazar(unidad, carpeta, mensaje, posicionLinea, posicionPalabra + 1, elQseVa.getDato().toString());
+                       
+                            }
+//                            
+                       }
                     }
                 } else {
-                    //la linea ya tiene un maximo de palabras entonces no se puede insertar
                     ret.resultado = Retorno.Resultado.ERROR;
-                    ret.valorString = "La línea a ingresar ya tiene su maximo de palabras";
+                    ret.valorString = "La posicion de la palabra no es valida en la linea indicada";
 
                 }
             } else {
@@ -518,7 +537,7 @@ public class Sistema implements ISistema {
     @Override
     public Retorno IngresarPalabraDiccionario(String palabraAIngresar) {
         Retorno ret = new Retorno(Retorno.Resultado.OK);
-        NodoPalabra palabraAingresar = new NodoPalabra (palabraAIngresar);
+        NodoPalabra palabraAingresar = new NodoPalabra(palabraAIngresar);
         //NodoPalabra aux = (NodoPalabra) diccionario.Primero;
         if (diccionario.obtenerElemento(palabraAingresar) == null) {
             diccionario.agregarOrd(palabraAingresar);
