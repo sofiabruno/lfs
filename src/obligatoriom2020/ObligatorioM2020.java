@@ -262,55 +262,75 @@ public class ObligatorioM2020 {
         
         p.tituloPrueba("                                 AGREGA UNA PALABRA AL DICCIONARIO - OK   ");
         // Ingresamos tres palabras al diccionario y luego imprimimos en pantalla las palabras que tiene el diccionario
-        p.ver(s.IngresarPalabraDiccionario("Hoja").resultado, Retorno.Resultado.OK, "Palabra ingresada correctamente");
-        p.ver(s.IngresarPalabraDiccionario("Hojalata").resultado, Retorno.Resultado.OK, "Palabra ingresada correctamente");
-        p.ver(s.IngresarPalabraDiccionario("Bosque").resultado, Retorno.Resultado.OK, "Palabra ingresada correctamente");
-        p.ver(s.ImprimirDiccionario().resultado, Retorno.Resultado.OK, "Diccionario impreso correctamente");
-
-        p.tituloPrueba("                              AGREGA UNA PALABRA AL DICCIONARIO - ERROR   ");
-        p.ver(s.IngresarPalabraDiccionario("Hoja").resultado, Retorno.Resultado.ERROR, "La palabra a ingresar ya existe"); // VER, LA AGREGO DOS VECES
-        p.ver(s.ImprimirDiccionario().resultado, Retorno.Resultado.OK, "Diccionario impreso correctamente");
-        
-        
+//        p.ver(s.IngresarPalabraDiccionario("Hoja").resultado, Retorno.Resultado.OK, "Palabra ingresada correctamente");
+//        p.ver(s.IngresarPalabraDiccionario("Hojalata").resultado, Retorno.Resultado.OK, "Palabra ingresada correctamente");
+//        p.ver(s.IngresarPalabraDiccionario("Bosque").resultado, Retorno.Resultado.OK, "Palabra ingresada correctamente");
+//        p.ver(s.ImprimirDiccionario().resultado, Retorno.Resultado.OK, "Diccionario impreso correctamente");
+//
+//        p.tituloPrueba("                              AGREGA UNA PALABRA AL DICCIONARIO - ERROR   ");
+//        p.ver(s.IngresarPalabraDiccionario("Hoja").resultado, Retorno.Resultado.ERROR, "La palabra a ingresar ya existe"); // VER, LA AGREGO DOS VECES
+//        p.ver(s.ImprimirDiccionario().resultado, Retorno.Resultado.OK, "Diccionario impreso correctamente");
+//        
+//        
         p.tituloPrueba("                                  BORRA UNA PALABRA AL DICCIONARIO - OK   ");
-        // Borrar palabras de diccionario y mostrar dicionario vacio al borrarlas
-        p.ver(s.BorrarPalabraDiccionario("Hoja").resultado, Retorno.Resultado.OK, "Palabra borrada correctamente");
-        p.ver(s.ImprimirDiccionario().resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
-        p.ver(s.BorrarPalabraDiccionario("Hojalata").resultado, Retorno.Resultado.OK, "Palabra borrada correctamente");
-        p.ver(s.BorrarPalabraDiccionario("Bosque").resultado, Retorno.Resultado.OK, "Palabra borrada correctamente");
-        p.ver(s.ImprimirDiccionario().resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
-
-        p.tituloPrueba("                               BORRA UNA PALABRA AL DICCIONARIO - ERROR   ");
-        p.ver(s.BorrarPalabraDiccionario("Pepito").resultado, Retorno.Resultado.ERROR, "La palabra no existe en el diccionario");
+//        // Borrar palabras de diccionario y mostrar dicionario vacio al borrarlas
+//        p.ver(s.BorrarPalabraDiccionario("Hoja").resultado, Retorno.Resultado.OK, "Palabra Hoja borrada correctamente");
+//        p.ver(s.ImprimirDiccionario().resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
+//        p.ver(s.BorrarPalabraDiccionario("Hojalata").resultado, Retorno.Resultado.OK, "Palabra Hojalata borrada correctamente");
+//        p.ver(s.BorrarPalabraDiccionario("Bosque").resultado, Retorno.Resultado.OK, "Palabra Bosque borrada correctamente");
+//        p.ver(s.ImprimirDiccionario().resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
+//
+//        p.tituloPrueba("                               BORRA UNA PALABRA AL DICCIONARIO - ERROR   ");
+//        p.ver(s.BorrarPalabraDiccionario("Pepito").resultado, Retorno.Resultado.ERROR, "La palabra Pepito no existe en el diccionario");
 
 
         p.tituloPrueba("                MUESTRA LAS PALABRAS DEL DICCIONARIO ALFABETICAMENTE - S/E   "); // VER, LA PALABRA HOJA, HOJALATA ESTAN DANDO PROBLEMAS, DUPLICA HOJA
         // Imprimimos en pantalla el diccionario vacio y luego ingresamos tres palabras al diccionario para verlas ordenadas alfabeticamente
+////        p.ver(s.ImprimirDiccionario().resultado, Retorno.Resultado.OK, "Diccionario impreso correctamente");
+//        p.ver(s.IngresarPalabraDiccionario("Brisa").resultado, Retorno.Resultado.OK, "Palabra ingresada correctamente");
+//        p.ver(s.IngresarPalabraDiccionario("Hoja").resultado, Retorno.Resultado.OK, "Palabra ingresada correctamente");
+////        p.ver(s.IngresarPalabraDiccionario("Hojalata").resultado, Retorno.Resultado.OK, "Palabra ingresada correctamente");
+//        p.ver(s.IngresarPalabraDiccionario("Bosque").resultado, Retorno.Resultado.OK, "Palabra ingresada correctamente");
 //        p.ver(s.ImprimirDiccionario().resultado, Retorno.Resultado.OK, "Diccionario impreso correctamente");
-        p.ver(s.IngresarPalabraDiccionario("Brisa").resultado, Retorno.Resultado.OK, "Palabra ingresada correctamente");
-        p.ver(s.IngresarPalabraDiccionario("Hoja").resultado, Retorno.Resultado.OK, "Palabra ingresada correctamente");
-//        p.ver(s.IngresarPalabraDiccionario("Hojalata").resultado, Retorno.Resultado.OK, "Palabra ingresada correctamente");
-        p.ver(s.IngresarPalabraDiccionario("Bosque").resultado, Retorno.Resultado.OK, "Palabra ingresada correctamente");
-        p.ver(s.ImprimirDiccionario().resultado, Retorno.Resultado.OK, "Diccionario impreso correctamente");
-        
+//        
 
         p.tituloPrueba("         MUESTRA LAS PALABRAS DEL TEXTO QUE NO SE ENCUENTRAN EN EL DICCIONARIO - S/E   ");
 //           Insertamos tres lineas y seis palabras 
+//        p.ver(s.InsertarLinea("C", "Archivos", "mensaje1").resultado, Retorno.Resultado.OK, "Linea vacía insertada correctamente");
+//        p.ver(s.InsertarLinea("C", "Archivos", "mensaje1").resultado, Retorno.Resultado.OK, "Linea vacía insertada correctamente");
+//        p.ver(s.InsertarLinea("C", "Archivos", "mensaje1").resultado, Retorno.Resultado.OK, "Linea vacía insertada correctamente");
+//        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje1", 2, 1, "PalabraEnDiccionario21").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+//        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje1", 2, 2, "PalabraEnDiccionario22").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+//        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje1", 1, 1, "PalabraIncorrecta11").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+//        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje1", 1, 2, "PalabraEnDiccionario12").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+//        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje1", 1, 3, "PalabraIncorrecta13").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+//        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje1", 3, 1, "PalabraIncorrecta31").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+//        p.ver(s.ImprimirTexto("C", "Archivos", "mensaje1").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
+//        
+//        p.ver(s.IngresarPalabraDiccionario("PalabraEnDiccionario21").resultado, Retorno.Resultado.OK, "SOFI1Palabra ingresada correctamente");
+//        p.ver(s.IngresarPalabraDiccionario("PalabraEnDiccionario22").resultado, Retorno.Resultado.OK, "SOFI2Palabra ingresada correctamente");
+//        p.ver(s.IngresarPalabraDiccionario("PalabraEnDiccionario12").resultado, Retorno.Resultado.OK, "SOFI3Palabra ingresada correctamente");
+//        
+
+//--sofi
+
         p.ver(s.InsertarLinea("C", "Archivos", "mensaje1").resultado, Retorno.Resultado.OK, "Linea vacía insertada correctamente");
         p.ver(s.InsertarLinea("C", "Archivos", "mensaje1").resultado, Retorno.Resultado.OK, "Linea vacía insertada correctamente");
         p.ver(s.InsertarLinea("C", "Archivos", "mensaje1").resultado, Retorno.Resultado.OK, "Linea vacía insertada correctamente");
-        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje1", 2, 1, "PalabraEnDiccionario21").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
-        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje1", 2, 2, "PalabraEnDiccionario22").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje1", 2, 1, "PalabraEnDiccionarioDosUno").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje1", 2, 2, "PalabraEnDiccionarioDosDos").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
         p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje1", 1, 1, "PalabraIncorrecta11").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
-        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje1", 1, 2, "PalabraEnDiccionario12").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
-        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje1", 1, 3, "PalabraIncorrecta13").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
-        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje1", 3, 1, "PalabraIncorrecta31").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje1", 1, 2, "PalabraEnDiccionarioUnoDos").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje1", 1, 3, "PalabraIncorrectaUnoTres").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje1", 3, 1, "PalabraIncorrectaTresUno").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
         p.ver(s.ImprimirTexto("C", "Archivos", "mensaje1").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
         
-        p.ver(s.IngresarPalabraDiccionario("PalabraEnDiccionario21").resultado, Retorno.Resultado.OK, "Palabra ingresada correctamente");
-        p.ver(s.IngresarPalabraDiccionario("PalabraEnDiccionario22").resultado, Retorno.Resultado.OK, "Palabra ingresada correctamente");
-        p.ver(s.IngresarPalabraDiccionario("PalabraEnDiccionario12").resultado, Retorno.Resultado.OK, "Palabra ingresada correctamente");
-        p.ver(s.ImprimirDiccionario().resultado, Retorno.Resultado.OK, "Diccionario impreso correctamente");
+        p.ver(s.IngresarPalabraDiccionario("PalabraEnDiccionarioDosUno").resultado, Retorno.Resultado.OK, "SOFI1Palabra ingresada correctamente");
+        p.ver(s.IngresarPalabraDiccionario("PalabraEnDiccionarioDosDos").resultado, Retorno.Resultado.OK, "SOFI2Palabra ingresada correctamente");
+        p.ver(s.IngresarPalabraDiccionario("PalabraEnDiccionarioUnoDos").resultado, Retorno.Resultado.OK, "SOFI3Palabra ingresada correctamente");
+       
+
+//p.ver(s.ImprimirDiccionario().resultado, Retorno.Resultado.OK, "Diccionario impreso correctamente");
         
         // p.ver(s.ImprimirTextoIncorrecto().resultado, Retorno.Resultado.OK, "Palabras no encontradas en diccionario");
         
