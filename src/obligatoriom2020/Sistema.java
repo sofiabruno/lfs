@@ -82,11 +82,11 @@ public class Sistema implements ISistema {
                 uni.listaCarpeta.agregarFinal(carpeta);
                 ret.valorString = "Se agregó la carpeta +" + carpeta + "a la unidad " + unidad;
             } else {
-//                ret.resultado = Retorno.Resultado.ERROR;
+                ret.resultado = Retorno.Resultado.ERROR;
                 ret.valorString = " La carpeta " + carpeta + " ya existe en la unidad " + unidad;
             }
         } else {
-//            ret.resultado = Retorno.Resultado.ERROR;
+            ret.resultado = Retorno.Resultado.ERROR;
             ret.valorString = "No existe la unidad " + unidad;
 
         }
