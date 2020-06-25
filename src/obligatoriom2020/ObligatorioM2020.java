@@ -20,6 +20,7 @@ public class ObligatorioM2020 {
         //      Agregar carpetas 
         p.tituloPrueba("******** OPERACIONES RELATIVAS A LA ESTRUCTURA - OK ****");
         p.ver(s.AgregarCarpeta("C", "Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Archivos en unidad C");
+        p.ver(s.AgregarCarpeta("C", "Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Archivos en unidad C");
         p.ver(s.AgregarCarpeta("C", "Docs").resultado, Retorno.Resultado.OK, "Se creo la carpeta Docs en unidad C");
         p.ver(s.AgregarCarpeta("C", "Descargas").resultado, Retorno.Resultado.OK, "Se creo la carpeta Descargas en unidad C");
         p.ver(s.ListarEstructuraUnidad("C").resultado, Retorno.Resultado.OK, "Se listan las carpetas de la unidad c: " + s.ListarEstructuraUnidad("C").valorString);
@@ -62,7 +63,7 @@ public class ObligatorioM2020 {
         //eliminar mensaje
         p.ver(s.EliminarMensaje("C", "Archivos", "mensaje4").resultado, Retorno.Resultado.OK, "Se elimina el mensaje4 de la carpeta Archivos");
         p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los mensajes de la unidad C: " + s.ListarEstructura("C", "Archivos").valorString);
-        p.ver(s.EliminarMensaje("C", "Archivos", "mensaje1").resultado, Retorno.Resultado.OK, "Se elimina el mensaje1 de la carpeta Archivos");
+        //p.ver(s.EliminarMensaje("C", "Archivos", "mensaje1").resultado, Retorno.Resultado.OK, "Se elimina el mensaje1 de la carpeta Archivos");
         p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los mensajes de la unidad C: " + s.ListarEstructura("C", "Archivos").valorString);
 
         //para que falle eliminar mensaje
@@ -350,6 +351,12 @@ public class ObligatorioM2020 {
 //        p.ver(s.InsertarPalabraEnLinea(2, 2, "Palabra2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente";
 //        p.ver(s.ImprimirLinea(2).resultado, Retorno.Resultado.NO_IMPLEMENTADA, s.ImprimirLinea(2).valorString);
 //           
+
+
+
+
+
+
 //        
 //        // OPERACIONES RELATIVAS AL DICCIONARIO --------------------------------------------------------------------------------------------------------------
 //        //      AGREGA UNA PALABRA AL DICCIONARIO
@@ -359,6 +366,13 @@ public class ObligatorioM2020 {
 //        p.ver(s.IngresarPalabraDiccionario("Bosque").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
 //        p.ver(s.ImprimirDiccionario().resultado, Retorno.Resultado.OK, "Diccionario impreso correctamente");
         
+
+
+
+
+
+
+
 
 // Boorar palabras de diccionario y mostrar dicionario vacio al borrarlas
 //        p.ver(s.BorrarPalabraDiccionario("Hoja").resultado, Retorno.Resultado.OK, "Palabra borrada correctamente");
@@ -405,7 +419,48 @@ public class ObligatorioM2020 {
 //        p.ver(s.IngresarPalabraDiccionario("Palabra21").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
 //        p.ver(s.IngresarPalabraDiccionario("Palabra22").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
 //        p.ver(s.ImprimirTextoIncorrecto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Diccionario impreso correctamente");
-//        
+//   
+
+
+
+        p.ver(s.InsertarLinea("C", "Archivos", "mensaje1").resultado, Retorno.Resultado.OK, "Linea vacía insertada correctamente");
+        p.ver(s.InsertarLinea("C", "Archivos", "mensaje1").resultado, Retorno.Resultado.OK, "Linea vacía insertada correctamente");
+        p.ver(s.InsertarLinea("C", "Archivos", "mensaje1").resultado, Retorno.Resultado.OK, "Linea vacía insertada correctamente");
+        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje1", 2, 1, "PalabraEnDiccionario21").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje1", 2, 2, "PalabraEnDiccionario22").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje1", 1, 1, "PalabraIncorrecta11").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje1", 1, 2, "PalabraEnDiccionario12").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje1", 1, 3, "PalabraIncorrecta13").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje1", 3, 1, "PalabraIncorrecta31").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+        p.ver(s.ImprimirTexto("C", "Archivos", "mensaje1").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
+        
+        p.ver(s.IngresarPalabraDiccionario("PalabraEnDiccionario21").resultado, Retorno.Resultado.OK, "Palabra ingresada correctamente");
+        p.ver(s.IngresarPalabraDiccionario("PalabraEnDiccionario22").resultado, Retorno.Resultado.OK, "Palabra ingresada correctamente");
+        p.ver(s.IngresarPalabraDiccionario("PalabraEnDiccionario12").resultado, Retorno.Resultado.OK, "Palabra ingresada correctamente");
+        p.ver(s.ImprimirDiccionario().resultado, Retorno.Resultado.OK, "Diccionario impreso correctamente");
+        
+        //p.ver(s.ImprimirTextoIncorrecto().resultado, Retorno.Resultado.OK, "Palabras no encontradas en diccionario");
+        
+        // Resultado Esperado:
+        // 1: PalabraIncorrecta11 PalabraIncorrecta13
+        // 2: 
+        // 3: PalabraIncorrecta31
+        
+        
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
 //      
         // EJERCICIO COMPLEMENTARIO --------------------------------------------------------------------------------------------------------------------------
 //        p.ver(s.BuscarCamino(s.Ciudades, "Montevideo", "NewYork").resultado, Retorno.Resultado.OK, s.BuscarCamino(s.Ciudades, "Montevideo", "NewYork").valorString);

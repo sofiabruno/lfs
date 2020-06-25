@@ -62,5 +62,5 @@ public interface ISistema {
     Retorno CargarDistancias(int[][] Ciudades);
 
     Retorno BuscarCamino(int[][] M, String origen, String destino);
-
+   
 }

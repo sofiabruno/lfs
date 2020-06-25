@@ -642,8 +642,20 @@ public class Sistema implements ISistema {
     public Retorno ImprimirTextoIncorrecto() {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
         
+        //NodoMensaje mensAux = (NodoMensaje) carpe.listamensaje.obtenerElemento(mensaje);
+        NodoLinea aux = mensaje1.listaLineas.Primero;           
+         
         
-        
+        while (aux.listaPalabras.cantelementos != 0){
+//            if (!buscarEnDiccionario(aux.getDato())) {
+//                System.out.println(aux.getDato() + " ");
+//            } else {
+//            
+//            }
+                 
+            aux = aux.siguiente;
+        }
+          
         return ret;
 
     }
