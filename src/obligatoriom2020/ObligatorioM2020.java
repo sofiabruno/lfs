@@ -7,6 +7,7 @@ public class ObligatorioM2020 {
         Sistema s = new Sistema(3);
         Prueba p = new Prueba();
         prueba1(s, p);
+        pruebaCiudades(s, p);
     }
 
     public static void prueba1(Sistema s, Prueba p) {
