@@ -590,19 +590,36 @@ public class Sistema implements ISistema {
         if (diccionario.obtenerElemento(palabraAingresar) == null) {
             diccionario.agregarOrd(palabraAingresar);
             ret.resultado = Retorno.Resultado.OK;
+            
         } else {
             ret.valorString = "La palabra a ingresar ya existe en el diccionario";
             ret.resultado = Retorno.Resultado.ERROR;
         }
+        
+        //System.out.print(diccionario.cantelementos);
 
         return ret;
     }
 
     @Override
     public Retorno BorrarPalabraDiccionario(String palabraABorrar) {
-        Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
-        return ret;
+        Retorno ret = new Retorno(Retorno.Resultado.OK);
 
+        if (diccionario.obtenerElemento(palabraABorrar) != null) {
+            diccionario.borrarElemento1(palabraABorrar);
+            ret.resultado = Retorno.Resultado.OK;   
+            
+            //diccionario.cantelementos = diccionario.cantelementos - 1;
+            
+            
+        } else {
+            //ret.resultado = Retorno.Resultado.ERROR;
+            ret.valorString = "La palabra no existe en el diccionario";
+        }
+        
+        
+        
+        return ret;
     }
 
     @Override
@@ -615,6 +632,8 @@ public class Sistema implements ISistema {
             System.out.println(diccionario.mostrarPalabras());
 
         }
+        
+        
 
         return ret;
     }

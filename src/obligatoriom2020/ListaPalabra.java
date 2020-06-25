@@ -216,7 +216,8 @@ public class ListaPalabra implements ILista {
                     if (aux.getSiguiente() != null) {
                         NodoPalabra borrar = aux.getSiguiente();
                         aux.setSiguiente(borrar.getSiguiente());
-                        borrar.setSiguiente(null);
+                        this.cantelementos = this.cantelementos - 1;
+                        //borrar.setSiguiente(null);
                     }
                 }
                 aux = aux.getSiguiente();
