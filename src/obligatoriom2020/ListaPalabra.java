@@ -236,9 +236,10 @@ public class ListaPalabra implements ILista {
     //PRE: //POS:
     public NodoPalabra obtenerElemento(Object dato) {
         NodoPalabra aux = this.Primero;
-        while (aux != null && !aux.getDato().equals(dato)) {
+        while (aux != null && aux.getDato() != dato) {
             aux = aux.getSiguiente();
         }
+        //esta comparando mal, hoja no le da igual a hoja
         //encontre dato o llegue al Ultimoal
         return aux;
     }

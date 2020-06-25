@@ -312,7 +312,7 @@ public class ObligatorioM2020 {
         p.ver(s.IngresarPalabraDiccionario("PalabraEnDiccionario12").resultado, Retorno.Resultado.OK, "Palabra ingresada correctamente");
         p.ver(s.ImprimirDiccionario().resultado, Retorno.Resultado.OK, "Diccionario impreso correctamente");
         
-         p.ver(s.ImprimirTextoIncorrecto().resultado, Retorno.Resultado.OK, "Palabras no encontradas en diccionario");
+        // p.ver(s.ImprimirTextoIncorrecto().resultado, Retorno.Resultado.OK, "Palabras no encontradas en diccionario");
         
         // Resultado Esperado:
         // 1: PalabraIncorrecta11 PalabraIncorrecta13
