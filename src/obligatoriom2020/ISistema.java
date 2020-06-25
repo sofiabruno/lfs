@@ -54,9 +54,9 @@ public interface ISistema {
 
     // Funcionalidades referentes a ejercicio complementario
 //    OJO XQ SI USAMOS ESTE SISTEMA HAY Q CORREGIR EL EJERCICIO 3
-//     Retorno CargarDistancias(int[][] Ciudades, String origen, String destino, int duracion);
+     Retorno CargarDistancias(int[][] Ciudades, String origen, String destino, int duracion);
 //     Retorno BuscarCamino ( int [][] M, String origen, String destino);
-    Retorno CargarDistancias(int[][] Ciudades);
+  //  Retorno CargarDistancias(int[][] Ciudades);
 //
 //    Retorno BuscarCamino(int[][] M, String origen, String destino);
 //    Retorno CargarDistancias(int[][] Ciudades, String origen, String destino, int duracion);

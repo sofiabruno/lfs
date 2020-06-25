@@ -325,9 +325,9 @@ public class ObligatorioM2020 {
         p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "MensajeEspecial", 3, 1, "PalabraIncorrectaTresUno").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
         p.ver(s.ImprimirTexto("C", "Archivos", "MensajeEspecial").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
         
-        p.ver(s.IngresarPalabraDiccionario("PalabraEnDiccionarioDosUno").resultado, Retorno.Resultado.OK, "SOFI1Palabra ingresada correctamente");
-        p.ver(s.IngresarPalabraDiccionario("PalabraEnDiccionarioDosDos").resultado, Retorno.Resultado.OK, "SOFI2Palabra ingresada correctamente");
-        p.ver(s.IngresarPalabraDiccionario("PalabraEnDiccionarioUnoDos").resultado, Retorno.Resultado.OK, "SOFI3Palabra ingresada correctamente");
+        p.ver(s.IngresarPalabraDiccionario("PalabraEnDiccionarioDosUno").resultado, Retorno.Resultado.OK, "Palabra ingresada correctamente");
+        p.ver(s.IngresarPalabraDiccionario("PalabraEnDiccionarioDosDos").resultado, Retorno.Resultado.OK, "Palabra ingresada correctamente");
+        p.ver(s.IngresarPalabraDiccionario("PalabraEnDiccionarioUnoDos").resultado, Retorno.Resultado.OK, "Palabra ingresada correctamente");
        
 
         p.ver(s.ImprimirDiccionario().resultado, Retorno.Resultado.OK, "Diccionario impreso correctamente");
@@ -343,8 +343,9 @@ public class ObligatorioM2020 {
 // *******************************************************************************************************************************************************
         p.tituloPrueba("*********************************************************************** EJERCICIO COMPLEMENTARIO ***");
         // Buscar el camino más corto para llegar de un origen a un destino, una ciudad intermedia solamente
-//        p.ver(s.BuscarCamino(s.Ciudades, "Montevideo", "NewYork").resultado, Retorno.Resultado.OK, s.BuscarCamino(s.Ciudades, "Montevideo", "NewYork").valorString);
+        p.ver(s.BuscarCamino(s.Ciudades, "Montevideo", "Santiago").resultado, Retorno.Resultado.OK, s.BuscarCamino(s.Ciudades, "Panama", "SanPablo").valorString);
 
+   
 
 
         // FUNCIONALIDAD DEL SISTEMA -------------------------------------------------------------------------------------------------------------------------
@@ -354,6 +355,29 @@ public class ObligatorioM2020 {
         
         p.imprimirResultadosPrueba();     
         
+    }
+    
+    public static void pruebaCiudades(Sistema s, Prueba p){
+        p.tituloPrueba("************************ EJERCICIO COMPLEMENTARIO **");
+        p.ver(s.crearSistemaMensajes().resultado, Retorno.Resultado.OK, "Se crea sistema de mensajes");
+        
+        // Cargamos distancias
+        s.CargarDistancias(s.Ciudades, "Montevideo", "Santiago", 10);
+        s.CargarDistancias(s.Ciudades, "Montevideo", "Lima", 25);
+        s.CargarDistancias(s.Ciudades, "Montevideo", "SanPablo", 15);
+        s.CargarDistancias(s.Ciudades, "Montevideo", "Panama", 30);
+        s.CargarDistancias(s.Ciudades, "Santiago", "Lima", 20);
+        s.CargarDistancias(s.Ciudades, "Lima", "NewYork", 40);
+        s.CargarDistancias(s.Ciudades, "SanPablo", "NewYork", 45);
+        s.CargarDistancias(s.Ciudades, "Panama", "NewYork", 25);
+                 
+        // Buscar el camino más corto para llegar de un origen a un destino, una ciudad intermedia solamente
+        p.ver(s.BuscarCamino(s.Ciudades, "Montevideo", "NewYork").resultado, Retorno.Resultado.OK, s.BuscarCamino(s.Ciudades, "Montevideo", "NewYork").valorString);
+        
+        
+        
+        p.ver(s.destruirSistemaMensajes().resultado, Retorno.Resultado.OK, "Se destruye sistema");
+        p.imprimirResultadosPrueba(); 
     }
 
 }

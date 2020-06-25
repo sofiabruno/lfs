@@ -56,9 +56,9 @@ public class Sistema implements ISistema {
         listaUnidades.agregarInicio(uni);
 
         diccionario = new ListaPalabra();
+        Ciudades = new int[6][6];
 
-        CargarDistancias(Ciudades);
-
+        //CargarDistancias(Ciudades);
         return ret;
 
     }
@@ -68,7 +68,8 @@ public class Sistema implements ISistema {
         Retorno ret = new Retorno(Retorno.Resultado.OK);
 
         listaUnidades = null;
-
+        Ciudades = null;
+        diccionario = null;
         return ret;
 
     }
@@ -657,27 +658,7 @@ public class Sistema implements ISistema {
             ret.resultado = Retorno.Resultado.ERROR;
         }
 
-//        if (uni != null && carpe != null && mensAux != null) {
-//            while ( auxDicc != null){
-//                NodoLinea lineAux = mensAux.listaLineas.Primero;
-//                while( lineAux != null ){
-//                    NodoPalabra auxPalabra = lineAux.listaPalabras.Primero;
-//                    while( auxPalabra != null){
-//                        if (!auxPalabra.dato.toString().contentEquals(auxDicc.dato.toString())) {
-//                            lineAux.listaPalabras.borrarElemento(auxPalabra);
-//                        }
-//                        auxPalabra = auxPalabra.siguiente;
-//                    }
-//                    lineAux = lineAux.siguiente;
-//                
-//                }
-//                auxDicc = auxDicc.siguiente;
-//            }
-//            ImprimirTexto(unidad, carpeta, mensaje);
-//                
-//        } else {
-//            ret.resultado = Retorno.Resultado.ERROR;
-//        }
+//        
         return ret;
     }
 
@@ -697,56 +678,60 @@ public class Sistema implements ISistema {
 
     }
 
+    String[] NombreCiudades = {"Montevideo", "Santiago", "Lima", "SanPablo", "Panama", "NewYork"};
+
     @Override
-//    public Retorno CargarDistancias(int[][] Ciudades, String origen, String destino, int duracion) {
-    public Retorno CargarDistancias(int[][] Ciudades) {
+    public Retorno CargarDistancias(int[][] Ciu, String origen, String destino, int duracion) {
+        //public Retorno CargarDistancias(int[][] Ciudades) {
         Retorno ret = new Retorno(Retorno.Resultado.OK);
 
-        Ciudades[0][1] = 10;
-        Ciudades[1][0] = 10;
+        Ciu[obtenerPosicion(origen)][obtenerPosicion(destino)] = duracion;
+        Ciu[obtenerPosicion(destino)][obtenerPosicion(origen)] = duracion;
 
-        Ciudades[0][2] = 25;
-        Ciudades[2][0] = 25;
-
-        Ciudades[0][3] = 15;
-        Ciudades[3][0] = 15;
-
-        Ciudades[0][4] = 30;
-        Ciudades[4][0] = 30;
-
-        Ciudades[0][5] = 0;
-        Ciudades[5][0] = 0;
-
-        Ciudades[1][2] = 20;
-        Ciudades[2][1] = 20;
-
-        Ciudades[1][3] = 0;
-        Ciudades[3][1] = 0;
-
-        Ciudades[1][4] = 0;
-        Ciudades[4][1] = 0;
-
-        Ciudades[1][5] = 0;
-        Ciudades[5][1] = 0;
-
-        Ciudades[2][3] = 0;
-        Ciudades[3][2] = 0;
-
-        Ciudades[2][4] = 0;
-        Ciudades[4][2] = 0;
-
-        Ciudades[2][5] = 40;
-        Ciudades[5][2] = 40;
-
-        Ciudades[3][4] = 0;
-        Ciudades[4][3] = 0;
-
-        Ciudades[3][5] = 45;
-        Ciudades[5][3] = 45;
-
-        Ciudades[4][5] = 25;
-        Ciudades[5][4] = 25;
-
+//        Ciudades[0][1] = 10;
+//        Ciudades[1][0] = 10;
+//
+//        Ciudades[0][2] = 25;
+//        Ciudades[2][0] = 25;
+//
+//        Ciudades[0][3] = 15;
+//        Ciudades[3][0] = 15;
+//
+//        Ciudades[0][4] = 30;
+//        Ciudades[4][0] = 30;
+//
+//        Ciudades[0][5] = 0;
+//        Ciudades[5][0] = 0;
+//
+//        Ciudades[1][2] = 20;
+//        Ciudades[2][1] = 20;
+//
+//        Ciudades[1][3] = 0;
+//        Ciudades[3][1] = 0;
+//
+//        Ciudades[1][4] = 0;
+//        Ciudades[4][1] = 0;
+//
+//        Ciudades[1][5] = 0;
+//        Ciudades[5][1] = 0;
+//
+//        Ciudades[2][3] = 0;
+//        Ciudades[3][2] = 0;
+//
+//        Ciudades[2][4] = 0;
+//        Ciudades[4][2] = 0;
+//
+//        Ciudades[2][5] = 40;
+//        Ciudades[5][2] = 40;
+//
+//        Ciudades[3][4] = 0;
+//        Ciudades[4][3] = 0;
+//
+//        Ciudades[3][5] = 45;
+//        Ciudades[5][3] = 45;
+//
+//        Ciudades[4][5] = 25;
+//        Ciudades[5][4] = 25;
         return ret;
 
     }
@@ -755,72 +740,116 @@ public class Sistema implements ISistema {
     public Retorno BuscarCamino(int[][] M, String origen, String destino) {
         Retorno ret = new Retorno(Retorno.Resultado.OK);
 
+//        int suma = 9999;
+//        int columnas = M[0].length;
+//        String escala = "";
+//        int miorigen = ciudadanumero(origen);
+//        int midestino = ciudadanumero(destino);
+//
+//        for (int i = 0; i < columnas; i++) {
+//            if (M[miorigen][i] != 0 && M[midestino][i] != 0) {
+//                if (M[miorigen][i] + M[midestino][i] < suma) {
+//                    suma = M[miorigen][i] + M[midestino][i];
+//                    escala = numerociudad(i);
+//                }
+//            }
+//        }
+        //  ret.valorString = "El camino mas corto es: " + origen + " - " + escala + " - " + destino;
         int suma = 9999;
         int columnas = M[0].length;
-        String escala = "";
-        int miorigen = ciudadanumero(origen);
-        int midestino = ciudadanumero(destino);
+        int escala = 0;
+        int miorigen = obtenerPosicion(origen);
+        int midestino = obtenerPosicion(destino);
+        String recorrido = "No valido";
 
-        for (int i = 0; i < columnas; i++) {
-            if (M[miorigen][i] != 0 && M[midestino][i] != 0) {
-                if (M[miorigen][i] + M[midestino][i] < suma) {
-                    suma = M[miorigen][i] + M[midestino][i];
-                    escala = numerociudad(i);
+        if (!origen.equals(destino)) {
+            recorrido = "";
+            for (int i = 0; i < columnas; i++) {
+                if (M[miorigen][i] != 0 && M[midestino][i] != 0) {
+                    if (M[miorigen][i] + M[midestino][i] < suma) {
+                        suma = M[miorigen][i] + M[midestino][i];
+                        escala = i;
+                    }
                 }
             }
+            recorrido = "El camino mas corto es: " + origen + " - " + obtenerNombre(escala) + " - " + destino;
         }
 
-        ret.valorString = "El camino mas corto es: " + origen + " - " + escala + " - " + destino;
+        ret.valorString = recorrido;
 
         return ret;
 
     }
 
-    public int ciudadanumero(String Ciudad) {
-        if (Ciudad.equals("Montevideo")) {
-            return 0;
-        }
-        if (Ciudad.equals("Santiago")) {
-            return 1;
-        }
-        if (Ciudad.equals("Lima")) {
-            return 2;
-        }
-        if (Ciudad.equals("SanPablo")) {
-            return 3;
-        }
-        if (Ciudad.equals("Panama")) {
-            return 4;
-        }
-        if (Ciudad.equals("NewYork")) {
-            return 5;
-        }
+//    public int ciudadanumero(String Ciudad) {
+//        if (Ciudad.equals("Montevideo")) {
+//            return 0;
+//        }
+//        if (Ciudad.equals("Santiago")) {
+//            return 1;
+//        }
+//        if (Ciudad.equals("Lima")) {
+//            return 2;
+//        }
+//        if (Ciudad.equals("SanPablo")) {
+//            return 3;
+//        }
+//        if (Ciudad.equals("Panama")) {
+//            return 4;
+//        }
+//        if (Ciudad.equals("NewYork")) {
+//            return 5;
+//        }
+//
+//        return -1;
+//    }
+//
+//    public String numerociudad(int numeroCiudad) {
+//
+//        if (numeroCiudad == 0) {
+//            return "Montevideo";
+//        }
+//        if (numeroCiudad == 1) {
+//            return "Santiago";
+//        }
+//        if (numeroCiudad == 2) {
+//            return "Lima";
+//        }
+//        if (numeroCiudad == 3) {
+//            return "SanPablo";
+//        }
+//        if (numeroCiudad == 4) {
+//            return "Panama";
+//        }
+//        if (numeroCiudad == 5) {
+//            return "NewYork";
+//        }
+//
+//        return "";
+//    }
+    private int obtenerPosicion(String ciudad) {
+        int largo = NombreCiudades.length;
+        int pos = 0;
+        int ret = 0;
 
-        return -1;
+        while (pos < largo) {
+            if (NombreCiudades[pos].equals(ciudad)) {
+                ret = pos;
+            }
+            pos++;
+        }
+        return ret;
     }
 
-    public String numerociudad(int numeroCiudad) {
+    private String obtenerNombre(int pos) {
+        int largo = NombreCiudades.length;
+        String nombre = "";
 
-        if (numeroCiudad == 0) {
-            return "Montevideo";
-        }
-        if (numeroCiudad == 1) {
-            return "Santiago";
-        }
-        if (numeroCiudad == 2) {
-            return "Lima";
-        }
-        if (numeroCiudad == 3) {
-            return "SanPablo";
-        }
-        if (numeroCiudad == 4) {
-            return "Panama";
-        }
-        if (numeroCiudad == 5) {
-            return "NewYork";
+        if (pos < largo && pos >= 0) {
+            nombre = NombreCiudades[pos];
         }
 
-        return "";
+        return nombre;
     }
 
 }
