@@ -249,6 +249,13 @@ public class ObligatorioM2020 {
 //        p.ver(s.BorrarOcurrenciasPalabraEnLinea("C", "Ocurr", "mensajeOcurrencias", 2, "Plinplin").resultado, Retorno.Resultado.OK, "Se borro plin plin");
         p.ver(s.ImprimirTexto("C", "Ocurr", "mensajeOcurrencias").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
         p.ver(s.BorrarPalabra("C", "Ocurr", "mensajeOcurrencias", 1, 2).resultado, Retorno.Resultado.OK, "sin coments");
+        p.ver(s.BorrarPalabra("C", "Ocurr", "mensajeOcurrencias", 1, 1).resultado, Retorno.Resultado.OK, "sin coments");
+        p.ver(s.BorrarPalabra("C", "Ocurr", "mensajeOcurrencias", 1, 1).resultado, Retorno.Resultado.OK, "sin coments");
+        p.ver(s.BorrarPalabra("C", "Ocurr", "mensajeOcurrencias", 1, 1).resultado, Retorno.Resultado.ERROR, "sin coments");
+        p.ver(s.BorrarPalabra("C", "Ocurr", "mensajeOcurrencias", 5, 3).resultado, Retorno.Resultado.ERROR, "sin coments");
+        p.ver(s.BorrarPalabra("C", "Ocurr", "mensajeOcurrencias", 5, 2).resultado, Retorno.Resultado.ERROR, "sin coments");
+       
+//  p.ver(s.BorrarPalabra("C", "Ocurr", "mensajeOcurrencias", 5, 1).resultado, Retorno.Resultado.OK, "sin coments");
         p.ver(s.ImprimirTexto("C", "Ocurr", "mensajeOcurrencias").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
 
 
