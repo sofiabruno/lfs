@@ -56,8 +56,6 @@ public class Sistema implements ISistema {
         listaUnidades.agregarInicio(uni);
 
         diccionario = new ListaPalabra();
-        
-        
 
         CargarDistancias(Ciudades);
 
@@ -571,9 +569,9 @@ public class Sistema implements ISistema {
         NodoLinea aux = mensAux.listaLineas.buscarPorPosicion(posicionLinea);
 
         if (posicionLinea >= 1 && posicionLinea <= MAX_CANT_PALABRAS_X_LINEA) {
-            
+
             String palabras = aux.listaPalabras.mostrarPalabras();
-            System.out.print( posicionLinea + ": " + palabras);
+            System.out.print(posicionLinea + ": " + palabras);
             ret.resultado = Retorno.Resultado.OK;
         } else {
             ret.resultado = Retorno.Resultado.ERROR;
@@ -590,14 +588,13 @@ public class Sistema implements ISistema {
         if (diccionario.obtenerElemento(palabraAingresar) == null) {
             diccionario.agregarOrd(palabraAingresar);
             ret.resultado = Retorno.Resultado.OK;
-            
+
         } else {
             ret.valorString = "La palabra a ingresar ya existe en el diccionario";
             ret.resultado = Retorno.Resultado.ERROR;
         }
-        
-        //System.out.print(diccionario.cantelementos);
 
+        //System.out.print(diccionario.cantelementos);
         return ret;
     }
 
@@ -607,18 +604,14 @@ public class Sistema implements ISistema {
 
         if (diccionario.obtenerElemento(palabraABorrar) != null) {
             diccionario.borrarElemento1(palabraABorrar);
-            ret.resultado = Retorno.Resultado.OK;   
-            
+            ret.resultado = Retorno.Resultado.OK;
+
             //diccionario.cantelementos = diccionario.cantelementos - 1;
-            
-            
         } else {
             //ret.resultado = Retorno.Resultado.ERROR;
             ret.valorString = "La palabra no existe en el diccionario";
         }
-        
-        
-        
+
         return ret;
     }
 
@@ -632,8 +625,6 @@ public class Sistema implements ISistema {
             System.out.println(diccionario.mostrarPalabras());
 
         }
-        
-        
 
         return ret;
     }
@@ -641,22 +632,34 @@ public class Sistema implements ISistema {
     @Override
     public Retorno ImprimirTextoIncorrecto() {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
-        
+
         //NodoMensaje mensAux = (NodoMensaje) carpe.listamensaje.obtenerElemento(mensaje);
-        NodoLinea aux = mensaje1.listaLineas.Primero;           
-         
-        
-        while (aux.listaPalabras.cantelementos != 0){
-//            if (!buscarEnDiccionario(aux.getDato())) {
-//                System.out.println(aux.getDato() + " ");
-//            } else {
-//            
-//            }
-                 
+        NodoLinea aux = mensaje1.listaLineas.Primero;
+
+        while (aux != null) {
+            if ( !buscarEnDiccionario(aux.dato.toString())) {
+                System.out.println(aux.getDato().toString() + " ");
+            } 
             aux = aux.siguiente;
         }
-          
+
         return ret;
+
+    }
+
+    public boolean buscarEnDiccionario(String Palabra) {
+        boolean encontre = false;
+        NodoPalabra  aux = diccionario.Primero;
+        while(aux != null){
+            if (aux.dato.toString() == Palabra) {
+                encontre = true;
+                break;
+            }
+            aux = aux.siguiente;
+        
+        }
+        
+        return encontre;
 
     }
 
