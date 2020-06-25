@@ -232,7 +232,7 @@ public class Sistema implements ISistema {
 //La posición es válida solamente si (posicionLinea >= 1) y 
 //(posicionLinea <= cantidad de líneas + 1)
     public Retorno InsertarLineaEnPosicion(String unidad, String carpeta, String mensaje, int posicionLinea) {
-        Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+        Retorno ret = new Retorno(Retorno.Resultado.OK);
 
         NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
         NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
@@ -256,7 +256,7 @@ public class Sistema implements ISistema {
 //    Borra la línea en la posición indicada y mueve todas las líneas que se encuentran a partir de la posición indicada, una posición más hacia arriba.
 //La posición es válida solamente si posicionLinea existe en el texto, esto es, si posicionLinea >= 1 y posicionLinea <= cantidad de líneas.
     public Retorno BorrarLinea(String unidad, String carpeta, String mensaje, int posicionLinea) {
-        Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+        Retorno ret = new Retorno(Retorno.Resultado.OK);
 
         NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
         NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
