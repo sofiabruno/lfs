@@ -254,6 +254,9 @@ public class ObligatorioM2020 {
         p.ver(s.BorrarPalabra("C", "Ocurr", "mensajeOcurrencias", 1, 1).resultado, Retorno.Resultado.ERROR, "sin coments");
         p.ver(s.BorrarPalabra("C", "Ocurr", "mensajeOcurrencias", 5, 3).resultado, Retorno.Resultado.ERROR, "sin coments");
         p.ver(s.BorrarPalabra("C", "Ocurr", "mensajeOcurrencias", 5, 2).resultado, Retorno.Resultado.ERROR, "sin coments");
+        p.ver(s.BorrarPalabra("C", "Ocurr", "mensajeOcurrencias", 5, 1).resultado, Retorno.Resultado.ERROR, "sin coments");
+        p.ver(s.BorrarPalabra("C", "Ocurr", "mensajeOcurrencias", 4, 3).resultado, Retorno.Resultado.ERROR, "sin coments");
+        p.ver(s.BorrarPalabra("C", "Ocurr", "mensajeOcurrencias", 4, 2).resultado, Retorno.Resultado.ERROR, "sin coments");
        
 //  p.ver(s.BorrarPalabra("C", "Ocurr", "mensajeOcurrencias", 5, 1).resultado, Retorno.Resultado.OK, "sin coments");
         p.ver(s.ImprimirTexto("C", "Ocurr", "mensajeOcurrencias").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");

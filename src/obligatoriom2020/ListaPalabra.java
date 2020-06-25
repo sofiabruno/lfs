@@ -83,8 +83,8 @@ public class ListaPalabra implements ILista {
             }
         }
     }
-    
-     public void mostrarLinea() {
+
+    public void mostrarLinea() {
         if (this.esVacia()) {
             System.out.println("La Linea está vacía");
         } else {
@@ -93,8 +93,9 @@ public class ListaPalabra implements ILista {
                 System.out.print(aux.getDato() + " ");
                 aux = aux.siguiente;
                 //para que no se junte la linea con el -------Testeo--------
-            }if(aux == null){
-            System.out.println("");
+            }
+            if (aux == null) {
+                System.out.println("");
             }
         }
     }
@@ -199,7 +200,7 @@ public class ListaPalabra implements ILista {
         }
     }
 
-       public void borrarElemento1(Object dato) {
+    public void borrarElemento1(Object dato) {
         // implementar el metodo
 
         if (this.Primero != null) {
@@ -224,6 +225,7 @@ public class ListaPalabra implements ILista {
 //            ojo q debe actualizar cant elementos
         }
     }
+
     //PRE: 
     //POS: Retorna la cantidad de nodos que tiene la lista
 //    public int cantElementos() {
@@ -263,10 +265,9 @@ public class ListaPalabra implements ILista {
             this.Primero = nuevaPalabra;
             this.cantelementos = this.cantelementos + 1;
 
-        } else if (this.Primero != null && posicion == 1){
+        } else if (this.Primero != null && posicion == 1) {
             this.agregarInicio(nuevaPalabra);
-        }    
-        else {
+        } else {
             //ahora voy a recorrer la lista desde el principio
             NodoPalabra actual = this.Primero;
             NodoPalabra previo = null;
@@ -292,29 +293,31 @@ public class ListaPalabra implements ILista {
             }
         }
     }
-    
-       public void borrarPorPosicion(int pos){
-        
-        if (pos>= 1 && pos <= this.cantelementos) {
+
+    public void borrarPorPosicion(int pos) {
+
+        if (pos >= 1 && pos <= this.cantelementos) {
             //si es el primero
-            if (pos==1) {
+            if (pos == 1) {
                 this.Primero = this.Primero.siguiente;
-            }
-            else if( pos == this.cantelementos){
+                this.cantelementos = this.cantelementos - 1;
+
+            } else if (pos == this.cantelementos) {
                 this.borrarFin();
-            }
-            else{
-                NodoPalabra previo = this.buscarPorPosicion(pos-1);
+            } else {
+                NodoPalabra previo = this.buscarPorPosicion(pos - 1);
                 previo.setSiguiente(previo.siguiente.siguiente);
-//              previo.setSiguiente(this.buscarPorPosicion(pos).siguiente);        
-               }
-            
-            this.cantelementos = this.cantelementos - 1;
-        }       
-    
+//              previo.setSiguiente(this.buscarPorPosicion(pos).siguiente);      
+
+                this.cantelementos = this.cantelementos - 1;
+
+            }
+
+        }
+
     }
-       
-          public NodoPalabra buscarPorPosicion(int posicionPalabra) {
+
+    public NodoPalabra buscarPorPosicion(int posicionPalabra) {
 
         if (posicionPalabra >= 1 && posicionPalabra <= this.cantelementos) {
             if (posicionPalabra == 1) {
@@ -332,7 +335,5 @@ public class ListaPalabra implements ILista {
         }
 
     }
-
-    
 
 }

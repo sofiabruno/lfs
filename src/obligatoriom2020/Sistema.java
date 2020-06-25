@@ -207,7 +207,7 @@ public class Sistema implements ISistema {
     @Override
     //insertar una linea nueva vacia al final del texto
     public Retorno InsertarLinea(String unidad, String carpeta, String mensaje) {
-        Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+        Retorno ret = new Retorno(Retorno.Resultado.OK);
 
         NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
         NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
