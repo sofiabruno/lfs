@@ -632,35 +632,37 @@ public class Sistema implements ISistema {
     @Override
     public Retorno ImprimirTextoIncorrecto() {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
-        AgregarCarpeta("C", "Archivos");
-        AgregarMensaje("C", "Archivos", "MensajeEspecial");
-        //NodoMensaje mensAux = (NodoMensaje) carpe.listamensaje.obtenerElemento(mensaje);
-        NodoLinea aux = mensaje1.listaLineas.Primero;
+        
+        NodoMensaje mensajeEspecial = new NodoMensaje("");
+       // AgregarMensaje("C", "Archivos", "mensajeEspecial");
+        
+
+        NodoLinea aux = mensajeEspecial.listaLineas.Primero;
 
         while (aux != null) {
-            if ( !buscarEnDiccionario(aux.dato.toString())) {
+            if (!buscarEnDiccionario(aux.dato.toString())) {
                 BorrarOcurrenciasPalabraEnTexto("C", "Archivos", "mensaje1", aux.dato.toString());
-         
-            } 
+
+            }
             aux = aux.siguiente;
         }
-                ImprimirTexto("C", "Archivos", "mensaje1");
+        ImprimirTexto("C", "Archivos", "mensaje1");
         return ret;
 
     }
 
     public boolean buscarEnDiccionario(String Palabra) {
         boolean encontre = false;
-        NodoPalabra  aux = diccionario.Primero;
-        while(aux != null){
+        NodoPalabra aux = diccionario.Primero;
+        while (aux != null) {
             if (aux.dato.toString() == Palabra) {
                 encontre = true;
                 break;
             }
             aux = aux.siguiente;
-        
+
         }
-        
+
         return encontre;
 
     }

@@ -313,7 +313,7 @@ public class ObligatorioM2020 {
 //        
 
 //--sofi
-
+        p.ver(s.AgregarMensaje("C", "Archivos", "MensajeEspecial").resultado, Retorno.Resultado.OK, "Se agrega mensaje1 en carpeta Archivos");
         p.ver(s.InsertarLinea("C", "Archivos", "MensajeEspecial").resultado, Retorno.Resultado.OK, "Linea vacía insertada correctamente");
         p.ver(s.InsertarLinea("C", "Archivos", "MensajeEspecial").resultado, Retorno.Resultado.OK, "Linea vacía insertada correctamente");
         p.ver(s.InsertarLinea("C", "Archivos", "MensajeEspecial").resultado, Retorno.Resultado.OK, "Linea vacía insertada correctamente");
