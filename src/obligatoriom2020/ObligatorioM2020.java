@@ -314,25 +314,25 @@ public class ObligatorioM2020 {
 
 //--sofi
 
-        p.ver(s.InsertarLinea("C", "Archivos", "mensaje1").resultado, Retorno.Resultado.OK, "Linea vacía insertada correctamente");
-        p.ver(s.InsertarLinea("C", "Archivos", "mensaje1").resultado, Retorno.Resultado.OK, "Linea vacía insertada correctamente");
-        p.ver(s.InsertarLinea("C", "Archivos", "mensaje1").resultado, Retorno.Resultado.OK, "Linea vacía insertada correctamente");
-        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje1", 2, 1, "PalabraEnDiccionarioDosUno").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
-        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje1", 2, 2, "PalabraEnDiccionarioDosDos").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
-        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje1", 1, 1, "PalabraIncorrecta11").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
-        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje1", 1, 2, "PalabraEnDiccionarioUnoDos").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
-        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje1", 1, 3, "PalabraIncorrectaUnoTres").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
-        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje1", 3, 1, "PalabraIncorrectaTresUno").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
-        p.ver(s.ImprimirTexto("C", "Archivos", "mensaje1").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
+        p.ver(s.InsertarLinea("C", "Archivos", "MensajeEspecial").resultado, Retorno.Resultado.OK, "Linea vacía insertada correctamente");
+        p.ver(s.InsertarLinea("C", "Archivos", "MensajeEspecial").resultado, Retorno.Resultado.OK, "Linea vacía insertada correctamente");
+        p.ver(s.InsertarLinea("C", "Archivos", "MensajeEspecial").resultado, Retorno.Resultado.OK, "Linea vacía insertada correctamente");
+        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "MensajeEspecial", 2, 1, "PalabraEnDiccionarioDosUno").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "MensajeEspecial", 2, 2, "PalabraEnDiccionarioDosDos").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "MensajeEspecial", 1, 1, "PalabraIncorrecta11").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "MensajeEspecial", 1, 2, "PalabraEnDiccionarioUnoDos").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "MensajeEspecial", 1, 3, "PalabraIncorrectaUnoTres").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "MensajeEspecial", 3, 1, "PalabraIncorrectaTresUno").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+        p.ver(s.ImprimirTexto("C", "Archivos", "MensajeEspecial").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
         
         p.ver(s.IngresarPalabraDiccionario("PalabraEnDiccionarioDosUno").resultado, Retorno.Resultado.OK, "SOFI1Palabra ingresada correctamente");
         p.ver(s.IngresarPalabraDiccionario("PalabraEnDiccionarioDosDos").resultado, Retorno.Resultado.OK, "SOFI2Palabra ingresada correctamente");
         p.ver(s.IngresarPalabraDiccionario("PalabraEnDiccionarioUnoDos").resultado, Retorno.Resultado.OK, "SOFI3Palabra ingresada correctamente");
        
 
-//p.ver(s.ImprimirDiccionario().resultado, Retorno.Resultado.OK, "Diccionario impreso correctamente");
+        p.ver(s.ImprimirDiccionario().resultado, Retorno.Resultado.OK, "Diccionario impreso correctamente");
         
-        // p.ver(s.ImprimirTextoIncorrecto().resultado, Retorno.Resultado.OK, "Palabras no encontradas en diccionario");
+        p.ver(s.ImprimirTextoIncorrecto().resultado, Retorno.Resultado.OK, "Palabras no encontradas en diccionario");
         
         // Resultado Esperado:
         // 1: PalabraIncorrecta11 PalabraIncorrecta13
