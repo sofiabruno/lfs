@@ -9,6 +9,7 @@ public class Sistema implements ISistema {
 
     int MAX_CANT_PALABRAS_X_LINEA;
     ListaPalabra diccionario;
+    NodoMensaje mensaje1 = new NodoMensaje("");
     ListaUnidad listaUnidades = null;
 
 //    public ListaCarpeta getListacarpeta() {
@@ -55,6 +56,8 @@ public class Sistema implements ISistema {
         listaUnidades.agregarInicio(uni);
 
         diccionario = new ListaPalabra();
+        
+        
 
         CargarDistancias(Ciudades);
 
@@ -568,7 +571,9 @@ public class Sistema implements ISistema {
         NodoLinea aux = mensAux.listaLineas.buscarPorPosicion(posicionLinea);
 
         if (posicionLinea >= 1 && posicionLinea <= MAX_CANT_PALABRAS_X_LINEA) {
-            aux.listaPalabras.mostrarLinea();
+            
+            String palabras = aux.listaPalabras.mostrarPalabras();
+            System.out.print( posicionLinea + ": " + palabras);
             ret.resultado = Retorno.Resultado.OK;
         } else {
             ret.resultado = Retorno.Resultado.ERROR;
@@ -617,6 +622,9 @@ public class Sistema implements ISistema {
     @Override
     public Retorno ImprimirTextoIncorrecto() {
         Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+        
+        
+        
         return ret;
 
     }

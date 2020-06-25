@@ -54,7 +54,7 @@ public class PruebasRafael {
     public static void pruebatopes(Sistema s, Prueba p) {
         p.tituloPrueba("pruebatopes");
         //p.ver(s.crearSistemaMensajes().resultado, Retorno.Resultado.OK, "Vacio");
-        p.ver(s.InsertarLinea("C", "Archivos", "mensaje1").resultado, Retorno.Resultado.OK, "Vacio"); //no hay errores posibles 
+        p.ver(s.InsertarLinea("C", "Archivos", s.mensaje1.toString()).resultado, Retorno.Resultado.OK, "Vacio"); //no hay errores posibles 
         p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje1",1, 1, "Palabra1").resultado, Retorno.Resultado.OK, "Palabra Ingresada");
         p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje1",1, 2, "Palabra2").resultado, Retorno.Resultado.OK, "Palabra Ingresada");
         p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje1",1, 3, "Palabra3").resultado, Retorno.Resultado.OK, "Palabra Ingresada");
@@ -68,6 +68,8 @@ public class PruebasRafael {
         p.ver(s.ImprimirTexto("C", "Archivos", "mensaje1").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
         p.ver(s.IngresarPalabraDiccionario("XXXXX").resultado, Retorno.Resultado.OK, "Palabra agregada al diccionario");
         p.ver(s.ImprimirTextoIncorrecto().resultado, Retorno.Resultado.OK, "Palabras no ingresadas al diccionario impresas");
+        
+        
         p.ver(s.destruirSistemaMensajes().resultado, Retorno.Resultado.OK, "Sistema Borrado");
         p.imprimirResultadosPrueba();
     }
