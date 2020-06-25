@@ -156,20 +156,37 @@ public class ListaPalabra implements ILista {
     @Override
     public void agregarOrd(Object dato) {
         NodoPalabra n = (NodoPalabra) dato; // new NodoPalabra(dato);
-        if (this.esVacia() || this.Primero.getDato().toString().compareToIgnoreCase(n.getDato().toString()) > 0) {
-            // A.compareToIgnoreCase(B) - Si A > B entonces el valor retorno es +1, siendo B el dato nuevo a ingresar  
+//        if (this.esVacia() || this.Primero.getDato().toString().equalsIgnoreCase(n.getDato().toString())) {
+//            // A.compareToIgnoreCase(B) - Si A > B entonces el valor retorno es +1, siendo B el dato nuevo a ingresar  
+//            this.agregarInicio(n);
+//        } else if (this.Ultimo.getDato().toString().compareToIgnoreCase(n.getDato().toString()) < 0) {
+//            // A.compareToIgnoreCase(B) - Si A < B entonces el valor retorno es -1, siendo B el dato nuevo a ingresar
+//            this.agregarFinal(n);
+//        } else {
+//            NodoPalabra aux = this.Primero;
+//            while (aux.getSiguiente() != null && aux.getSiguiente().getDato().toString().compareToIgnoreCase(n.getDato().toString()) < 0) {
+//
+//                aux.getSiguiente();
+//            }
+//            n.setSiguiente(aux.getSiguiente());
+//            aux.setSiguiente(n);
+//        }
+
+        if (this.esVacia() || (this.Primero.dato.toString().compareToIgnoreCase(n.dato.toString()) > 0)) {
             this.agregarInicio(n);
-        } else if (this.Ultimo.getDato().toString().compareToIgnoreCase(n.getDato().toString()) < 0) {
-            // A.compareToIgnoreCase(B) - Si A < B entonces el valor retorno es -1, siendo B el dato nuevo a ingresar
+        } //último elemento es menor o igual => agrego al final
+        else if (this.Ultimo.dato.toString().compareToIgnoreCase(n.dato.toString()) < 0) {
             this.agregarFinal(n);
         } else {
             NodoPalabra aux = this.Primero;
-            while (aux.getSiguiente() != null && aux.getSiguiente().getDato().toString().compareToIgnoreCase(n.getDato().toString()) < 0) {
-                aux.getSiguiente();
+            while (aux.siguiente != null && (aux.siguiente.dato.toString().compareToIgnoreCase(n.dato.toString()) > 0) ) {
+                aux = aux.getSiguiente();
             }
-            n.setSiguiente(aux.getSiguiente());
+            //NodoPalabra nuevo = new NodoPalabra(n);
+            n.setSiguiente(aux.siguiente);
             aux.setSiguiente(n);
         }
+
     }
 
     //PRE: lista ordenada

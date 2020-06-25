@@ -310,7 +310,7 @@ public class ObligatorioM2020 {
 //        p.ver(s.IngresarPalabraDiccionario("PalabraEnDiccionario21").resultado, Retorno.Resultado.OK, "SOFI1Palabra ingresada correctamente");
 //        p.ver(s.IngresarPalabraDiccionario("PalabraEnDiccionario22").resultado, Retorno.Resultado.OK, "SOFI2Palabra ingresada correctamente");
 //        p.ver(s.IngresarPalabraDiccionario("PalabraEnDiccionario12").resultado, Retorno.Resultado.OK, "SOFI3Palabra ingresada correctamente");
-//        
+////        
 
 //--sofi
         p.ver(s.AgregarMensaje("C", "Archivos", "MensajeEspecial").resultado, Retorno.Resultado.OK, "Se agrega mensaje1 en carpeta Archivos");

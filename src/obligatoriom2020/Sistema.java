@@ -323,17 +323,23 @@ public class Sistema implements ISistema {
         if (uni != null && carpe != null) {
             if (mensAux != null) {
                 NodoLinea aux = mensAux.listaLineas.Primero;
-                for (int i = 0; i < mensAux.listaLineas.cantelementos; i++) {
-                    NodoPalabra auxPalabra = aux.listaPalabras.Primero;
-                    for (int j = 0; j < aux.listaPalabras.cantelementos; j++) {
-                        if (auxPalabra.getDato().toString() == palabraABorrar) {
-                            aux.listaPalabras.borrarElemento(auxPalabra);
+                if (aux != null) {
+                    for (int i = 0; i < mensAux.listaLineas.cantelementos; i++) {
+                        NodoPalabra auxPalabra = aux.listaPalabras.Primero;
+                        while (auxPalabra != null) {
+                            for (int j = 0; j < aux.listaPalabras.cantelementos; j++) {
+                                if (auxPalabra.getDato().toString() == palabraABorrar) {
+                                    aux.listaPalabras.borrarElemento(auxPalabra);
+                                }
+                                auxPalabra = auxPalabra.siguiente;
+                            }
                         }
-                        auxPalabra = auxPalabra.siguiente;
+                        aux = aux.siguiente;
                     }
-                    aux = aux.siguiente;
+                    ret.resultado = Retorno.Resultado.OK;
+
                 }
-                ret.resultado = Retorno.Resultado.OK;
+
             } else {
 //                    el mensaje a borrar en la posicion indicada esta vacio
                 ret.resultado = Retorno.Resultado.ERROR;
@@ -637,29 +643,41 @@ public class Sistema implements ISistema {
         NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
         NodoMensaje mensAux = (NodoMensaje) carpe.listamensaje.obtenerElemento(mensaje);
 
-//        NodoLinea aux = mensAux.listaLineas.Primero;
+        NodoPalabra auxDicc = diccionario.Primero;
 
         if (uni != null && carpe != null && mensAux != null) {
+            while (auxDicc != null) {
+                BorrarOcurrenciasPalabraEnTexto(unidad, carpeta, mensaje, auxDicc.dato.toString());
+                auxDicc = auxDicc.siguiente;
+            }
 
-//            while (aux != null) {
-
-//                NodoPalabra palabra = aux.listaPalabras.Primero;
-                NodoPalabra palabra = diccionario.Primero;
-
-                while (palabra != null) {
-//                    if (!buscarEnDiccionario(palabra.dato.toString())) {
-                        BorrarOcurrenciasPalabraEnTexto(unidad, carpeta, mensaje, palabra.dato.toString());
-//                    }
-                    palabra = palabra.siguiente;
-
-                }
-
-//                aux = aux.siguiente;
-//            }
             ImprimirTexto(unidad, carpeta, mensaje);
 
+        } else {
+            ret.resultado = Retorno.Resultado.ERROR;
         }
-        
+
+//        if (uni != null && carpe != null && mensAux != null) {
+//            while ( auxDicc != null){
+//                NodoLinea lineAux = mensAux.listaLineas.Primero;
+//                while( lineAux != null ){
+//                    NodoPalabra auxPalabra = lineAux.listaPalabras.Primero;
+//                    while( auxPalabra != null){
+//                        if (!auxPalabra.dato.toString().contentEquals(auxDicc.dato.toString())) {
+//                            lineAux.listaPalabras.borrarElemento(auxPalabra);
+//                        }
+//                        auxPalabra = auxPalabra.siguiente;
+//                    }
+//                    lineAux = lineAux.siguiente;
+//                
+//                }
+//                auxDicc = auxDicc.siguiente;
+//            }
+//            ImprimirTexto(unidad, carpeta, mensaje);
+//                
+//        } else {
+//            ret.resultado = Retorno.Resultado.ERROR;
+//        }
         return ret;
     }
 
