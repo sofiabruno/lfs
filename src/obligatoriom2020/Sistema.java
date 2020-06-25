@@ -601,8 +601,8 @@ public class Sistema implements ISistema {
     @Override
     public Retorno BorrarPalabraDiccionario(String palabraABorrar) {
         Retorno ret = new Retorno(Retorno.Resultado.OK);
-
-        if (diccionario.obtenerElemento(palabraABorrar) != null) {
+        NodoPalabra nodoConPalabraAborrar = new NodoPalabra(palabraABorrar);
+        if (diccionario.obtenerElemento(nodoConPalabraAborrar) != null) {
             diccionario.borrarElemento1(palabraABorrar);
             ret.resultado = Retorno.Resultado.OK;
 
