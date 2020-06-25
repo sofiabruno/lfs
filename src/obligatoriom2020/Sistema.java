@@ -630,25 +630,37 @@ public class Sistema implements ISistema {
     }
 
     @Override
-    public Retorno ImprimirTextoIncorrecto() {
-        Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
-        
-        NodoMensaje mensajeEspecial = new NodoMensaje("");
-       // AgregarMensaje("C", "Archivos", "mensajeEspecial");
-        
+    public Retorno ImprimirTextoIncorrecto(String unidad, String carpeta, String mensaje) {
+        Retorno ret = new Retorno(Retorno.Resultado.OK);
 
-        NodoLinea aux = mensajeEspecial.listaLineas.Primero;
+        NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
+        NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
+        NodoMensaje mensAux = (NodoMensaje) carpe.listamensaje.obtenerElemento(mensaje);
 
-        while (aux != null) {
-            if (!buscarEnDiccionario(aux.dato.toString())) {
-                BorrarOcurrenciasPalabraEnTexto("C", "Archivos", "mensaje1", aux.dato.toString());
+//        NodoLinea aux = mensAux.listaLineas.Primero;
 
-            }
-            aux = aux.siguiente;
+        if (uni != null && carpe != null && mensAux != null) {
+
+//            while (aux != null) {
+
+//                NodoPalabra palabra = aux.listaPalabras.Primero;
+                NodoPalabra palabra = diccionario.Primero;
+
+                while (palabra != null) {
+//                    if (!buscarEnDiccionario(palabra.dato.toString())) {
+                        BorrarOcurrenciasPalabraEnTexto(unidad, carpeta, mensaje, palabra.dato.toString());
+//                    }
+                    palabra = palabra.siguiente;
+
+                }
+
+//                aux = aux.siguiente;
+//            }
+            ImprimirTexto(unidad, carpeta, mensaje);
+
         }
-        ImprimirTexto("C", "Archivos", "mensaje1");
+        
         return ret;
-
     }
 
     public boolean buscarEnDiccionario(String Palabra) {
@@ -668,6 +680,7 @@ public class Sistema implements ISistema {
     }
 
     @Override
+//    public Retorno CargarDistancias(int[][] Ciudades, String origen, String destino, int duracion) {
     public Retorno CargarDistancias(int[][] Ciudades) {
         Retorno ret = new Retorno(Retorno.Resultado.OK);
 

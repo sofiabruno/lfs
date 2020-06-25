@@ -50,17 +50,17 @@ public interface ISistema {
 
     Retorno ImprimirDiccionario();
 
-    Retorno ImprimirTextoIncorrecto();
+    Retorno ImprimirTextoIncorrecto(String unidad, String carpeta, String mensaje);
 
     // Funcionalidades referentes a ejercicio complementario
-    
-    
 //    OJO XQ SI USAMOS ESTE SISTEMA HAY Q CORREGIR EL EJERCICIO 3
 //     Retorno CargarDistancias(int[][] Ciudades, String origen, String destino, int duracion);
 //     Retorno BuscarCamino ( int [][] M, String origen, String destino);
-    
     Retorno CargarDistancias(int[][] Ciudades);
+//
+//    Retorno BuscarCamino(int[][] M, String origen, String destino);
+//    Retorno CargarDistancias(int[][] Ciudades, String origen, String destino, int duracion);
 
     Retorno BuscarCamino(int[][] M, String origen, String destino);
-   
+
 }
