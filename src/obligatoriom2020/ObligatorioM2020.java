@@ -43,16 +43,16 @@ public class ObligatorioM2020 {
         p.ver(s.EliminarCarpeta("D", "Fotos").resultado, Retorno.Resultado.ERROR, "Intentar eliminar Fotos en unidad D " + s.EliminarCarpeta("D", "Fotos").valorString);
 
         //agregar mensaje
-        p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los mensajes de la unidad C: " + s.ListarEstructura("C", "Archivos").valorString);
+        p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los mensajes de la unidad C, carpeta Archivos: " + s.ListarEstructura("C", "Archivos").valorString);
 
         p.ver(s.AgregarMensaje("C", "Archivos", "mensaje1").resultado, Retorno.Resultado.OK, "Se agrega mensaje1 en carpeta Archivos");
-        p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los mensajes de la unidad C: " + s.ListarEstructura("C", "Archivos").valorString);
+        p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los mensajes de la unidad C, carpeta Archivos: " + s.ListarEstructura("C", "Archivos").valorString);
         p.ver(s.AgregarMensaje("C", "Archivos", "mensaje2").resultado, Retorno.Resultado.OK, "Se agrega mensaje2 en carpeta Archivos");
-        p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los mensajes de la unidad C: " + s.ListarEstructura("C", "Archivos").valorString);
+        p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los mensajes de la unidad C, carpeta Archivos: " + s.ListarEstructura("C", "Archivos").valorString);
         p.ver(s.AgregarMensaje("C", "Archivos", "mensaje3").resultado, Retorno.Resultado.OK, "Se agrega mensaje3 en carpeta Archivos");
-        p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los mensajes de la unidad C: " + s.ListarEstructura("C", "Archivos").valorString);
+        p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los mensajes de la unidad C, carpeta Archivos: " + s.ListarEstructura("C", "Archivos").valorString);
         p.ver(s.AgregarMensaje("C", "Archivos", "mensaje4").resultado, Retorno.Resultado.OK, "Se agrega mensaje4 en carpeta Archivos");
-        p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los mensajes de la unidad C: " + s.ListarEstructura("C", "Archivos").valorString);
+        p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los mensajes de la unidad C, carpeta Archivos: " + s.ListarEstructura("C", "Archivos").valorString);
 
         //para q falle el agregar mensaje
         //agregar mensaje a una carpeta q no existe
@@ -62,15 +62,15 @@ public class ObligatorioM2020 {
 
         //eliminar mensaje
         p.ver(s.EliminarMensaje("C", "Archivos", "mensaje4").resultado, Retorno.Resultado.OK, "Se elimina el mensaje4 de la carpeta Archivos");
-        p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los mensajes de la unidad C: " + s.ListarEstructura("C", "Archivos").valorString);
+        p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los mensajes de la unidad C, carpeta Archivos: " + s.ListarEstructura("C", "Archivos").valorString);
         //p.ver(s.EliminarMensaje("C", "Archivos", "mensaje1").resultado, Retorno.Resultado.OK, "Se elimina el mensaje1 de la carpeta Archivos");
-        p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los mensajes de la unidad C: " + s.ListarEstructura("C", "Archivos").valorString);
+        p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los mensajes de la unidad C, carpeta Archivos: " + s.ListarEstructura("C", "Archivos").valorString);
 
         //para que falle eliminar mensaje
         //eliminar mensaje mensaje a una carpeta q no existe
         p.ver(s.EliminarMensaje("C", "Fotitos", "mensaje3").resultado, Retorno.Resultado.OK, "Se intenta eliminar mensaje3 en carpeta Fotitos " + s.EliminarMensaje("C", "Fotitos", "mensaje3").valorString);
         //no existe el mensaje que se desea eliminar
-        p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los mensajes de la unidad C: " + s.ListarEstructura("C", "Archivos").valorString);
+        p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los mensajes de la unidad C, carpeta Archivos: " + s.ListarEstructura("C", "Archivos").valorString);
         p.ver(s.EliminarMensaje("C", "Archivos", "mensaje4").resultado, Retorno.Resultado.OK, "Se intenta eliminar mensaje4 en carpeta Archivos " + s.EliminarMensaje("C", "Archivos", "mensaje4").valorString);
 
 //        p.ver(s.AgregarCarpeta("C", "Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Archivos en unidad C: " + s.AgregarCarpeta("C", "Archivos").valorString);
