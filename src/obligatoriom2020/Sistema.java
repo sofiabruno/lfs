@@ -428,7 +428,7 @@ public class Sistema implements ISistema {
 
     @Override
     public Retorno InsertarPalabraYDesplazar(String unidad, String carpeta, String mensaje, int posicionLinea, int posicionPalabra, String palabraAIngresar) {
-        Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+        Retorno ret = new Retorno(Retorno.Resultado.OK);
 
         NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
         NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
@@ -519,7 +519,36 @@ public class Sistema implements ISistema {
 
     @Override
     public Retorno BorrarOcurrenciasPalabraEnLinea(String unidad, String carpeta, String mensaje, int posicionLinea, String palabraABorrar) {
-        Retorno ret = new Retorno(Retorno.Resultado.NO_IMPLEMENTADA);
+        Retorno ret = new Retorno(Retorno.Resultado.OK);
+        
+        NodoUnidad uni = (NodoUnidad) listaUnidades.obtenerElemento(unidad);
+        NodoCarpeta carpe = uni.listaCarpeta.obtenerElemento(carpeta);
+        NodoMensaje mensAux = (NodoMensaje) carpe.listamensaje.obtenerElemento(mensaje);
+        NodoLinea LineAux = (NodoLinea) mensAux.listaLineas.buscarPorPosicion(posicionLinea);
+
+        if (uni != null && carpe != null && mensAux != null) {
+            if (LineAux != null) {
+                NodoPalabra auxPalabra = LineAux.listaPalabras.Primero;
+                    for (int j = 0; j < LineAux.listaPalabras.cantelementos; j++) {
+                        if (auxPalabra.dato.toString() == palabraABorrar) {
+                            LineAux.listaPalabras.borrarElemento(auxPalabra);
+                        }
+                        auxPalabra = auxPalabra.siguiente;
+                    }           
+                ret.resultado = Retorno.Resultado.OK;
+            } else {
+//                    la linea a borrar en la posicion indicada esta vacio
+                ret.resultado = Retorno.Resultado.ERROR;
+                ret.valorString = "La linea esta vacia";
+                // Como mostramos este error en el juego de pruebas? Fede
+            }
+        } else {
+//            no existe la ubicacion de linea
+            ret.resultado = Retorno.Resultado.ERROR;
+            ret.valorString = "No existe la unidad o la carpeta o el mensaje";
+        }
+        
+        
         return ret;
 
     }

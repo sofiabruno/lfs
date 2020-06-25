@@ -189,7 +189,7 @@ public class ListaPalabra implements ILista {
                     if (aux.getSiguiente() != null) {
                         NodoPalabra borrar = aux.getSiguiente();
                         aux.setSiguiente(borrar.getSiguiente());
-                        borrar.setSiguiente(null);
+                        //borrar.setSiguiente(null);
                     }
                 }
                 aux = aux.getSiguiente();

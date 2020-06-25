@@ -194,16 +194,16 @@ public class ObligatorioM2020 {
 //        // p.ver(s.InsertarPalabraYDesplazar("C", "Archivos", "mensaje3", 1, 3, "NodoLineaUnoNuevaTerceraPalabra").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
 //        //String unidad, String carpeta, String mensaje, int posicionLinea, int posicionPalabra
 //        p.ver(s.ImprimirTexto("C", "Archivos", "mensaje3").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
-//        p.ver(s.BorrarPalabra("C", "Archivos", "mensaje3", 1, 3).resultado, Retorno.Resultado.OK, "Palabra borrada Correctamente");
+      //p.ver(s.BorrarPalabra("C", "Archivos", "mensaje3", 1, 2).resultado, Retorno.Resultado.OK, "Palabra borrada Correctamente");
 //        
-//        p.ver(s.ImprimirTexto("C", "Archivos", "mensaje3").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
+   // p.ver(s.ImprimirTexto("C", "Archivos", "mensaje3").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
 //        //borrar palabra con posición de palabra que no existe
 //        p.ver(s.BorrarPalabra("C", "Archivos", "mensaje3", 1, 6).resultado, Retorno.Resultado.ERROR, "La posición de la palabra no es válida");
 //        // //borrar palabra con posición de linea que no existe
 //        p.ver(s.ImprimirTexto("C", "Archivos", "mensaje3").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
 //        
         //Borr la linea
-        p.ver(s.ImprimirLinea("C", "Archivos", "mensaje3", 3).resultado, Retorno.Resultado.OK, "Linea impresa correctamente");
+      //  p.ver(s.ImprimirLinea("C", "Archivos", "mensaje3", 3).resultado, Retorno.Resultado.OK, "Linea impresa correctamente");
 //        
 //        //      BORRA TODAS LAS LINEAS DEL TEXTO
 //        //      Borramos todas las lineas del texto
@@ -227,7 +227,7 @@ public class ObligatorioM2020 {
         p.ver(s.InsertarLineaEnPosicion("C", "Ocurr", "mensajeOcurrencias", 2).resultado, Retorno.Resultado.OK, "Se agrego la linea");
        // p.ver(s.InsertarPalabraEnLinea("C", "Ocurr", "mensajeOcurrencias", 2, 1, "Palabra2").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
        // p.ver(s.ImprimirTexto("C", "Ocurr", "mensajeOcurrencias").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
-     //   p.ver(s.BorrarOcurrenciasPalabraEnTexto("C", "Ocurr", "mensajeOcurrencias", "Palabra1").resultado, Retorno.Resultado.OK, "Borro ok");
+      //p.ver(s.BorrarOcurrenciasPalabraEnTexto("C", "Ocurr", "mensajeOcurrencias", "Palabra1").resultado, Retorno.Resultado.OK, "Borro ok");
        // p.ver(s.ImprimirTexto("C", "Ocurr", "mensajeOcurrencias").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
 
         p.ver(s.InsertarPalabraYDesplazar("C", "Ocurr", "mensajeOcurrencias", 1, 3, "Palabra3").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
@@ -237,36 +237,26 @@ public class ObligatorioM2020 {
        p.ver(s.InsertarPalabraYDesplazar("C", "Ocurr", "mensajeOcurrencias", 1, 1, "Juan").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
        p.ver(s.InsertarPalabraYDesplazar("C", "Ocurr", "mensajeOcurrencias", 1, 1, "Fede").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
        p.ver(s.InsertarPalabraYDesplazar("C", "Ocurr", "mensajeOcurrencias", 1, 1, "FX").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
-//       p.ver(s.InsertarPalabraYDesplazar("C", "Ocurr", "mensajeOcurrencias", 3, 3, "Palabra3").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
-//       p.ver(s.InsertarPalabraYDesplazar("C", "Ocurr", "mensajeOcurrencias", 3, 3, "Palabra4").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
-//       p.ver(s.InsertarPalabraYDesplazar("C", "Ocurr", "mensajeOcurrencias", 3, 3, "Palabra5").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
-//       p.ver(s.InsertarPalabraYDesplazar("C", "Ocurr", "mensajeOcurrencias", 4, 1, "Palabra6").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
-//       p.ver(s.InsertarPalabraYDesplazar("C", "Ocurr", "mensajeOcurrencias", 4, 2, "Palabra7").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
-        
-        
-        
-        
+       p.ver(s.InsertarPalabraYDesplazar("C", "Ocurr", "mensajeOcurrencias", 4, 3, "asdfna").resultado, Retorno.Resultado.ERROR, "La posición de la palabra no es válida");
+       p.ver(s.InsertarPalabraYDesplazar("C", "Ocurr", "mensajeOcurrencias", 5, 3, "asdfna").resultado, Retorno.Resultado.ERROR, "La posición de la línea no es válida");
+       p.ver(s.InsertarPalabraYDesplazar("C", "Ocurr", "mensajeOcurrencias", 3, 3, "Palabra3").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+       p.ver(s.InsertarPalabraYDesplazar("C", "Ocurr", "mensajeOcurrencias", 3, 3, "Palabra4").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+       p.ver(s.InsertarPalabraYDesplazar("C", "Ocurr", "mensajeOcurrencias", 3, 3, "Palabra5").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+       p.ver(s.InsertarPalabraYDesplazar("C", "Ocurr", "mensajeOcurrencias", 4, 1, "Palabra6").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+       p.ver(s.InsertarPalabraYDesplazar("C", "Ocurr", "mensajeOcurrencias", 4, 2, "Palabra7").resultado, Retorno.Resultado.OK, "Se agrego la palabra");
+  
+//        p.ver(s.ImprimirTexto("C", "Ocurr", "mensajeOcurrencias").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
+//        p.ver(s.BorrarOcurrenciasPalabraEnLinea("C", "Ocurr", "mensajeOcurrencias", 2, "Plinplin").resultado, Retorno.Resultado.OK, "Se borro plin plin");
         p.ver(s.ImprimirTexto("C", "Ocurr", "mensajeOcurrencias").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
-
+        p.ver(s.BorrarPalabra("C", "Ocurr", "mensajeOcurrencias", 1, 2).resultado, Retorno.Resultado.OK, "sin coments");
+        p.ver(s.ImprimirTexto("C", "Ocurr", "mensajeOcurrencias").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
 
 
 
 
 //        //      BORRA TODAS LAS OCURRENCIAS DE UNA PALABRA EN EL TEXTO
 //        //      Borramos todas las palabras "Palabra2" y correr las palabras en la linea 
-//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");
-//        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");
-//        p.ver(s.InsertarPalabraEnLinea(1, 1, "Palabra1").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
-//        p.ver(s.InsertarPalabraEnLinea(1, 2, "Palabra2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
-//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra1").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
-//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
-//        p.ver(s.InsertarLineaEnPosicion(2).resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Línea insertada en la posición indicada");
-//        p.ver(s.InsertarPalabraEnLinea(2, 1, "Palabra2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra ingresada correctamente");
-//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Texto impreso correctamente");
-//        //      Hasta aca se plantea un texto para luego borrar y ver como se perjudico el mismo
-//        p.ver(s.BorrarOcurrenciasPalabraEnTexto("Palabra2").resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Palabra borrada correctamente");
-//        p.ver(s.ImprimirTexto().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Texto impreso correctamente");
-//        
+       
 //        //      IMPRIME EL TEXTO POR PANTALLA
 //        //      Mostrar texto en pantalla y "Texto vacio" cuando no contiene lineas el mensaje
 //        p.ver(s.InsertarLinea().resultado, Retorno.Resultado.NO_IMPLEMENTADA, "Linea vacía insertada correctamente");
