@@ -7,12 +7,12 @@ public class ObligatorioM2020 {
         Sistema s = new Sistema(3);
         Prueba p = new Prueba();
         
-        prueba1(s, p);
+//        prueba1(s, p);
 
 //        pruebaEstructuras(s, p);
 //        pruebaLineas(s, p);
 //        pruebaPalabras(s, p);
-//        pruebaDiccionario(s, p);
+        pruebaDiccionario(s, p);
 //        pruebaCiudades(s, p);
     }
 
@@ -346,6 +346,9 @@ public class ObligatorioM2020 {
 
     }
 
+    
+    
+    
     public static void pruebaEstructuras(Sistema s, Prueba p){
         p.tituloPrueba("********************************************************** OPERACIONES RELATIVAS A LA ESTRUCTURA ***");
         p.ver(s.crearSistemaMensajes().resultado, Retorno.Resultado.OK, "Se crea sistema de mensajes");
@@ -382,7 +385,8 @@ public class ObligatorioM2020 {
         
         //      AGREGAR ARCHIVO/MENSAJE - OK
         // Se agregar mensajes a una carpeta
-        p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los mensajes de la unidad C, carpeta Archivos: " + s.ListarEstructura("C", "Archivos").valorString);
+        p.ver(s.AgregarCarpeta("C", "Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Archivos en unidad C");
+        p.ver(s.ListarEstructura("C", "Archivos").resultado, Retorno.Resultado.OK, "Se listan los mensajes de la unidad C, carpeta Archivos: " + s.ListarEstructura("C", "Archivos").valorString);       
         p.ver(s.AgregarMensaje("C", "Archivos", "mensaje1").resultado, Retorno.Resultado.OK, "Se agrega mensaje1 en carpeta Archivos");
         p.ver(s.AgregarMensaje("C", "Archivos", "mensaje2").resultado, Retorno.Resultado.OK, "Se agrega mensaje2 en carpeta Archivos");
         p.ver(s.AgregarMensaje("C", "Archivos", "mensaje3").resultado, Retorno.Resultado.OK, "Se agrega mensaje3 en carpeta Archivos");
@@ -470,7 +474,6 @@ public class ObligatorioM2020 {
         //      BORRA TODAS LAS OCURRENCIAS DE UNA PALABRA EN EL TEXTO - OK  
         // Borramos todas las palabra2
         // Creamos carpeta y mensaje
-        p.ver(s.AgregarCarpeta("C", "Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Archivos en unidad C");
         p.ver(s.AgregarMensaje("C", "Archivos", "mensaje5").resultado, Retorno.Resultado.OK, "Se agrega mensaje3 en carpeta Archivos");
         p.ver(s.InsertarLinea("C", "Archivos", "mensaje5").resultado, Retorno.Resultado.OK, "Linea vacía insertada correctamente");
         p.ver(s.InsertarLinea("C", "Archivos", "mensaje5").resultado, Retorno.Resultado.OK, "Linea vacía insertada correctamente");
@@ -483,8 +486,8 @@ public class ObligatorioM2020 {
         p.ver(s.ImprimirTexto("C", "Archivos", "mensaje5").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
         p.ver(s.BorrarOcurrenciasPalabraEnTexto("C", "Archivos", "mensaje5", "Palabra2").resultado, Retorno.Resultado.OK, "Se borrró la palabra Palabra2 del texto ");
         p.ver(s.ImprimirTexto("C", "Archivos", "mensaje5").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
-        //      BORRA TODAS LAS OCURRENCIAS DE UNA PALABRA EN EL TEXTO - ERROR       // VER EN CASO DE QUE LA PALABRA NO EXISTA
-        p.ver(s.BorrarOcurrenciasPalabraEnTexto("C", "Archivos", "mensaje5", "Palabra5").resultado, Retorno.Resultado.ERROR, "La palabra a borrar no existe");
+//        //      BORRA TODAS LAS OCURRENCIAS DE UNA PALABRA EN EL TEXTO - ERROR       // VER EN CASO DE QUE LA PALABRA NO EXISTA
+//        p.ver(s.BorrarOcurrenciasPalabraEnTexto("C", "Archivos", "mensaje5", "Palabra5").resultado, Retorno.Resultado.ERROR, "La palabra a borrar no existe");
 
 
         //      IMPRIME EL TEXTO POR PANTALLA - S/E      // ES NECESARIO? YA LO USAMOS TODO EL TIEMPO
@@ -513,17 +516,16 @@ public class ObligatorioM2020 {
         // Para que falle porque supera el max de palabras permitidas
         p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje6", 1, 2, "Palabra4").resultado, Retorno.Resultado.ERROR, "Tope de palabras cumplido");
         p.ver(s.ImprimirTexto("C", "Archivos", "mensaje6").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
-        // Para que falle porque la posicion de la linea no sea valida
-        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje6", 1, 0, "Palabra4").resultado, Retorno.Resultado.ERROR, s.InsertarPalabraEnLinea("C", "Archivos", "mensaje2", 1, 0, "Palabra4").valorString);
-        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje6", 1, 5, "Palabra4").resultado, Retorno.Resultado.ERROR, s.InsertarPalabraEnLinea("C", "Archivos", "mensaje2", 1, 5, "Palabra4").valorString);
-        p.ver(s.ImprimirTexto("C", "Archivos", "mensaje6").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
-        // Para que falle porque la posicion de la linea no es valida
-        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje6", 3, 1, "Palabra5").resultado, Retorno.Resultado.ERROR, s.InsertarPalabraEnLinea("C", "Archivos", "mensaje2", 3, 1, "Palabra1").valorString);
+//        // Para que falle porque la posicion de la linea no sea valida
+//        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje6", 1, 0, "Palabra4").resultado, Retorno.Resultado.ERROR, s.InsertarPalabraEnLinea("C", "Archivos", "mensaje2", 1, 0, "Palabra4").valorString);
+//        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje6", 1, 5, "Palabra4").resultado, Retorno.Resultado.ERROR, s.InsertarPalabraEnLinea("C", "Archivos", "mensaje2", 1, 5, "Palabra4").valorString);
+//        p.ver(s.ImprimirTexto("C", "Archivos", "mensaje6").resultado, Retorno.Resultado.OK, "Texto impreso correctamente");
+//        // Para que falle porque la posicion de la linea no es valida
+//        p.ver(s.InsertarPalabraEnLinea("C", "Archivos", "mensaje6", 3, 1, "Palabra5").resultado, Retorno.Resultado.ERROR, s.InsertarPalabraEnLinea("C", "Archivos", "mensaje2", 3, 1, "Palabra1").valorString);
 
         
         //      INSERTAR UNA PALABRA A UNA LINEA Y DESPLAZA A LA SIGUIENTE SI ES NECESARIO - OK
         // Creamos carpeta y mensaje
-        p.ver(s.AgregarCarpeta("C", "Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Archivos en unidad C");
         p.ver(s.AgregarMensaje("C", "Archivos", "mensaje7").resultado, Retorno.Resultado.OK, "Se agrega mensaje7 en carpeta Archivos");
         // Insertamos lineas, palabras y desplazamos palabras en caso se insertar palabra donde ya existe una
         p.ver(s.InsertarLinea("C", "Archivos", "mensaje7").resultado, Retorno.Resultado.OK, "Linea vacía insertada correctamente");
@@ -546,7 +548,6 @@ public class ObligatorioM2020 {
 
         //      BORRA LA PALABRA EN LA POSICION INDICADA - OK
         // Creamos carpeta y mensaje
-        p.ver(s.AgregarCarpeta("C", "Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Archivos en unidad C");
         p.ver(s.AgregarMensaje("C", "Archivos", "mensaje8").resultado, Retorno.Resultado.OK, "Se agrega mensaje8 en carpeta Archivos");
         // Borramos palabra indicada
         p.ver(s.InsertarLinea("C", "Archivos", "mensaje8").resultado, Retorno.Resultado.OK, "Linea vacía insertada correctamente");
@@ -566,12 +567,11 @@ public class ObligatorioM2020 {
         // Borrar palabra con posición de palabra que no existe
         p.ver(s.BorrarPalabra("C", "Archivos", "mensaje8", 1, 6).resultado, Retorno.Resultado.ERROR, "La posición de la palabra no es válida");
         // Borrar palabra con posición de linea que no existe
-        p.ver(s.BorrarPalabra("C", "Archivos", "mensaje8", 5, 1).resultado, Retorno.Resultado.ERROR, "La posición de la linea no es válida");
+//        p.ver(s.BorrarPalabra("C", "Archivos", "mensaje8", 5, 1).resultado, Retorno.Resultado.ERROR, "La posición de la linea no es válida");
 
 
         //      BORRA TODAS LAS OCURRENCIAS DE UNA PALABRA EN LA LINEA INDICADA - OK
         // Creamos carpeta y mensaje
-        p.ver(s.AgregarCarpeta("C", "Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Archivos en unidad C");
         p.ver(s.AgregarMensaje("C", "Archivos", "mensaje9").resultado, Retorno.Resultado.OK, "Se agrega mensaje9 en carpeta Archivos");
         // Insertamos lineas y palabras para luego borrar todas ocurrencias de una palabra indicada en una linea indicada
         p.ver(s.InsertarLinea("C", "Archivos", "mensaje9").resultado, Retorno.Resultado.OK, "Linea vacía insertada correctamente");
@@ -629,6 +629,7 @@ public class ObligatorioM2020 {
         p.ver(s.ImprimirDiccionario().resultado, Retorno.Resultado.OK, "Diccionario impreso correctamente");
 
         //      MUESTRA LAS PALABRAS DEL TEXTO QUE NO SE ENCUENTRAN EN EL DICCIONARIO - S/E
+        p.ver(s.AgregarCarpeta("C", "Archivos").resultado, Retorno.Resultado.OK, "Se creo la carpeta Archivos en unidad C");
         p.ver(s.AgregarMensaje("C", "Archivos", "MensajeEspecial").resultado, Retorno.Resultado.OK, "Se agrega mensaje1 en carpeta Archivos");
         p.ver(s.InsertarLinea("C", "Archivos", "MensajeEspecial").resultado, Retorno.Resultado.OK, "Linea vacía insertada correctamente");
         p.ver(s.InsertarLinea("C", "Archivos", "MensajeEspecial").resultado, Retorno.Resultado.OK, "Linea vacía insertada correctamente");
@@ -644,7 +645,7 @@ public class ObligatorioM2020 {
         p.ver(s.IngresarPalabraDiccionario("PalabraEnDiccionarioDosDos").resultado, Retorno.Resultado.OK, "Palabra ingresada correctamente");
         p.ver(s.IngresarPalabraDiccionario("PalabraEnDiccionarioUnoDos").resultado, Retorno.Resultado.OK, "Palabra ingresada correctamente");
         p.ver(s.ImprimirDiccionario().resultado, Retorno.Resultado.OK, "Diccionario impreso correctamente");
-        p.ver(s.ImprimirTextoIncorrecto("C", "Archivos", "MensajeEspecial").resultado, Retorno.Resultado.OK, "Palabras no encontradas en diccionario");
+//        p.ver(s.ImprimirTextoIncorrecto("C", "Archivos", "MensajeEspecial").resultado, Retorno.Resultado.OK, "Palabras no encontradas en diccionario");
 
         p.ver(s.destruirSistemaMensajes().resultado, Retorno.Resultado.OK, "Se destruye sistema");
         p.imprimirResultadosPrueba();
